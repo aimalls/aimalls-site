@@ -1,0 +1,17 @@
+@import "fonts";
+
+body {
+    font-family: 'WorkSans-Regular', Tahoma, Verdana, sans-serif !important;
+}
+
+.container {
+    margin: 0px 5%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0px 1%;
+    }
+}

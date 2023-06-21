@@ -1,0 +1,52 @@
+#home-page {
+    
+    #responsive-nav {
+        padding: 0px 20px;
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            a {
+                width: 100%;
+                text-decoration: none;
+                text-align: end;
+                li {
+                    padding: 10px 0px;
+                    border-bottom: thin solid #ececec;
+                }
+            }
+        }
+    }
+    #main-header {
+        ion-toolbar {
+            display: flex;
+            align-items: center;
+            height: 70px;
+        }
+        #main-navigation {
+            ul {
+                list-style: none;
+                display: inline-flex;
+                a {
+                    font-family: 'WorkSans-Bold', Courier, monospace;
+                    padding: 10px 15px;
+                    color: #000;
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+            }
+        }
+        .logo {
+            height: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+}
