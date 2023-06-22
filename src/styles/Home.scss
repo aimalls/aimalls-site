@@ -1,7 +1,4 @@
 #home-page {
-    #footer-bar{
-
-    }
     #faq-section{
         background: #1e110e;
         .title{
@@ -55,6 +52,33 @@
             transform: translateY(-150px);
         }
     }
+    #footer-section {
+        background: #37231e;
+        color: #FFF;
+        font-family: 'WorkSans-Bold';
+
+        .logo {
+            img {
+                height: 70px;
+            }
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .social-buttons {
+            a {
+                display: inline-block;
+                padding: 10px;
+
+                img {
+                    height: 30px;
+                }
+            }
+        }
+    }
+
     #tokenomics-section {
         background: #1e110e;
         min-height: 300px;
@@ -591,6 +615,22 @@
 
 @media screen and (max-width: 768px) {
     #home-page {
+        #footer-section {
+            .logo {
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            .copyright {
+                display: flex;
+                justify-content: center !important;
+            }
+
+            .social-buttons {
+                justify-content: center !important;
+            }
+        }
+
         #hero-section {
             .hero-tagline {
                 font-size: 30px;

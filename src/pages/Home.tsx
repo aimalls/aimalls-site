@@ -1,5 +1,4 @@
 import { IonContent, IonPage } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import '../styles/Home.scss';
 import { Header } from './home-parts/Header';
 import { HeroSection } from './home-parts/Hero';
@@ -13,13 +12,26 @@ import { WhyAiMalls } from './home-parts/WhyAiMalls';
 import { VisionAndMission } from './home-parts/VisionAndMission';
 import { TokenUtilitySection } from './home-parts/TokenUtility';
 import { TokenomicsSection } from './home-parts/Tokenomics';
-import { FooterBar } from './home-parts/FooterBar';
 import { RoadMap } from './home-parts/RoadMap';
 import { FAQSection } from './home-parts/FAQSection';
+import { FooterSection } from './home-parts/Footer';
+import { useEffect, useState } from 'react';
+import { PageLoading } from '../components/PageLoading';
 
 const Home: React.FC = () => {
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        window.addEventListener('load', () => {
+            setLoading(false)
+        })
+    }, [])
+
     return (
         <IonPage id='home-page'>
+            {loading && (
+                <PageLoading />
+            )}
             <Header />
             <IonContent fullscreen>
                 <HeroSection />
@@ -35,7 +47,7 @@ const Home: React.FC = () => {
                 <TokenomicsSection />
                 <RoadMap />
                 <FAQSection />
-                <FooterBar />
+                <FooterSection />
             </IonContent>
         </IonPage>
     );

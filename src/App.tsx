@@ -27,10 +27,14 @@ import { Routes } from './routes/Index';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-    <IonApp>
-        <Routes />
-    </IonApp>
-);
+const App: React.FC = () => {
 
+
+    return (
+        <IonApp>
+
+            <Routes />
+        </IonApp>
+    )
+}
 export default App;
