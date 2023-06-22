@@ -1,9 +1,23 @@
 #home-page {
+    #technology-and-target-market{
+        background: #1e110e;
+        .content{
+            border-top: 3px solid var(--ion-color-tertiary);
+            border-bottom: 3px solid var(--ion-color-tertiary);
+            height: 600px;
+            margin-bottom: -200px;
+            background: url("../assets/images/bg-3.png") center center no-repeat;
+            background-size: cover;
+            padding-bottom: 20px;
+
+        }
+    }
     #aimalls-app{
         background: url("../assets/images/mockup.png") top right no-repeat, url("../assets/images/bg-2.png") top center no-repeat, #1e110e;
         color: #fff;
         background-size: contain, cover;
         padding: 50px 0px 100px 0px;
+        height: 100vh;
         .container {
             background: rgba(0,0,0,0.3);
             border-radius: 20px;

@@ -8,6 +8,7 @@ import { FutureOfShoppingSection } from './home-parts/FutureOfShopping';
 import { DiscoverBenefits } from './home-parts/DiscoverBenefits';
 import { FutureOfShoppingV2Section } from './home-parts/FutureOfShoppingV2';
 import { AiMallsApp } from './home-parts/AiMallsApp';
+import { TechnologyAndTargetMarket } from './home-parts/TechnologyAndTargetMarket';
 
 const Home: React.FC = () => {
     return (
@@ -20,6 +21,7 @@ const Home: React.FC = () => {
                 <DiscoverBenefits />
                 <FutureOfShoppingV2Section />
                 <AiMallsApp />
+                <TechnologyAndTargetMarket />
             </IonContent>
         </IonPage>
     );

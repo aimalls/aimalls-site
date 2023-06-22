@@ -25,9 +25,6 @@ export const AiMallsApp: React.FC = () => {
                             </ul>
                         </div>
                     </IonCol>
-                    {/* <IonCol size="12" sizeSm="12" sizeMd="6">
-                        <img src={mockup} alt=""  />
-                    </IonCol> */}
                 </IonRow>
             </IonGrid>
         </div>
