@@ -1,7 +1,45 @@
 #home-page {
+    #aimalls-app{
+        background: url("../assets/images/mockup.png") top right no-repeat, url("../assets/images/bg-2.png") top center no-repeat, #1e110e;
+        color: #fff;
+        background-size: contain, cover;
+        padding: 50px 0px 100px 0px;
+        .container {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+        }
+        .title {
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+            padding: 20px;
+        }
+        .sub-title{
+            padding: 0 20px;
+            font-family: 'WorkSans-Regular';
+        }
+        .content {
+            line-height: 25px;
+            padding: 0 10px 0 40px;
+            ul {
+                list-style: none;
+                padding: 0;
+                li {
+                    padding: 7px 0px;
+                    &::before {
+                        content: '\2022';
+                        color: var(--ion-color-tertiary);
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 2em;
+                        margin-left: -2em;
+                        font-family: 'WorkSans-Regular';
+                    }
+                }
+            }
+        }
+    }
     #future-of-shopping-v2 {
         padding: 50px 0px 100px 0px;
-        min-height: 500px;
         background: url("../assets/images/abstract-bg1.png") left center no-repeat, #1e110e;
         color: #FFF;
         .section-title {
@@ -17,6 +55,36 @@
             text-align: center;
             font-family: 'WorkSans-Regular';
             font-size: 20px;
+        }
+        .container ion-col {
+            padding: 20px 3%;
+        }
+        .shopping-card{
+            background: rgb(55,35,30);
+            background: linear-gradient(180deg, rgba(55,35,30,1) 0%, rgba(31,18,15,1) 85%);
+            border: 3px solid #37231e;
+            height: 100%;
+            border-radius: 10px;
+            .icon{
+                display: flex;
+                justify-content: center;
+                padding: 30px 0px;
+                img {
+                    height: 70px;
+                }
+            }
+            .title {
+                padding: 10px 20px;
+                color: var(--ion-color-tertiary);
+                text-align: center;
+                font-family: 'WorkSans-Bold';
+
+            }
+            .content {
+                padding: 20px;
+                text-align: justify;
+            }
+
         }
     }
     #discover-benefits {
