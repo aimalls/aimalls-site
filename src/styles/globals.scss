@@ -8,7 +8,16 @@ body {
     margin: 0px 5%;
 }
 
-
+#loading-wrapper {
+    z-index: 1000;
+    background: #FFF;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media screen and (max-width: 768px) {
     .container {
