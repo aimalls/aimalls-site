@@ -1,8 +1,13 @@
 import { IonCol, IonGrid, IonRow } from "@ionic/react"
 
 import TokenomicsBG from "../../assets/images/tokenomics.png"
+import TokenomicsBGPlaceholder from "../../assets/images/tokenomics-placeholder.png"
+import { useProgressiveImage } from "../../hooks/ProgressiveImage";
 
 export const TokenomicsSection: React.FC = () => {
+
+    const loaded_tokenomics = useProgressiveImage(TokenomicsBG);
+
     return (
         <div id="tokenomics-section">
             <IonGrid className="container">
@@ -13,7 +18,7 @@ export const TokenomicsSection: React.FC = () => {
                         </div>
                     </IonCol>
                     <IonCol size="12">
-                        <img src={TokenomicsBG} alt="Tokenomics" />
+                        <img src={loaded_tokenomics || TokenomicsBGPlaceholder} alt="Tokenomics" />
                     </IonCol>
                 </IonRow>
             </IonGrid>
