@@ -19,7 +19,7 @@ http://ionicframework.com/docs/theming/ */
 
 	--ion-color-tertiary: #fc9a14;
 	--ion-color-tertiary-rgb: 252,154,20;
-	--ion-color-tertiary-contrast: #000000;
+	--ion-color-tertiary-contrast: #FFF;
 	--ion-color-tertiary-contrast-rgb: 0,0,0;
 	--ion-color-tertiary-shade: #de8812;
 	--ion-color-tertiary-tint: #fca42c;
@@ -83,7 +83,7 @@ http://ionicframework.com/docs/theming/ */
 
 	--ion-color-tertiary: #fc9a14;
 	--ion-color-tertiary-rgb: 252,154,20;
-	--ion-color-tertiary-contrast: #000000;
+	--ion-color-tertiary-contrast: #FFF;
 	--ion-color-tertiary-contrast-rgb: 0,0,0;
 	--ion-color-tertiary-shade: #de8812;
 	--ion-color-tertiary-tint: #fca42c;

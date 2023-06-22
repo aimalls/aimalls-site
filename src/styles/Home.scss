@@ -1,5 +1,196 @@
 #home-page {
-    
+    #future-of-shopping-v2 {
+        padding: 50px 0px 100px 0px;
+        min-height: 500px;
+        background: url("../assets/images/abstract-bg1.png") left center no-repeat, #1e110e;
+        color: #FFF;
+        .section-title {
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+            text-align: center;
+            padding: 20px;
+            span {
+                color: var(--ion-color-tertiary);
+            }
+        }
+        .section-sub-header {
+            text-align: center;
+            font-family: 'WorkSans-Regular';
+            font-size: 20px;
+        }
+    }
+    #discover-benefits {
+        padding: 50px 0px 100px 0px;
+        border-top: 17px solid var(--ion-color-tertiary);
+        border-bottom: 17px solid var(--ion-color-tertiary);
+        .section-title {
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+            text-align: center;
+            padding: 20px;
+            span {
+                color: var(--ion-color-tertiary);
+            }
+        }
+        .section-sub-header {
+            text-align: center;
+            font-family: 'WorkSans-Regular';
+            font-size: 20px;
+        }
+        .container ion-col {
+            padding: 20px 3%;
+        }
+        .benefit-card {
+            border: 3px solid var(--ion-color-tertiary);
+            height: 100%;
+            font-family: 'WorkSans-Regular';
+            .thumb {
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                }
+            }
+            .title {
+                padding: 10px 20px;
+                color: var(--ion-color-tertiary);
+                text-align: center;
+                font-family: 'WorkSans-Bold';
+
+            }
+            .content {
+                padding: 10px 20px;
+                text-align: justify;
+            }
+        }
+    }
+    #future-of-shopping-section {
+        min-height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        color: #FFF;
+        padding: 50px 0px 100px 0px;
+        .header-title {
+            color: #FFF;
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+            span {
+                color: var(--ion-color-tertiary);
+            }
+        }
+        .content {
+            padding-top: 20px;
+            line-height: 25px;
+            font-family: 'WorkSans-Regular';
+            text-align: justify;
+        }
+        .features {
+            ion-col {
+                padding: 0px 30px;
+                .thumb {
+                    img {
+                        height: 80px;
+                    }
+                }
+                .title {
+                    color: var(--ion-color-tertiary);
+                    font-family: 'WorkSans-Bold';
+                }
+            }
+        }
+    }
+    #about-section {
+        background: #1e110e;
+        min-height: 300px;
+        color: #FFF;
+        padding-bottom: 100px;
+        .header-title {
+            color: #FFF;
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+            span {
+                color: var(--ion-color-tertiary);
+            }
+        }
+        .about-feature-image-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-height: 400px;
+            }
+        }
+        .about-section-content-wrap {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .content {
+            line-height: 25px;
+            ul {
+                list-style: none;
+                padding: 0;
+                li {
+                    padding: 7px 0px;
+                    &::before {
+                        content: '\2022';
+                        color: var(--ion-color-tertiary);
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 2em;
+                        margin-left: -2em;
+                    }
+                }
+            }
+        }
+    }
+    #hero-section {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: calc(100vh - 70px);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        .hero-tagline {
+            color: #FFF;
+            font-family: 'WorkSans-Bold';
+            font-size: 50px;
+            text-align: start;
+            span {
+                color: var(--ion-color-tertiary);
+            }
+        }
+        .hero-caption {
+            color: #FFF;
+            text-align: start;
+            font-family: 'WorkSans-Regular';
+            line-height: 25px;
+        }
+        .hero-action-buttons {
+            padding: 20px 0px;
+            display: flex;
+            ion-button {
+                font-family: 'WorkSans-Bold';
+            }
+        }
+        .social-buttons {
+            border: 2px solid var(--ion-color-tertiary);
+            border-radius: 10px;
+            top: 50%;
+            width: 50px;
+            transform: translate(-7px, -50%);
+            position: absolute;
+            padding: 10px 5px;
+            a {
+                width: 35px;
+                padding: 5px;
+                display: block;
+            }
+        }
+    }
     #responsive-nav {
         padding: 0px 20px;
         .logo-wrap {
@@ -29,12 +220,15 @@
             height: 70px;
         }
         #main-navigation {
+            display: flex;
+            justify-content: center;
             ul {
                 list-style: none;
                 display: inline-flex;
                 a {
                     font-family: 'WorkSans-Bold', Courier, monospace;
                     padding: 10px 15px;
+                    text-decoration: none;
                     color: #000;
                     font-weight: bold;
                     font-size: 15px;
@@ -48,5 +242,39 @@
 }
 
 @media screen and (max-width: 768px) {
+#home-page {
+    #hero-section {
+        .hero-tagline {
+            font-size: 30px;
+            text-align: center;
+        }
+        .hero-caption {
+            text-align: center;
+        }
+        .hero-action-buttons {
+            justify-content: center;
+        }
+        .hero-social-buttons {
+            display: flex;
+            justify-content: center;
+            a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+            }
+        }
+    }
+}
 
+}
+
+@media screen and (max-width: 576px) {
+    #home-page {
+        #hero-section {
+            .hero-action-buttons {
+                flex-direction: column;
+            }
+        }
+    }
 }
