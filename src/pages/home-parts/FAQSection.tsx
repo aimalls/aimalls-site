@@ -52,7 +52,7 @@ export const FAQSection: React.FC = () => {
                     </IonCol>
                 </IonRow>
                 <IonRow className="ion-justify-content-center">
-                    <IonCol size="12" sizeMd="10">
+                    <IonCol size="12" sizeMd="10" style={{ padding: "50px 0px" }}>
                         { faq_content.map((content, index) => (
                             <div key={index} className="content">
                                 <div className="content-title">
