@@ -14,6 +14,8 @@ import { VisionAndMission } from './home-parts/VisionAndMission';
 import { TokenUtilitySection } from './home-parts/TokenUtility';
 import { TokenomicsSection } from './home-parts/Tokenomics';
 import { FooterBar } from './home-parts/FooterBar';
+import { RoadMap } from './home-parts/RoadMap';
+import { FAQSection } from './home-parts/FAQSection';
 
 const Home: React.FC = () => {
     return (
@@ -31,6 +33,8 @@ const Home: React.FC = () => {
                 <VisionAndMission />
                 <TokenUtilitySection />
                 <TokenomicsSection />
+                <RoadMap />
+                <FAQSection />
                 <FooterBar />
             </IonContent>
         </IonPage>
