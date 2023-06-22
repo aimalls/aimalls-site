@@ -12,6 +12,7 @@ import { TechnologyAndTargetMarket } from './home-parts/TechnologyAndTargetMarke
 import { WhyAiMalls } from './home-parts/WhyAiMalls';
 import { VisionAndMission } from './home-parts/VisionAndMission';
 import { TokenUtilitySection } from './home-parts/TokenUtility';
+import { TokenomicsSection } from './home-parts/Tokenomics';
 
 const Home: React.FC = () => {
     return (
@@ -28,6 +29,7 @@ const Home: React.FC = () => {
                 <WhyAiMalls />
                 <VisionAndMission />
                 <TokenUtilitySection />
+                <TokenomicsSection />
             </IonContent>
         </IonPage>
     );
