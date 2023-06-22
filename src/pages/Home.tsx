@@ -9,6 +9,9 @@ import { DiscoverBenefits } from './home-parts/DiscoverBenefits';
 import { FutureOfShoppingV2Section } from './home-parts/FutureOfShoppingV2';
 import { AiMallsApp } from './home-parts/AiMallsApp';
 import { TechnologyAndTargetMarket } from './home-parts/TechnologyAndTargetMarket';
+import { WhyAiMalls } from './home-parts/WhyAiMalls';
+import { VisionAndMission } from './home-parts/VisionAndMission';
+import { TokenUtilitySection } from './home-parts/TokenUtility';
 
 const Home: React.FC = () => {
     return (
@@ -22,6 +25,9 @@ const Home: React.FC = () => {
                 <FutureOfShoppingV2Section />
                 <AiMallsApp />
                 <TechnologyAndTargetMarket />
+                <WhyAiMalls />
+                <VisionAndMission />
+                <TokenUtilitySection />
             </IonContent>
         </IonPage>
     );
