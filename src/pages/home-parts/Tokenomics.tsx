@@ -8,6 +8,11 @@ export const TokenomicsSection: React.FC = () => {
             <IonGrid className="container">
                 <IonRow>
                     <IonCol size="12">
+                        <div className="title">
+                            Tokenomics
+                        </div>
+                    </IonCol>
+                    <IonCol size="12">
                         <img src={TokenomicsBG} alt="Tokenomics" />
                     </IonCol>
                 </IonRow>

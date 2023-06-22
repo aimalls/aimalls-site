@@ -13,6 +13,7 @@ import { WhyAiMalls } from './home-parts/WhyAiMalls';
 import { VisionAndMission } from './home-parts/VisionAndMission';
 import { TokenUtilitySection } from './home-parts/TokenUtility';
 import { TokenomicsSection } from './home-parts/Tokenomics';
+import { FooterBar } from './home-parts/FooterBar';
 
 const Home: React.FC = () => {
     return (
@@ -30,6 +31,7 @@ const Home: React.FC = () => {
                 <VisionAndMission />
                 <TokenUtilitySection />
                 <TokenomicsSection />
+                <FooterBar />
             </IonContent>
         </IonPage>
     );
