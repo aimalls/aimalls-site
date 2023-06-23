@@ -34,7 +34,7 @@ const Home: React.FC = () => {
             {loading && (
                 <PageLoading />
             )}
-            <img src={Thumb} alt="test thumb" style={{ display: 'none' }} />
+            {/* <img src={Thumb} alt="test thumb" style={{ display: 'none' }} /> */}
             <Header />
             <IonContent fullscreen>
                 <HeroSection />
