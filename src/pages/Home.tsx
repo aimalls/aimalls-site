@@ -24,9 +24,11 @@ const Home: React.FC = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        window.addEventListener('load', () => {
-            setLoading(false)
-        })
+        if (!!window) {
+            window.addEventListener('load', () => {
+                setLoading(false)
+            })
+        }
     }, [])
 
     return (
