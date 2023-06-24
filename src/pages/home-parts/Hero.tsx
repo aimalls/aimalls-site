@@ -11,21 +11,21 @@ import { useScreen } from "../../hooks/ScreenSize"
 export const HeroSection = () => {
 
     const loaded_bg = useProgressiveImage(heroBg);
-    const {screenWidth} = useScreen();
+    const { screenWidth } = useScreen();
 
     return (
-        <div id="hero-section" style={{ backgroundImage: `url(${ loaded_bg || heroBgPlaceholder })` }}>
+        <div id="hero-section" style={{ backgroundImage: `url(${loaded_bg || heroBgPlaceholder})` }}>
             <div className="social-buttons ion-hide-md-down">
                 <SocialButtons />
             </div>
             <IonGrid className="container" style={{ alignSelf: "center" }}>
-                <IonRow className={screenWidth <= 768 ? `ion-justify-content-center`: ''}>
+                <IonRow className={screenWidth <= 768 ? `ion-justify-content-center` : ''}>
                     <IonCol size="10" sizeMd="5" sizeLg="4" pushMd="1">
                         <div className="hero-tagline">Experience the <span>Future of Shopping</span> with <span>AI</span></div>
                         <div className="hero-caption">It is an AI-powered online mall, a platform and an app that uses intelligent algorithms.</div>
                         <div className="hero-action-buttons">
                             <IonButton color="tertiary" shape="round" href="#about-section">Get Started</IonButton>
-                            <IonButton color="tertiary" shape="round" href="https://aimalls.files.wordpress.com/2023/05/whitepaper.pdf" target="_blank">Whitepaper</IonButton>
+                            <IonButton color="tertiary" shape="round" href="https://cdn.aimalls.app/whitepaper.pdf" target="_blank">Whitepaper</IonButton>
                         </div>
                     </IonCol>
                 </IonRow>

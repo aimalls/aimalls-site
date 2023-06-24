@@ -24,7 +24,7 @@ export const FAQSection: React.FC = () => {
         },
         {
             title: "Q: Do you have the project Whitepaper?",
-            content: "A: Yes, here is the link : https://drive.google.com/file/d/1EJ2UrREwaaSyAe94OFBRRnNeXCjnRwnW/view"
+            content: `A: Yes, here is the link : https://cdn.aimalls.app/whitepaper.pdf`
         },
         {
             title: "Q: What is the ticker for AiMalls token?",
@@ -53,16 +53,16 @@ export const FAQSection: React.FC = () => {
                 </IonRow>
                 <IonRow className="ion-justify-content-center">
                     <IonCol size="12" sizeMd="10" style={{ padding: "50px 0px" }}>
-                        { faq_content.map((content, index) => (
+                        {faq_content.map((content, index) => (
                             <div key={index} className="content">
                                 <div className="content-title">
-                                    { content.title }
+                                    {content.title}
                                 </div>
                                 <div className="content-details">
-                                    { content.content }
+                                    {content.content}
                                 </div>
                             </div>
-                        )) }
+                        ))}
                     </IonCol>
                 </IonRow>
             </IonGrid>
