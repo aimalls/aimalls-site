@@ -25,20 +25,17 @@ const Home: React.FC = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (!isPlatform('android')) {
 
-            window.addEventListener('load', () => {
-                setLoading(false)
-            })
+        window.addEventListener('load', () => {
+            setLoading(false)
+        })
 
-        } else {
-            setLoading(true)
-        }
+
     }, [])
 
     return (
         <IonPage id='home-page'>
-            {loading && (
+            {loading && !isPlatform('android') && (
                 <PageLoading />
             )}
             {/* <img src={Thumb} alt="test thumb" style={{ display: 'none' }} /> */}
