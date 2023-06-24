@@ -16,6 +16,7 @@ import { FAQSection } from './home-parts/FAQSection';
 import { FooterSection } from './home-parts/Footer';
 import { useEffect, useState } from 'react';
 import { PageLoading } from '../components/PageLoading';
+import { isPlatform } from '@ionic/react';
 
 import Thumb from "../assets/images/thumb.jpg"
 import { Header } from './home-parts/Header';
@@ -24,10 +25,14 @@ const Home: React.FC = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (!!window) {
+        if (!isPlatform('android')) {
+
             window.addEventListener('load', () => {
                 setLoading(false)
             })
+
+        } else {
+            setLoading(true)
         }
     }, [])
 
