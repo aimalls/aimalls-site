@@ -26,6 +26,10 @@ import './styles/globals.scss';
 import { Routes } from './routes/Index';
 
 setupIonicReact();
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
 
 const App: React.FC = () => {
 
