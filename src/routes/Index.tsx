@@ -5,9 +5,7 @@ import { PublicRoutes } from "./Public"
 export const Routes: React.FC = () => {
     return (
         <IonReactRouter>
-            <IonRouterOutlet>
-                <PublicRoutes />
-            </IonRouterOutlet>
+            <PublicRoutes />
         </IonReactRouter>
     )
 }

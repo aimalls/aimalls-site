@@ -24,7 +24,6 @@ export const AboutSection: React.FC = () => {
             yPercent: 50,
             opacity: 0,
         })
-        // ScrollTrigger.refresh()
 
 
         // if(about_section.current) {
