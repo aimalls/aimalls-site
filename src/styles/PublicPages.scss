@@ -1,4 +1,40 @@
 #public-pages {
+    #privacy-policy{
+        // margin: 100px 0;
+        .title{
+            text-align: center;
+            color: var(--ion-color-tertiary);
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+            margin: 50px;
+        }
+        .revised-date{
+            margin: 100px 0px 20px 0;
+            font-size: 15px;
+        }
+        .description{
+            font-family: 'WorkSans-Regular';
+            font-size: 15px;
+        }
+        .content{
+            margin: 20px 0px;
+            .content-title{
+                color: var(--ion-color-tertiary);
+                font-size: 30px;
+                font-family: 'WorkSans-Bold';
+            }
+            .content-sub-title{
+                font-family: 'WorkSans-Bold';
+                font-size: 15px;
+                padding-top: 20px;
+            }
+            .content-description{
+                font-family: 'WorkSans-Regular';
+                font-size: 15px;
+                padding-top: 20px;
+            }
+        }
+    }
     #main-header {
         ion-toolbar {
             display: flex;
