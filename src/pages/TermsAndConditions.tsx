@@ -147,7 +147,7 @@ const TermsAndConditions: React.FC = () => {
                                 <div className="content">
                                     <div className="content-title">11. Contact Information</div>
                                     <div className="content-description">
-                                        If you have any questions or concerns regarding this Agreement, please contact us at [Contact Information].
+                                        If you have any questions or concerns regarding this Agreement, please contact us at <a href="/public/terms-and-conditions" style={{color: "var(--ion-color-tertiary)"}}>support@aimalls.app</a>.
                                     </div>
                                 </div>
                             </IonCol>

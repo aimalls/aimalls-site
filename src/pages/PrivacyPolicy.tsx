@@ -120,7 +120,7 @@ const PrivacyPolicy: React.FC = () => {
                                         7. Changes to this Privacy Policy
                                     </div>
                                     <div className="content-description">
-                                        We reserve the right to modify this Privacy Policy at any time. If we make material changes, we will notify you by posting the updated
+                                        We reserve the right to modify this Privacy Policy at any time. If we make material changes, we will notify you by posting the updated.
                                     </div>
                                 </div>
                             </IonCol>
