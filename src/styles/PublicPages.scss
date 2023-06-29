@@ -1,17 +1,18 @@
 #public-pages {
-    #terms-and-conditions{
-        .title{
+
+    #terms-and-conditions {
+        .title {
             text-align: center;
             color: var(--ion-color-tertiary);
             font-size: 40px;
             font-family: 'WorkSans-Bold';
             margin: 50px;
         }
-        .description{
+        .description {
             font-family: 'WorkSans-Regular';
             font-size: 15px;
         }
-        .content{
+        .content {
             margin: 20px 0px;
             .content-title{
                 color: var(--ion-color-tertiary);
@@ -30,7 +31,8 @@
             }
         }
     }
-    #privacy-policy{
+
+    #privacy-policy {
         .title{
             text-align: center;
             color: var(--ion-color-tertiary);
@@ -66,6 +68,7 @@
             }
         }
     }
+    
     #main-header {
         ion-toolbar {
             display: flex;
