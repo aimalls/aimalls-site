@@ -19,7 +19,7 @@ const Register: React.FC = () => {
                         
                             
                             <div id="register-content">
-                                {/* <IonGrid className='ion-no-padding'> */}
+                                <IonGrid className='ion-no-padding'>
                                     <IonRow className='ion-justify-content-between'>
                                         <IonCol size='12' sizeSm='6' sizeMd='8'>
                                             <div className="register-column">
@@ -96,7 +96,7 @@ const Register: React.FC = () => {
                                             </div>
                                         </IonCol>
                                     </IonRow>
-                                {/* </IonGrid> */}
+                                </IonGrid>
                             </div>
                     ): ( 
                         <div id='verified'>

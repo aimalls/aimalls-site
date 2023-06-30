@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "../../styles/auth/Login.scss"
 import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton } from '@ionic/react'
+import Logo from '../../assets/images/logo-full.png'
 
 import facebook from '../../assets/images/facebook-logo.png'
 import telegram from '../../assets/images/telegram-logo.png'
@@ -18,10 +19,10 @@ const Login: React.FC = () => {
 
     return (
         <div id='login'>
-            {/* <IonPage>
-                <IonContent> */}
+            <IonPage>
+                <IonContent>
                     <div className="login-content">
-                        {/* <IonGrid className='ion-no-padding'> */}
+                        <IonGrid className='ion-no-padding'>
                             <IonRow className='ion-justify-content-between'>
                                 <IonCol size='12' sizeSm='6' sizeMd='8'>
                                     <div className="login-column">
@@ -45,7 +46,8 @@ const Login: React.FC = () => {
                                             <IonCol size='12' sizeMd='8' className='ion-padding-top'>
                                                 <IonInput 
                                                     label='Username' 
-                                                    className='inputs'
+                                                    className='inputs' 
+                                                    counter={true}
                                                     labelPlacement="floating" 
                                                     placeholder='Enter your Username' 
                                                 />
@@ -54,7 +56,8 @@ const Login: React.FC = () => {
                                                 <IonInput 
                                                     label='Password' 
                                                     className='inputs' 
-                                                    labelPlacement="floating"
+                                                    labelPlacement="floating" 
+                                                    counter={true}
                                                     placeholder='Enter your Password'
                                                 />
                                             </IonCol>
@@ -89,10 +92,10 @@ const Login: React.FC = () => {
                                     </div>
                                 </IonCol>
                             </IonRow>
-                        {/* </IonGrid> */}
+                        </IonGrid>
                     </div>
-                    {/* </IonContent>
-            </IonPage> */}
+                    </IonContent>
+            </IonPage>
         </div>
     )
 }
