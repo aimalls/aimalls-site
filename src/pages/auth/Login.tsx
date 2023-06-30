@@ -24,7 +24,7 @@ const Login: React.FC = () => {
                     <div className="login-content">
                         <IonGrid className='ion-no-padding'>
                             <IonRow className='ion-justify-content-between'>
-                                <IonCol size='12' sizeSm='6' sizeMd='7'>
+                                <IonCol size='12' sizeSm='6' sizeMd='8'>
                                     <div className="login-column">
                                         <IonRow className='ion-justify-content-center'>
                                             <IonCol size='12'>
@@ -47,7 +47,7 @@ const Login: React.FC = () => {
                                                 <IonInput 
                                                     label='Username' 
                                                     className='inputs' 
-                                                    fill='outline'
+                                                    counter={true}
                                                     labelPlacement="floating" 
                                                     placeholder='Enter your Username' 
                                                 />
@@ -57,9 +57,16 @@ const Login: React.FC = () => {
                                                     label='Password' 
                                                     className='inputs' 
                                                     labelPlacement="floating" 
-                                                    fill='outline'
+                                                    counter={true}
                                                     placeholder='Enter your Password'
                                                 />
+                                            </IonCol>
+                                            <IonCol size='12' sizeMd='8'>
+                                                <div className="forgot-password">
+                                                <IonButton href='/forgot-password' fill='clear'>
+                                                    <div className='forgot-password-title'>forgot password?</div>
+                                                </IonButton>
+                                                </div>
                                             </IonCol>
                                             <IonCol size='12' sizeMd='8'>
                                                 <div className='login-btn'>

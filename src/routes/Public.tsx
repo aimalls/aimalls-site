@@ -4,6 +4,7 @@ import { PublicPagesLayout } from "../layouts/PublicPages"
 import { IonRouterOutlet } from "@ionic/react"
 import Login from "../pages/auth/Login"
 import Register from "../pages/auth/Register"
+import ForgotPassword from "../pages/auth/ForgotPassword"
 
 export const PublicRoutes = () => (
 
@@ -17,6 +18,9 @@ export const PublicRoutes = () => (
         </Route>
         <Route exact path="/register">
             <Register />
+        </Route>
+        <Route exact path="/forgot-password">
+            <ForgotPassword />
         </Route>
     </IonRouterOutlet>
 

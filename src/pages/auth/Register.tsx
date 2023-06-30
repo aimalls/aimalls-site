@@ -16,7 +16,7 @@ const Register: React.FC = () => {
                     <div id="register-content">
                         <IonGrid className='ion-no-padding'>
                             <IonRow className='ion-justify-content-between'>
-                                <IonCol size='12' sizeSm='6' sizeMd='7'>
+                                <IonCol size='12' sizeSm='6' sizeMd='8'>
                                     <div className="register-column">
                                         <IonRow className='ion-justify-content-center'>
                                             <IonCol size='12'>
@@ -35,43 +35,43 @@ const Register: React.FC = () => {
                                                 </div>
                                                 <div className='line-break'>or</div>
                                             </IonCol>
-                                            <IonCol size='12' sizeMd='8' className='ion-padding-top'>
+                                            <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
                                                 <IonInput 
                                                     label='Username' 
-                                                    className='inputs' 
-                                                    fill='outline'
+                                                    className='inputs'
                                                     labelPlacement="floating" 
+                                                    counter={true}
                                                     placeholder='Enter your Username' 
                                                 />
                                             </IonCol>
-                                            <IonCol size='12' sizeMd='8' className='ion-padding-top'>
+                                            <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
                                                 <IonInput 
                                                     label='Email' 
-                                                    className='inputs' 
-                                                    fill='outline'
+                                                    className='inputs'
                                                     labelPlacement="floating" 
+                                                    counter={true}
                                                     placeholder='Enter your Email' 
                                                 />
                                             </IonCol>
-                                            <IonCol size='12' sizeMd='8' className='ion-padding-top'>
+                                            <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
                                                 <IonInput 
                                                     label='Password' 
-                                                    className='inputs' 
-                                                    fill='outline'
+                                                    className='inputs'
                                                     labelPlacement="floating" 
+                                                    counter={true}
                                                     placeholder='Enter your Password' 
                                                 />
                                             </IonCol>
-                                            <IonCol size='12' sizeMd='8' className='ion-padding-top'>
+                                            <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
                                                 <IonInput 
                                                     label='Confirm Password' 
-                                                    className='inputs' 
-                                                    fill='outline'
+                                                    className='inputs'
                                                     labelPlacement="floating" 
+                                                    counter={true}
                                                     placeholder='Enter your Confirm Password' 
                                                 />
                                             </IonCol>
-                                            <IonCol size='12' sizeMd='8'>
+                                            <IonCol size='12' sizeSm='9' sizeMd='7'>
                                                 <div className='register-btn'>
                                                     <a href="/register">Register</a>
                                                 </div>
@@ -81,14 +81,14 @@ const Register: React.FC = () => {
                                 </IonCol>
                                 <IonCol  size='12' sizeSm='6' sizeMd='4' >
                                     <div className="login-column">
-                                        <IonRow className='ion-justify-content-center'>
+                                        <IonRow className='ion-justify-content-center al'>
                                             <IonCol size='12'>
                                                 <div className="login-title">Welcome Back!</div>
                                                 <div className="login-description">
                                                     Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
                                                 </div>
                                             </IonCol>
-                                            <IonCol size='12' sizeMd='8'>
+                                            <IonCol size='12' sizeMd='7'>
                                                 <IonButton expand='block' shape='round' href='/login' color={'light'}>Login</IonButton>
                                             </IonCol>
                                         </IonRow>

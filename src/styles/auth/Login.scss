@@ -5,7 +5,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fff;
+            color: #fff;
+            background: url(../../assets/images/auth-bg2.jpg) center center no-repeat;
             padding: 10px;
             .login-title{
                 text-align: center;
@@ -34,11 +35,12 @@
             .line-break {
                 overflow: hidden;
                 text-align: center;
+                margin-bottom: 20px;
               }
               
             .line-break:before,
             .line-break:after {
-                background-color: #000;
+                background-color: #fff;
                 content: "";
                 display: inline-block;
                 height: 1px;
@@ -58,9 +60,29 @@
             }
             
         }
+        ion-input.inputs{
+            --background: rgb(255, 252, 252);
+            --color: #000;
+            --placeholder-color: #1e1e1e;
+            --placeholder-opacity: 0.8;
+
+            --padding-bottom: 10px;
+            --padding-end: 10px;
+            --padding-start: 10px;
+            --border-radius: 5px;
+        }
+        .forgot-password{
+            display: flex;
+            justify-content: end;
+            .forgot-password-title{
+                font-family: 'WorkSans-Regular';
+                font-size: 15px;
+            }
+
+        }
         .login-btn{
             background: rgb(255,0,0);
-            margin-top: 20px;
+            margin: 20px 0;
             background: linear-gradient(135deg, rgba(255,0,0,1) 15%, rgba(254,162,24,1) 61%);
             text-align: center;
             padding: 10px 0;
