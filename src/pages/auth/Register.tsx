@@ -1,4 +1,4 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/Register.scss'
 
@@ -9,15 +9,29 @@ import verifiedIcon from '../../assets/images/verified.png'
 
 const Register: React.FC = () => {
     
-    const [verified, setVerified] = useState(true)
+    const [verified, setVerified] = useState(false)
+
+    const [registrationForm, setRegistrationForm] = useState({
+        email: null,
+        password: null,
+        confirm_password: null
+    });
+    const handleFormChange = (prop: any, { value }: any) => {
+        let prev_reg: any = registrationForm;
+        prev_reg[prop] = value
+
+        setRegistrationForm(prev_reg)
+    }
+
+    const processRegistration = () => {
+
+    }
     
     return (
         <div id='register'>
             <IonPage>
                 <IonContent>
-                    { verified ? (
-                        
-                            
+                    { !verified ? (
                             <div id="register-content">
                                 <IonGrid className='ion-no-padding'>
                                     <IonRow className='ion-justify-content-between'>
@@ -40,28 +54,39 @@ const Register: React.FC = () => {
                                                         </div>
                                                         <div className='line-break'>or</div>
                                                     </IonCol>
-                                                    <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
+                                                    {/* <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
+                                                        
                                                         <IonInput 
                                                             label='Username' 
                                                             className='inputs'
                                                             labelPlacement="floating" 
                                                             placeholder='Enter your Username' 
+                                                            ref={registrationForm.username}
+                                                            type='text'
+                                                            onIonChange={(val) => handleFormChange('username', val.detail)}
                                                             />
-                                                    </IonCol>
+                                                    </IonCol> */}
                                                     <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
                                                         <IonInput 
                                                             label='Email' 
                                                             className='inputs'
                                                             labelPlacement="floating" 
                                                             placeholder='Enter your Email' 
+                                                            type='email'
+                                                            ref={registrationForm.email}
+                                                            onIonChange={(val) => handleFormChange('email', val.detail)}
                                                         />
+                                                        
                                                     </IonCol>
                                                     <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
                                                         <IonInput 
                                                             label='Password' 
                                                             className='inputs'
                                                             labelPlacement="floating" 
-                                                            placeholder='Enter your Password' 
+                                                            placeholder='Enter your Password'
+                                                            type='password'
+                                                            ref={registrationForm.password}
+                                                            onIonChange={(val) => handleFormChange('password', val.detail)}
                                                             />
                                                     </IonCol>
                                                     <IonCol size='12' sizeSm='9' sizeMd='7' className='ion-padding-top'>
@@ -69,12 +94,27 @@ const Register: React.FC = () => {
                                                             label='Confirm Password' 
                                                             className='inputs'
                                                             labelPlacement="floating" 
-                                                            placeholder='Enter your Confirm Password' 
-                                                            />
+                                                            placeholder='Enter your Confirm Password'
+                                                            type="password"
+                                                            ref={registrationForm.confirm_password}
+                                                            onIonChange={(val) => handleFormChange('confirm_password', val.detail)} 
+                                                        />
+                                                    </IonCol>
+                                                    <IonCol size='12' sizeMd='9'>
+                                                        <div className="terms-and-conditions">
+                                                            <IonCheckbox labelPlacement='end'>I accept the</IonCheckbox>
+                                                            <a href="/terms-and-conditions" target='_blank'>Terms and Conditions</a>
+                                                        </div>
+                                                    </IonCol>
+                                                    <IonCol size='12' sizeMd='9'>
+                                                        <div className='privacy-policy'>
+                                                            <IonCheckbox labelPlacement='end'>I agree to the</IonCheckbox>
+                                                            <a href="/privacy-policy" target='_blank'>Privacy Policy</a>
+                                                        </div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeSm='9' sizeMd='7'>
                                                         <div className='register-btn'>
-                                                            <a href="/register">Register</a>
+                                                            <a onClick={processRegistration} href="/register">Register</a>
                                                         </div>
                                                     </IonCol>
                                                 </IonRow>    
@@ -100,7 +140,6 @@ const Register: React.FC = () => {
                             </div>
                     ): ( 
                         <div id='verified'>
-                            {/* <IonGrid> */}
                                 <IonRow className="ion-justify-content-center">
                                     <IonCol size='12'>
                                         <div className="icon">
@@ -118,7 +157,7 @@ const Register: React.FC = () => {
                                     </IonCol>
                                     <IonCol size='12' sizeMd='4'>
                                         <div className='verified-btn'>
-                                            <a href="/register">Got it</a>
+                                            <a href="/login">Got it</a>
                                         </div>
                                     </IonCol>
                                 </IonRow>

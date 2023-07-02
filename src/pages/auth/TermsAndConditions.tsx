@@ -1,5 +1,6 @@
 import { IonPage, IonContent, IonGrid, IonRow, IonCol } from '@ionic/react'
 import React from 'react'
+import '../../styles/auth/TermsAndCondition.scss'
 
 const TermsAndConditions: React.FC = () => {
     return (

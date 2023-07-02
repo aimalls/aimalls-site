@@ -1,14 +1,23 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonPage, IonRow } from '@ionic/react'
-import React from 'react'
+import React, { useState } from 'react'
 import '../../styles/auth/ForgotPassword.scss'
 import Key from '../../assets/images/key.png'
 import { arrowBackOutline } from 'ionicons/icons'
 
 const ForgotPassword = () => {
+
+    const [email, setEmail] = useState('')
+
+    const handleSubmit = () => {
+        const requestData = {
+            email
+        }
+    }
+
     return (
         <div id="forgot-password">
             <IonPage>
-                <IonContent>
+                <IonContent fullscreen>
                     <div id="forgot-password-content">
                         <IonGrid className='container'>
                             <IonRow className="ion-justify-content-center">
@@ -26,19 +35,22 @@ const ForgotPassword = () => {
                                     </div>
                                 </IonCol>
                                 <IonCol size='12' sizeMd='6' sizeLg='4'>
-                                <IonInput 
+                                    <IonInput 
                                         label='Email' 
                                         className='inputs' 
                                         labelPlacement="floating"
                                         placeholder='Enter your Email' 
                                         counter={true}
+                                        value={email}
+                                        keyboard-attach
+                                        onIonChange={(val) => setEmail(val.detail.value!)}
                                     />
                                 </IonCol>
                             </IonRow>
                             <IonRow className='ion-justify-content-center'>
                                 <IonCol size='12' sizeMd='6' sizeLg='4'>
                                     <div className='forgot-password-btn'>
-                                        <a href="/forgot-password">Send Request</a>
+                                        <a href="/forgot-password" onClick={handleSubmit}>Send Request</a>
                                     </div>
                                 </IonCol>
                             </IonRow>
