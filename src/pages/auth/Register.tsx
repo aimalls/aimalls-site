@@ -8,16 +8,25 @@ import telegram from '../../assets/images/telegram-logo.png'
 import verifiedIcon from '../../assets/images/verified.png'
 
 import { Register as RegisterRequest } from '../../requests/auth.request'
+import { useLocalStorage } from 'usehooks-ts'
 
 const Register: React.FC = () => {
     
     const [verified, setVerified] = useState(false)
+    const [referrer, setReferrer] = useLocalStorage("referrer", '')
+
+    const url_string = window.location.href
+    const url = new URL(url_string)
+    const mode = url.searchParams.get("mode")
+    const mail = url.searchParams.get("mail")
 
     const [registrationForm, setRegistrationForm] = useState({
-        email: '',
+        email: !!mail ? mail : '',
         password: '',
-        confirm_password: ''
+        confirm_password: '',
+        referrer: !!referrer ? referrer : ''
     });
+
     const handleFormChange = (prop: any, { value }: any) => {
         let prev_reg: any = registrationForm;
         prev_reg[prop] = value
@@ -26,15 +35,16 @@ const Register: React.FC = () => {
     }
 
     const processRegistration = async () => {
-        
         try {
-            await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password)
+            await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
             setVerified(true)
         } catch (error) {
             console.log(error)
         }
         
     }
+
+    
     
     return (
         <div id='register'>
@@ -70,6 +80,8 @@ const Register: React.FC = () => {
                                                             labelPlacement="floating" 
                                                             placeholder='Enter your Email' 
                                                             type='email'
+                                                            value={mail}
+                                                            disabled={ !!mail }
                                                             onIonChange={(val) => handleFormChange('email', val.detail)}
                                                         />
                                                         
@@ -133,9 +145,17 @@ const Register: React.FC = () => {
                                     <IonCol size='12'>
 
                                         <div className="verified-title">Yehey!</div>
-                                        <div className="verified-description">
-                                            Your registration is almost done, please check your email to complete the verification of your account!
-                                        </div>
+                                        { !!mail ? (
+                                            <div className="verified-description">
+                                                Your registration is almost done, You can now login using your google account!
+                                            </div>
+                                        ): (
+                                            <div className="verified-description">
+                                                Your registration is almost done, please check your email to complete the verification of your account!
+                                            </div>
+                                        )}
+                                        
+                                        
                                     </IonCol>
                                     <IonCol size='12' sizeMd='4'>
                                         <div className='verified-btn'>

@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const authHeadersForAPI = () => {
-    const tokenData = window.localStorage.getItem("auth-token");
+    const tokenData = window.localStorage.getItem("authToken");
 
     if (tokenData == null) {
         return {
@@ -23,7 +23,6 @@ const authHeadersForAPI = () => {
 
 
 export const HTTP_API = (payload?: any) => {
-    // const router = useRouter();
 
 
 

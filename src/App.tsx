@@ -28,11 +28,25 @@ import { Routes } from './routes/Index';
 setupIonicReact();
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useLocalStorage } from 'usehooks-ts';
+import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger)
 
 const App: React.FC = () => {
 
+    const [ref, setReferrer] = useLocalStorage("referrer", '')
+
+    useEffect(() => {
+        const url_string = window.location.href
+        const url = new URL(url_string)
+        const referrer = url.searchParams.get("ref")
+        if (referrer) {
+            setReferrer(referrer)
+        }
+    },[])
+
+    
 
     return (
         <IonApp>
