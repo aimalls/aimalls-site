@@ -49,7 +49,7 @@ const Login: React.FC = () => {
                                             <IonCol size='12' sizeSm='9' sizeMd='7'>
                                                 <IonButton expand='block' color={'light'}>
                                                     <img src={gmailIcon} alt="Google Icon" height={25} />
-                                                    <div className='sign-up-title'>Sign up with Google</div>
+                                                    <div className='sign-up-title'>Sign In with Google</div>
                                                 </IonButton>
                                                 <div className='line-break'>or</div>
                                             </IonCol>
