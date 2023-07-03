@@ -9,3 +9,6 @@ export const Register = (email: string, password: string, confirm_password: stri
             return Promise.reject(err)
         })
 }
+export const Verification = (verificationLink: any) => {
+    
+}

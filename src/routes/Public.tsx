@@ -7,6 +7,7 @@ import TermsAndConditions from "../pages/auth/TermsAndConditions"
 import Login from "../pages/auth/Login"
 import Register from "../pages/auth/Register"
 import ForgotPassword from "../pages/auth/ForgotPassword"
+import Verification from "../pages/auth/Verification"
 
 export const PublicRoutes = () => {
     
@@ -32,6 +33,9 @@ export const PublicRoutes = () => {
             </Route>
             <Route exact path="/register">
                 <Register />
+            </Route>
+            <Route exact path="/verify">
+                <Verification { ...publicRoutesProps } />
             </Route>
             <Route exact path="/forgot-password">
                 <ForgotPassword />

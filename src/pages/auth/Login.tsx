@@ -34,20 +34,9 @@ const Login: React.FC = () => {
                                             <IonCol size='12'>
                                                 <div className="login-title">Login to Your Account</div>
                                                 <div className='login-description'>Welcome back</div>
-                                                {/* <div className="login-social-media">
-                                                    <a href="">
-                                                        <img src={facebook} alt="" />
-                                                    </a>
-                                                    <a href="">
-                                                        <img src={twitter} alt="" />
-                                                    </a>
-                                                    <a href="">
-                                                        <img src={telegram} alt="" />
-                                                    </a>
-                                                </div> */}
                                             </IonCol>
                                             <IonCol size='12' sizeSm='9' sizeMd='7'>
-                                                <IonButton expand='block' color={'light'}>
+                                                <IonButton expand='block' size='large' color={'light'}>
                                                     <img src={gmailIcon} alt="Google Icon" height={25} />
                                                     <div className='sign-up-title'>Sign In with Google</div>
                                                 </IonButton>
@@ -102,7 +91,11 @@ const Login: React.FC = () => {
                                                 </div>
                                             </IonCol>
                                             <IonCol size='12' sizeMd='8'>
-                                                <IonButton expand='block' shape='round' href='/register' color={'light'}>Register</IonButton>
+                                                <IonButton size='large' expand='block' shape='round' href='/register' color={'light'}>
+                                                    <div className="register-btn-txt">
+                                                        Register
+                                                    </div>
+                                                </IonButton>
                                             </IonCol>
                                         </IonRow>
                                     </div>
