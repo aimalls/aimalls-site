@@ -2,10 +2,11 @@ import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonL
 import React, { useState } from 'react'
 import '../../styles/auth/Register.scss'
 
-import facebook from '../../assets/images/facebook-logo.png'
-import twitter from '../../assets/images/twitter-logo.png'
-import telegram from '../../assets/images/telegram-logo.png'
+// import facebook from '../../assets/images/facebook-logo.png'
+// import twitter from '../../assets/images/twitter-logo.png'
+// import telegram from '../../assets/images/telegram-logo.png'
 import verifiedIcon from '../../assets/images/verified.png'
+import gmailIcon from '../../assets/images/google.png'
 
 import { Register as RegisterRequest } from '../../requests/auth.request'
 import { useLocalStorage } from 'usehooks-ts'
@@ -59,21 +60,16 @@ const Register: React.FC = () => {
                                                 <IonRow className='ion-justify-content-center'>
                                                     <IonCol size='12'>
                                                         <div className="register-title">Create Your Account</div>
-                                                        <div className="register-description">Create account using social networks</div>
-                                                        <div className="register-social-media">
-                                                            <a href="">
-                                                                <img src={facebook} alt="" />
-                                                            </a>
-                                                            <a href="">
-                                                                <img src={twitter} alt="" />
-                                                            </a>
-                                                            <a href="">
-                                                                <img src={telegram} alt="" />
-                                                            </a>
-                                                        </div>
+                                                        <div className="register-description">New Here?</div>
+                                                    </IonCol>
+                                                    <IonCol size='12' sizeMd='9'>
+                                                        <IonButton expand='block' size='large' color={'light'}>
+                                                            <img src={gmailIcon} alt="Google Icon" height={25} />
+                                                            <div className='sign-up-title'>Sign In with Google</div>
+                                                        </IonButton>
                                                         <div className='line-break'>or</div>
                                                     </IonCol>
-                                                    <IonCol size='12' sizeMd='9' className='ion-padding-top'>
+                                                    <IonCol size='12' sizeMd='9'>
                                                         <IonInput 
                                                             label='Email' 
                                                             className='inputs ion-margin-top'
@@ -124,7 +120,9 @@ const Register: React.FC = () => {
                                                         </div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='7'>
-                                                        <IonButton expand='block' shape='round' href='/login' color={'light'}>Login</IonButton>
+                                                        <IonButton expand='block' size='large' shape='round' href='/login' color={'light'}>
+                                                            <div className="login-btn-txt">Login</div>
+                                                        </IonButton>
                                                     </IonCol>
                                                 </IonRow>
                                             </div>
@@ -157,13 +155,14 @@ const Register: React.FC = () => {
                                         
                                         
                                     </IonCol>
-                                    <IonCol size='12' sizeMd='4'>
-                                        <div className='verified-btn'>
-                                            <a href="/login">Got it</a>
-                                        </div>
+                                    <IonCol size='12' sizeMd='8' className='ion-marigin-top'>
+                                        <IonButton expand='block' shape='round' size='large' color={'light'} href='/login'>
+                                            <div className='got-it-button'>
+                                                Got it
+                                            </div>
+                                        </IonButton>
                                     </IonCol>
                                 </IonRow>
-                            {/* </IonGrid> */}
                         </div> 
                     ) }
                 </IonContent>

@@ -10,7 +10,6 @@
             align-items: center;
             flex-direction: column;
             color: #fff;
-            // background: #1e1e1e;
             background: url(../../assets/images/auth-bg2.jpg) center center no-repeat;
             padding: 10px;
             .register-title{
@@ -23,24 +22,18 @@
                 text-align: center;
                 font-size: 15px;
                 font-family: 'WorkSans-Regular';
+                margin-bottom: 50px;
             }
-            .register-social-media{
-                display: flex;
-                justify-content: center;
-                margin: 10px 0;
-                a {
-                    display: inline-block;
-                    padding: 10px;
-        
-                    img {
-                        height: 30px;
-                    }
-                }
+            .sign-up-title{
+                font-size: 15px;
+                font-family: 'WorkSans-Bold';
+                padding-left: 5px;
+                text-transform: capitalize;
             }
             .line-break {
                 overflow: hidden;
                 text-align: center;
-                margin-bottom: 20px;
+                margin: 20px 0;
             }
             
             .line-break:before,
@@ -128,6 +121,11 @@
                 padding: 20px 0;
                 margin-bottom: 20px;
             }
+            .login-btn-txt {
+                text-transform: capitalize;
+                font-family: 'WorkSans-Regular';
+                font-size: 20px;
+            }
         }
 
     }
@@ -148,16 +146,14 @@
                 align-items: center;
                 justify-content: center;
                 background: #fff;
-                width: 100px;
+                width: 150px;
+                height: 150px;
                 border-radius: 50%;
-                height: 100px;
             }
             img{
-                // padding: 100px;
                 vertical-align: middle;
-                width: 60px;
-                height: 60px;
-                // object-fit: contain;
+                width: 100px;
+                height: 100px;
             }
         }
         .verified-title{
@@ -171,42 +167,15 @@
             font-size: 15px;
             font-family: 'WorkSans-Regular';
         }
-        .verified-btn{
-            margin: 20px 0;
-            background: #fff;
-            text-align: center;
-            padding: 10px 0;
-            border-radius: 50px;
-            box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.1);
-            a{
-                color: #000;
-                text-decoration: none;
-                padding: 20px;
-                text-align: center;
-                font-size: 20px;
-                font-family: 'WorkSans-Regular';
-            }
+        .got-it-button{
+            text-transform: capitalize;
+            font-family: 'WorkSans-Regular';
+            font-size: 20px;
         }
     }
 }
 @media only screen and (max-width: 575px) {
     #register{
-        // .sign-up{
-        //     display: flex;
-        //     justify-content: center;
-        //     background: var(--ion-color-tertiary);
-        //     color: #fff;
-        //     padding: 20px 0;
-        //     .sign-up-title{
-        //         display: flex;
-        //         font-size: 15px;
-        //         font-family: 'WorkSans-Regular';
-        //         a{
-        //             color: rgb(92, 92, 235);
-        //             font-family: 'WorkSans-Regular';
-        //         }
-        //     }
-        // }
         #register-content{
             .register-column{
                 min-height: 80vh;

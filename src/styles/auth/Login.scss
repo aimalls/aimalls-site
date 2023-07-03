@@ -27,19 +27,6 @@
                 padding-left: 5px;
                 text-transform: capitalize;
             }
-            // .login-social-media{
-            //     display: flex;
-            //     justify-content: center;
-            //     margin: 10px 0;
-            //     a {
-            //         display: inline-block;
-            //         padding: 10px;
-    
-            //         img {
-            //             height: 30px;
-            //         }
-            //     }
-            // }
             .line-break {
                 overflow: hidden;
                 text-align: center;
@@ -125,6 +112,11 @@
             font-family: 'WorkSans-Regular';
             padding: 20px 0;
             margin-bottom: 20px;
+        }
+        .register-btn-txt{
+            text-transform: capitalize;
+            font-family: 'WorkSans-Regular';
+            font-size: 20px;
         }
     }
 }
