@@ -10,6 +10,7 @@ import gmailIcon from '../../assets/images/google.png'
 
 import { Register as RegisterRequest } from '../../requests/auth.request'
 import { useLocalStorage } from 'usehooks-ts'
+import getGoogleAuthURL from '../../helpers/googleAuth'
 
 const Register: React.FC = () => {
     
@@ -63,7 +64,7 @@ const Register: React.FC = () => {
                                                         <div className="register-description">New Here?</div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='9'>
-                                                        <IonButton expand='block' size='large' color={'light'}>
+                                                        <IonButton expand='block' size='large' color={'light'} href={getGoogleAuthURL(import.meta.env.VITE_GOOGLE_AUTH_REDIRECT_URL)}>
                                                             <img src={gmailIcon} alt="Google Icon" height={25} />
                                                             <div className='sign-up-title'>Sign In with Google</div>
                                                         </IonButton>
