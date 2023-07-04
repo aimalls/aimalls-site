@@ -1,4 +1,4 @@
-import { IonButton, IonContent } from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonGrid, IonRow } from "@ionic/react";
 import { FC, useContext } from "react";
 import { UserContext } from "../../contexts/userContext";
 import { Logout } from "../../requests/auth.request";
@@ -24,8 +24,15 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
 
     return (
         <IonContent fullscreen>
-            <IonButton onClick={processLogout}>Logout</IonButton>
-            {JSON.stringify(user)}
+            <IonGrid className="container">
+                <IonRow className="ion-justify-content-center">
+                    <IonCol size="10">
+                        <h1>Dashboard</h1>
+                        {JSON.stringify(user)}
+                    </IonCol>
+                </IonRow>
+            </IonGrid>
+            {/* <IonButton onClick={processLogout}>Logout</IonButton> */}
         </IonContent>
     )
 };

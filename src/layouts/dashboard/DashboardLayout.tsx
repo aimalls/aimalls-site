@@ -2,6 +2,7 @@ import { IonContent, IonHeader, IonPage, IonRouterOutlet, IonToolbar } from "@io
 import { FC, useContext } from "react";
 import DashboardRoutes from "../../routes/DashboardRoutes";
 import UserContextProvider, { UserContext } from "../../contexts/userContext";
+import DashboardHeader from "../../pages/dashboard/DashboardHeader";
 
 export interface iProps {
 
@@ -12,14 +13,13 @@ export const DashboardLayout: FC<iProps> = (props): JSX.Element => {
 
     return (
             
-            <IonPage id="dashboard">
+        <IonPage id="dashboard">
                 {!!user?.email == false ? (
                     <IonContent>Unauthenticated!, Login first!</IonContent>
-                ): (
-                    <>
-                        <IonHeader>
-                            <IonToolbar></IonToolbar>
-                        </IonHeader>
+                    ): (
+                        <>
+                        
+                        <DashboardHeader />
                         <IonContent>
                             <IonRouterOutlet>
                                 <DashboardRoutes />

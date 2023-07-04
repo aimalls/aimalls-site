@@ -12,9 +12,12 @@ export const Header = () => {
                         <img src={logoFull} className='logo' />
                     </div>
                     <NavigationList />
-                    <IonButton fill='solid' shape='round' expand="full">
+                    <IonButton fill='solid' shape='round' expand="full" style={{textTransform: "lowercase"}}>
                         <IonIcon slot="start" icon={mail}></IonIcon>
                         support@aimalls.app
+                    </IonButton>
+                    <IonButton fill="clear">
+                        sds
                     </IonButton>
                 </div>
             </IonMenu>
@@ -31,10 +34,14 @@ export const Header = () => {
                                 </div>
                             </IonCol>
                             <IonCol size='auto' sizeMd='3' style={{ display: 'flex', justifyContent: 'end' }}>
-                                <IonButton fill='solid' shape='round' className='ion-hide-md-down'>
+                                <IonButton fill='solid' shape='round' className='ion-hide-md-down' style={{textTransform: "lowercase"}}>
                                     <IonIcon slot="start" icon={mail}></IonIcon>
                                     support@aimalls.app
                                 </IonButton>
+                                <IonButton fill="clear" shape="round">
+                                    Login
+                                </IonButton>
+                                <div>/</div>
                                 <IonMenuToggle className='ion-hide-md-up'>
                                     <IonButton fill='solid'>
                                         <IonIcon slot='icon-only' icon={menuOutline}></IonIcon>
