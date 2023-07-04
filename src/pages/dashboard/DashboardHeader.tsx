@@ -31,10 +31,10 @@ const DashboardHeader: React.FC = () => {
                             <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
                         </IonItem>
                         <IonItem lines="full" href="/dashboard">
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
+                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Tasks</IonLabel>
                         </IonItem>
                         <IonItem lines="full" href="/dashboard">
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
+                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Rewards</IonLabel>
                         </IonItem>
                         <IonItem lines='full'>
                             <IonButton slot='end' fill='clear' onClick={() => processLogout()}>Logout</IonButton>
