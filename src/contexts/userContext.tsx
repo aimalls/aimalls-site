@@ -30,6 +30,7 @@ export const UserContextProvider = ({ children }: UserContextProviderProps) => {
     
     const userQuery = useQuery({
         queryKey: ["user"],
+        enabled: !!localStorage.getItem("authToken"),
         queryFn: getUserInfo
     })
 

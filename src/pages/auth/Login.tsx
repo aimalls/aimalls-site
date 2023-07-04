@@ -26,7 +26,7 @@ const Login: React.FC = () => {
             } else {
                 const token = await LoginRequest(email, password)
                 if (!!token) {
-                    setAuthToken(token)
+                    setAuthToken(token.data.authToken)
                     history.push("/dashboard")
                 }
             }

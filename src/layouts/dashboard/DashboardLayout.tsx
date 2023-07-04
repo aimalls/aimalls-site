@@ -1,25 +1,34 @@
 import { IonContent, IonHeader, IonPage, IonRouterOutlet, IonToolbar } from "@ionic/react";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import DashboardRoutes from "../../routes/DashboardRoutes";
-import UserContextProvider from "../../contexts/userContext";
+import UserContextProvider, { UserContext } from "../../contexts/userContext";
 
 export interface iProps {
 
 }
 export const DashboardLayout: FC<iProps> = (props): JSX.Element => {
+
+    const { user } = useContext(UserContext)
+
     return (
-        <UserContextProvider>
+            
             <IonPage id="dashboard">
-                <IonHeader>
-                    <IonToolbar>asdsad</IonToolbar>
-                </IonHeader>
-                <IonContent>
-                    <IonRouterOutlet>
-                        <DashboardRoutes />
-                    </IonRouterOutlet>
-                </IonContent>
+                {!!user?.email == false ? (
+                    <IonContent>Unauthenticated!, Login first!</IonContent>
+                ): (
+                    <>
+                        <IonHeader>
+                            <IonToolbar></IonToolbar>
+                        </IonHeader>
+                        <IonContent>
+                            <IonRouterOutlet>
+                                <DashboardRoutes />
+                            </IonRouterOutlet>
+                        </IonContent>
+                    </>
+                )}
+                
             </IonPage>
-        </UserContextProvider>
     )
 };
 export default DashboardLayout;

@@ -40,6 +40,10 @@ export const HTTP_API = (payload?: any) => {
 
         },
         (error) => {
+            if (error.response.status == 401) {
+                // localStorage.removeItem("authToken");
+                // location.assign("/login")
+            }
             // if (error.response.status == 401 && !error.response.data.authorization) {
             //     eventBus.$emit('unauthorized')
             // }

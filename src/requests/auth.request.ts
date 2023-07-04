@@ -16,6 +16,14 @@ export const Login = async (email: string, password: string) => {
     }
 }
 
+export const Logout = async () => {
+    try {
+        return await HTTP_API().post("/auth/logout")
+    } catch (error) {
+        Promise.reject(error)
+    }
+}
+
 export const GoogleLogin = async (code: string) => {
     try {
         return await HTTP_API().post("/auth/google", { code })
