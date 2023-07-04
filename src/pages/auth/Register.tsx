@@ -17,6 +17,8 @@ import getGoogleAuthURL from '../../helpers/googleAuth'
 const Register: React.FC = () => {
     
     const [verified, setVerified] = useState(false)
+    const [privacyPolicy, setPrivacyPolicy] = useState(false);
+    const [termsandConditions, setTermsandConditions] = useState(false);
     const [referrer, setReferrer] = useLocalStorage("referrer", '')
 
     const url_string = window.location.href
@@ -101,14 +103,14 @@ const Register: React.FC = () => {
                                                             onIonChange={(val) => handleFormChange('confirm_password', val.detail)} 
                                                         />
                                                         <div className="terms-and-conditions">
-                                                            <IonCheckbox labelPlacement='end'>I accept the</IonCheckbox>
+                                                            <IonCheckbox labelPlacement='end' onIonChange={(val) => setTermsandConditions(val.detail.checked)}>I accept the</IonCheckbox>
                                                             <a href="/terms-and-conditions" target='_blank'>Terms and Conditions</a>
                                                         </div>
                                                         <div className='privacy-policy'>
-                                                            <IonCheckbox labelPlacement='end'>I agree to the</IonCheckbox>
+                                                            <IonCheckbox labelPlacement='end' onIonChange={(val) => setPrivacyPolicy(val.detail.checked)}>I agree to the</IonCheckbox>
                                                             <a href="/privacy-policy" target='_blank'>Privacy Policy</a>
                                                         </div>
-                                                        <IonButton onClick={processRegistration} expand='block' size='large' shape='round'>Register</IonButton>
+                                                        <IonButton onClick={processRegistration} disabled={ (!privacyPolicy || !termsandConditions) } expand='block' size='large' shape='round'>Register</IonButton>
                                                     </IonCol>
                                                 </IonRow>    
                                             </div>

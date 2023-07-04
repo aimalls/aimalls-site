@@ -30,8 +30,8 @@ const Login: React.FC = () => {
                     history.push("/dashboard")
                 }
             }
-        } catch (error) {
-            console.log(error)
+        } catch (error: any) {
+            alert(error.response.data.error)
         }
     }
 
