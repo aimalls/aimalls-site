@@ -34,14 +34,13 @@ export const Header = () => {
                                 </div>
                             </IonCol>
                             <IonCol size='auto' sizeMd='3' style={{ display: 'flex', justifyContent: 'end' }}>
-                                <IonButton fill='solid' shape='round' className='ion-hide-md-down' style={{textTransform: "lowercase"}}>
+                                {/* <IonButton fill='solid' shape='round' className='ion-hide-md-down' style={{textTransform: "lowercase"}}>
                                     <IonIcon slot="start" icon={mail}></IonIcon>
                                     support@aimalls.app
-                                </IonButton>
+                                </IonButton> */}
                                 <div style={{display: "flex", alignItems: "center"}}>
-                                    <IonButton fill="clear" href="/login">Login</IonButton>
-                                    <div>/</div>
-                                    <IonButton fill="clear" href="/register">Register</IonButton>
+                                    <IonButton fill="clear" routerLink="/login">Login</IonButton>
+                                    <IonButton fill="clear" routerLink="/register">Register</IonButton>
 
                                 </div>
                                 <IonMenuToggle className='ion-hide-md-up'>

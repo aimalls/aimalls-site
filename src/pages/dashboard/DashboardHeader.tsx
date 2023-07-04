@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonTitle, IonToolbar } from '@ionic/react'
+import { IonButton, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonTitle, IonToolbar } from '@ionic/react'
 import React from 'react'
 import '../../styles/dashboard/DashboardHeader.scss'
 import { mail, menuOutline } from 'ionicons/icons'
@@ -36,10 +36,8 @@ const DashboardHeader: React.FC = () => {
                         <IonItem lines="full" href="/dashboard">
                             <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
                         </IonItem>
-                        <IonItem lines='full' onClick={processLogout}>
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>
-                                Log out
-                            </IonLabel>
+                        <IonItem lines='full'>
+                            <IonButton slot='end' fill='clear' onClick={() => processLogout()}>Logout</IonButton>
                         </IonItem>
                         <IonButton className='ion-margin-top' fill='solid' shape='round' expand="full" style={{textTransform: "lowercase"}}>
                             <IonIcon slot="start" icon={mail}></IonIcon>

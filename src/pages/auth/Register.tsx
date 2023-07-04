@@ -119,7 +119,7 @@ const Register: React.FC = () => {
                                             <div className="login-column">
                                                 <IonRow className='ion-justify-content-center al'>
                                                     <IonCol size='12'>
-                                                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}><img src={ Logo } alt='aimalls' /></div>
+                                                        <IonRouterLink routerLink='/'><div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }} ><img src={ Logo } alt='aimalls' /></div></IonRouterLink>
                                                         <div className="login-title">Welcome Back!</div>
                                                         <div className="login-description">
                                                             Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!

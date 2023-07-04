@@ -22,7 +22,7 @@ import Thumb from "../assets/images/thumb.jpg"
 import { Header } from './home-parts/Header';
 
 const Home: React.FC = () => {
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
 
