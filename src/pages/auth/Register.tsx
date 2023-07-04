@@ -1,6 +1,8 @@
 import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/Register.scss'
+import Logo from '../../assets/images/logo-full.png'
+
 
 // import facebook from '../../assets/images/facebook-logo.png'
 // import twitter from '../../assets/images/twitter-logo.png'
@@ -114,6 +116,7 @@ const Register: React.FC = () => {
                                             <div className="login-column">
                                                 <IonRow className='ion-justify-content-center al'>
                                                     <IonCol size='12'>
+                                                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}><img src={ Logo } alt='aimalls' /></div>
                                                         <div className="login-title">Welcome Back!</div>
                                                         <div className="login-description">
                                                             Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
@@ -141,7 +144,6 @@ const Register: React.FC = () => {
                                         </div>
                                     </IonCol>
                                     <IonCol size='12'>
-
                                         <div className="verified-title">Yehey!</div>
                                         { !!mail ? (
                                             <div className="verified-description">
