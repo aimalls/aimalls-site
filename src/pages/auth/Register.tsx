@@ -1,4 +1,4 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/Register.scss'
 import Logo from '../../assets/images/logo-full.png'
@@ -119,14 +119,14 @@ const Register: React.FC = () => {
                                             <div className="login-column">
                                                 <IonRow className='ion-justify-content-center al'>
                                                     <IonCol size='12'>
-                                                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}><img src={ Logo } alt='aimalls' /></div>
+                                                        <IonRouterLink routerLink='/'><div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }} ><img src={ Logo } alt='aimalls' /></div></IonRouterLink>
                                                         <div className="login-title">Welcome Back!</div>
                                                         <div className="login-description">
                                                             Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
                                                         </div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='7'>
-                                                        <IonButton expand='block' size='large' shape='round' href='/login' color={'light'}>
+                                                        <IonButton routerLink='/login' expand='block' size='large' shape='round' color={'light'}>
                                                             <div className="login-btn-txt">Login</div>
                                                         </IonButton>
                                                     </IonCol>

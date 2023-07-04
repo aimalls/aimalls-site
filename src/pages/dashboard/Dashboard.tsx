@@ -28,7 +28,7 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
                 <IonRow className="ion-justify-content-center">
                     <IonCol size="10">
                         <h1>Dashboard</h1>
-                        {JSON.stringify(user)}
+                        Welcome, { user.email }!
                     </IonCol>
                 </IonRow>
             </IonGrid>

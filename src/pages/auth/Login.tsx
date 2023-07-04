@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "../../styles/auth/Login.scss"
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton, IonLabel } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton, IonLabel, IonRouterLink } from '@ionic/react'
 import Logo from '../../assets/images/logo-full.png'
 
 import gmailIcon from '../../assets/images/google.png'
@@ -112,14 +112,14 @@ const Login: React.FC = () => {
                                     <div className="register-column">
                                         <IonRow className='ion-justify-content-center'>
                                             <IonCol size='12'>
-                                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}><img src={ Logo } alt='aimalls' /></div>
+                                                <IonRouterLink routerLink='/'><div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}><img src={ Logo } alt='aimalls' /></div></IonRouterLink>
                                                 <div className="register-title">New Here?</div>
                                                 <div className="register-description">
                                                     Welcome to the future of shopping, where AI takes you on a personalized retail journey like never before. Sign up today and discover the extraordinary convenience, tailored experiences, and endless possibilities of AI malls.
                                                 </div>
                                             </IonCol>
                                             <IonCol size='12' sizeMd='8'>
-                                                <IonButton size='large' expand='block' shape='round' href='/register' color={'light'}>
+                                                <IonButton size='large' expand='block' shape='round' routerLink='/register' color={'light'}>
                                                     <div className="register-btn-txt">
                                                         Register
                                                     </div>
