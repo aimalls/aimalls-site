@@ -11,13 +11,13 @@ import Verification from "../pages/auth/Verification"
 
 export const PublicRoutes = () => {
     
-    const navigation =useHistory()
+    const navigation = useHistory()
     const publicRoutesProps ={
         navigation
     }
     return(
         
-        <IonRouterOutlet>
+        <>
             <Route exact path="/">
                 <Home />
             </Route>
@@ -40,7 +40,7 @@ export const PublicRoutes = () => {
             <Route exact path="/forgot-password">
                 <ForgotPassword />
             </Route>
-        </IonRouterOutlet>
+        </>
         
     )
 }

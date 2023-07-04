@@ -50,8 +50,11 @@ const App: React.FC = () => {
 
     return (
         <IonApp>
-
-            <Routes />
+            <IonReactRouter>
+                <IonRouterOutlet>
+                    <Routes />
+                </IonRouterOutlet>
+            </IonReactRouter>
         </IonApp>
     )
 }

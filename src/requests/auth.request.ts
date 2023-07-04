@@ -23,3 +23,11 @@ export const GoogleLogin = async (code: string) => {
         Promise.reject(error)
     }
 }
+
+export const getUserInfo = async () => {
+    try {
+        return await HTTP_API().get("/auth/me")
+    } catch (error) {
+        Promise.reject(error)
+    }
+}
