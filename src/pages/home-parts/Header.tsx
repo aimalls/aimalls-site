@@ -38,10 +38,12 @@ export const Header = () => {
                                     <IonIcon slot="start" icon={mail}></IonIcon>
                                     support@aimalls.app
                                 </IonButton>
-                                <IonButton fill="clear" shape="round">
-                                    Login
-                                </IonButton>
-                                <div>/</div>
+                                <div style={{display: "flex", alignItems: "center"}}>
+                                    <IonButton fill="clear" href="/login">Login</IonButton>
+                                    <div>/</div>
+                                    <IonButton fill="clear" href="/register">Register</IonButton>
+
+                                </div>
                                 <IonMenuToggle className='ion-hide-md-up'>
                                     <IonButton fill='solid'>
                                         <IonIcon slot='icon-only' icon={menuOutline}></IonIcon>
