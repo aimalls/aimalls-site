@@ -1,4 +1,4 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/Register.scss'
 import Logo from '../../assets/images/logo-full.png'
@@ -126,7 +126,7 @@ const Register: React.FC = () => {
                                                         </div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='7'>
-                                                        <IonButton expand='block' size='large' shape='round' href='/login' color={'light'}>
+                                                        <IonButton routerLink='/login' expand='block' size='large' shape='round' color={'light'}>
                                                             <div className="login-btn-txt">Login</div>
                                                         </IonButton>
                                                     </IonCol>

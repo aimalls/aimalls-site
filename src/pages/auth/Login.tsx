@@ -119,7 +119,7 @@ const Login: React.FC = () => {
                                                 </div>
                                             </IonCol>
                                             <IonCol size='12' sizeMd='8'>
-                                                <IonButton size='large' expand='block' shape='round' href='/register' color={'light'}>
+                                                <IonButton size='large' expand='block' shape='round' routerLink='/register' color={'light'}>
                                                     <div className="register-btn-txt">
                                                         Register
                                                     </div>
