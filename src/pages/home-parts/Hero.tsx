@@ -34,17 +34,17 @@ export const HeroSection = () => {
                         y: 80,
                         duration: 0.5
                     })
-                    .from(" .started-btn", {
-                        opacity: 0,
-                        x: -80,
-                        duration: 0.4
-                    })
+                    // .from(" .started-btn", {
+                    //     opacity: 0,
+                    //     x: -80,
+                    //     duration: 0.4
+                    // })
                     
-                    .from(" .whitepaper-btn", {
-                        opacity: 0,
-                        x: 80,
-                        duration: 0.4
-                    })
+                    // .from(" .whitepaper-btn", {
+                    //     opacity: 0,
+                    //     x: 80,
+                    //     duration: 0.4
+                    // })
             }
         }
     }, [])
