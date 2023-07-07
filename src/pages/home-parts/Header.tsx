@@ -16,9 +16,13 @@ export const Header = () => {
                         <IonIcon slot="start" icon={mail}></IonIcon>
                         support@aimalls.app
                     </IonButton>
-                    <IonButton fill="clear">
-                        sds
-                    </IonButton>
+                    <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+                        <IonButton fill="clear" href="/login">
+                            Login
+                        </IonButton>
+                        <div style={{color: "#fc9a14"}}>/</div>
+                        <IonButton fill="clear" href="/register">Register</IonButton>
+                    </div>
                 </div>
             </IonMenu>
             <IonHeader id='main-header'>
@@ -38,7 +42,7 @@ export const Header = () => {
                                     <IonIcon slot="start" icon={mail}></IonIcon>
                                     support@aimalls.app
                                 </IonButton> */}
-                                <div style={{display: "flex", alignItems: "center"}}>
+                                <div  className='ion-hide-md-down' style={{display: "flex", alignItems: "center"}}>
                                     <IonButton fill="clear" routerLink="/login">Login</IonButton>
                                     <IonButton fill="clear" routerLink="/register">Register</IonButton>
 
