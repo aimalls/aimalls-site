@@ -23,11 +23,13 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
     }
 
     return (
-        <IonContent fullscreen>
-            <IonGrid className="container">
-                <IonRow className="ion-justify-content-center">
-                    <IonCol size="10">
-                        <h1>Dashboard</h1>
+        <IonContent>
+            <IonGrid>
+                <IonRow>
+                    <IonCol size="12" className="page-title">
+                        Dashboard
+                    </IonCol>
+                    <IonCol size="12">
                         Welcome, { user.email }!
                     </IonCol>
                 </IonRow>
