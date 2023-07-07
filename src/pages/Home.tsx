@@ -50,8 +50,8 @@ const Home: React.FC = () => {
                 <TechnologyAndTargetMarket />
                 <WhyAiMalls />
                 <VisionAndMission />
-                <TokenUtilitySection />
-                <TokenomicsSection />
+                {/* <TokenUtilitySection /> */}
+                {/* <TokenomicsSection /> */}
                 <RoadMap />
                 <FAQSection />
                 <FooterSection />
