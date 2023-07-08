@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { iTextInput } from "../../../hooks/useTask";
 import { IonInput } from "@ionic/react";
 
@@ -8,10 +8,15 @@ export interface iProps {
 }
 export const TextInput: FC<iProps> = ({field, onChange}): JSX.Element => {
 
+    
     return (
         <IonInput
             onIonChange={(e) => onChange(e.detail.value!)}
-            {...field}
+            type={ field.type }
+            fill={ field.fill }
+            label={ field.label }
+            labelPlacement={ field.labelPlacement }
+            placeholder={ field.placeholder }
         ></IonInput>
     )
 };

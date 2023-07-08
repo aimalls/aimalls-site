@@ -34,9 +34,10 @@ export const FileInput: FC<iProps> = ({ field, onChange }): JSX.Element => {
 
     return (
         <div className='file-input-wrapper ion-ouline' onClick={() => handleFileInputClick()}>
-            <IonLabel position="floating">Upload { fileName }</IonLabel>
+            <IonLabel position="floating">Upload { field.label }</IonLabel>
             <IonIcon icon={attach} size=''></IonIcon>
-        <input ref={fileInput} type={ field.type } onChange={(e) => handleUploadPaymentProof(e)} className="file-input" />
+            <IonLabel>{ fileName }</IonLabel>
+            <input ref={fileInput} type={ field.type } multiple={ field.multiple } onChange={(e) => handleUploadPaymentProof(e)} className="file-input" />
         </div>
     )
 };

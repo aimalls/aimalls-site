@@ -8,7 +8,7 @@ export interface iProps {
 }
 export const SelectInput: FC<iProps> = ({ field, onChange }): JSX.Element => {
     return (
-        <IonSelect fill={ field.fill } multiple={ field.multiple } onIonChange={(e) => onChange(e.detail.value)}>
+        <IonSelect placeholder={ field.placeholder } label={ field.label } labelPlacement={ field.labelPlacement } fill={ field.fill } multiple={ field.multiple } onIonChange={(e) => onChange(e.detail.value)}>
             {field.options.map((option, index) => (
                 <IonSelectOption key={`select-option-${index}`} value={option.value}>{option.label}</IonSelectOption>   
             ))}

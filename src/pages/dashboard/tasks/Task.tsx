@@ -1,16 +1,19 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonRow } from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonGrid, IonLoading, IonRow, useIonLoading } from "@ionic/react";
 import { useQuery } from "@tanstack/react-query";
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { useParams } from "react-router";
-import { getTaskByIdFromAPI, saveUserTaskToAPI } from "../../../requests/task.request";
+import { getTaskByIdFromAPI } from "../../../requests/task.request";
 import { iTask } from "../../../hooks/useTask";
 import DynamicFormField from "../../../components/dynamic-form-field/DynamicFormField";
+import { saveUserTaskToAPI } from "../../../requests/user-task.request";
+import { Toast } from "@capacitor/toast";
 
 export interface iProps {}
 
 export const Task: FC<iProps> = (props): JSX.Element => {
     const params: { id: string } = useParams();
     
+    const [present, dismiss] = useIonLoading();
 
     const taskQuery = useQuery(
         ["task", params.id],
@@ -23,18 +26,34 @@ export const Task: FC<iProps> = (props): JSX.Element => {
 
     const [formField, setFormField] = useState<object>({})
 
-    const handleTaskFromSubmit = async () => {
+    const handleTaskFormSubmit = async () => {
+        await present()
         try {
-            await saveUserTaskToAPI(formField)
-        } catch (err) {
-            console.log(err)
+            let form = {
+                taskId: params.id,
+                ...formField
+            }
+            await saveUserTaskToAPI(form)
+            
+            await Toast.show({
+                text: "Task successfully submited!",
+                duration: 'long',
+                position: 'top'
+            })
+        } catch (err: any) {
+            await Toast.show({
+                text: err.message,
+                duration: 'long',
+                position: 'top'
+            })
+        } finally {
+            await dismiss()
         }
     }
 
     const handleFormChange = (formControlName: string, value: any) => {
-        console.log(formControlName, value)
-        
         setFormField((current: any) => {
+            console.log(current)
             current[formControlName] = value
             return current;
         })
@@ -42,6 +61,7 @@ export const Task: FC<iProps> = (props): JSX.Element => {
 
     return (
         <IonContent>
+            <IonLoading  message="Loading..." duration={3000} spinner="circles" />
             <IonGrid>
                 { !taskIsLoading ? (
                 <IonRow>
@@ -56,8 +76,8 @@ export const Task: FC<iProps> = (props): JSX.Element => {
                             <DynamicFormField field={field} onFormFieldChange={(value) => handleFormChange(field?.formControlName!, value)} />
                         </IonCol>
                     ))}
-                    <IonCol size="12">
-                        <IonButton onClick={() => handleTaskFromSubmit()}>Submit</IonButton>
+                    <IonCol size="12" sizeMd="4" pushMd="8">
+                        <IonButton expand="block" onClick={() => handleTaskFormSubmit()}>Submit</IonButton>
                     </IonCol>
                 </IonRow>
                 ) : null}

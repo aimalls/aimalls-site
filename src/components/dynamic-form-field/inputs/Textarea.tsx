@@ -8,7 +8,12 @@ export interface iProps {
 }
 export const Textarea: FC<iProps> = ({ field, onChange }): JSX.Element => {
     return (
-        <IonTextarea fill={ field.fill } autoGrow={field.autoGrow} onIonChange={(e) => onChange(e.detail.value)} />
+        <IonTextarea
+            label={ field.label }
+            placeholder={ field.placeholder }
+            labelPlacement={ field.labelPlacement ? field.labelPlacement : "floating"}
+            fill={ field.fill } 
+            autoGrow={field.autoGrow} onIonChange={(e) => onChange(e.detail.value)} />
     )
 };
 export default Textarea;
