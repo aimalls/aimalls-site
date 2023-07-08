@@ -1,6 +1,6 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonLoading, IonRow, useIonLoading } from "@ionic/react";
+import { IonButton, IonCol, IonContent, IonGrid, IonLoading, IonRow, useIonAlert, useIonLoading } from "@ionic/react";
 import { useQuery } from "@tanstack/react-query";
-import { FC, useCallback, useState } from "react";
+import { FC, useState } from "react";
 import { useParams } from "react-router";
 import { getTaskByIdFromAPI } from "../../../requests/task.request";
 import { iTask } from "../../../hooks/useTask";
@@ -15,6 +15,8 @@ export const Task: FC<iProps> = (props): JSX.Element => {
     
     const [present, dismiss] = useIonLoading();
 
+    const [presentAlert] = useIonAlert();
+
     const taskQuery = useQuery(
         ["task", params.id],
         () => getTaskByIdFromAPI(params.id)
@@ -27,25 +29,17 @@ export const Task: FC<iProps> = (props): JSX.Element => {
     const [formField, setFormField] = useState<object>({})
 
     const handleTaskFormSubmit = async () => {
-        await present()
+        await present({ message: 'Saving task..' })
         try {
             let form = {
                 taskId: params.id,
                 ...formField
             }
             await saveUserTaskToAPI(form)
+            presentAlert("Task Saved.")
             
-            await Toast.show({
-                text: "Task successfully submited!",
-                duration: 'long',
-                position: 'top'
-            })
         } catch (err: any) {
-            await Toast.show({
-                text: err.message,
-                duration: 'long',
-                position: 'top'
-            })
+            presentAlert(err.error)
         } finally {
             await dismiss()
         }
@@ -76,9 +70,14 @@ export const Task: FC<iProps> = (props): JSX.Element => {
                             <DynamicFormField field={field} onFormFieldChange={(value) => handleFormChange(field?.formControlName!, value)} />
                         </IonCol>
                     ))}
-                    <IonCol size="12" sizeMd="4" pushMd="8">
+                    <IonCol size="12" sizeMd="3" pushMd="6" style={{ padding: '0px' }}>
+                        <IonButton expand="block" routerLink="/dashboard/tasks">Do Later</IonButton>
+                        
+                    </IonCol>
+                    <IonCol size="12" sizeMd="3" pushMd="6" style={{ padding: '0px' }}>
                         <IonButton expand="block" onClick={() => handleTaskFormSubmit()}>Submit</IonButton>
                     </IonCol>
+                    
                 </IonRow>
                 ) : null}
             </IonGrid>

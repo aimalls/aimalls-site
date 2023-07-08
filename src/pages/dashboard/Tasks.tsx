@@ -16,8 +16,8 @@ export const Tasks: FC<iProps> = (props): JSX.Element => {
                         Tasks
                     </IonCol>
                     {!isTasksLoading ? tasks.map((task: iTask) => (
-                        <IonCol size="12" sizeLg="3" sizeMd="4" sizeSm="6" key={task._id}>
-                            <IonCard>
+                        <IonCol size="12" sizeMd="4" sizeSm="6" key={task._id} style={{ display: 'flex' }}>
+                            <IonCard style={{ width: '100%' }}>
                                 <IonCardHeader>
                                     <IonCardTitle>
                                         { task.taskTitle }
