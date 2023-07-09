@@ -10,6 +10,18 @@
             font-family: 'WorkSans-Regular', Courier, monospace;
         }
     }
+    .referral-link-wrapper {
+        padding: 15px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        input {
+            width: 100%;
+            border: 1px solid #f1f1f1;
+        }
+    }
     ion-toolbar{
         display: flex;
         align-items: center;
@@ -19,4 +31,5 @@
         --side-max-width: 300px;
         --border: 1px solid #f1f1f1;
     }
+
 }

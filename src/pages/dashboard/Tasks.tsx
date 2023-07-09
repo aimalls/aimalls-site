@@ -24,7 +24,6 @@ export const Tasks: FC<iProps> = (props): JSX.Element => {
                                     <IonCardTitle>
                                         { task.taskTitle }
                                     </IonCardTitle>
-                                    
                                 </IonCardHeader>
                                 
                                 <IonCardContent>
@@ -33,7 +32,11 @@ export const Tasks: FC<iProps> = (props): JSX.Element => {
                                         Reward: { `${task.taskReward.amount.$numberDecimal} ${task.taskReward.currency}` }
                                     </IonCardSubtitle>
                                     <div style={{ display: 'flex', justifyContent: 'end' }}>
-                                        <IonButton routerLink={`/dashboard/tasks/${task._id}`}>Go</IonButton>
+                                        { !task.userCompletionStatus || task.userCompletionStatus == 'Rejected' ? (
+                                            <IonButton routerLink={`/dashboard/tasks/${task._id}`}>Go</IonButton>
+                                        ): (    
+                                            <IonButton disabled>{ task.userCompletionStatus }</IonButton>
+                                        )}
                                     </div>
                                 </IonCardContent>
                             </IonCard>

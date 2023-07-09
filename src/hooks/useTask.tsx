@@ -70,7 +70,8 @@ export interface iTask {
     taskReward: { currency: string, amount: { $numberDecimal: number } },
     taskDescription: string,
     customFields: tCustomField[],
-    taskActiveStatus: boolean
+    taskActiveStatus: boolean,
+    userCompletionStatus?: string
 }
 
 export const useTask = () => {

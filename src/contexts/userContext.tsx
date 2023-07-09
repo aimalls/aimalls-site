@@ -3,9 +3,11 @@ import { useQuery } from "@tanstack/react-query"
 import { getUserInfo } from "../requests/auth.request"
 
 export type tUser = {
+    _id: string
     email: string,
     isVerified: boolean,
     isAdmin: boolean,
+
 }
 
 export interface iUserContext {
@@ -16,7 +18,8 @@ const defaultState = {
     user: {
         email: '',
         isVerified: false,
-        isAdmin: false
+        isAdmin: false,
+        _id: ''
     }
 } as iUserContext
 
