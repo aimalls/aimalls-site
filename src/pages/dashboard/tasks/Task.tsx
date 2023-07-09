@@ -1,7 +1,7 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonLoading, IonRow, useIonAlert, useIonLoading } from "@ionic/react";
 import { useQuery } from "@tanstack/react-query";
 import { FC, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { getTaskByIdFromAPI } from "../../../requests/task.request";
 import { iTask } from "../../../hooks/useTask";
 import DynamicFormField from "../../../components/dynamic-form-field/DynamicFormField";
@@ -16,6 +16,9 @@ export const Task: FC<iProps> = (props): JSX.Element => {
     const [present, dismiss] = useIonLoading();
 
     const [presentAlert] = useIonAlert();
+
+    
+    const navigation = useHistory();
 
     const taskQuery = useQuery(
         ["task", params.id],
@@ -37,7 +40,7 @@ export const Task: FC<iProps> = (props): JSX.Element => {
             }
             await saveUserTaskToAPI(form)
             presentAlert("Task Saved.")
-            
+            navigation.push("/dashboard/tasks")
         } catch (err: any) {
             presentAlert(err.error)
         } finally {
