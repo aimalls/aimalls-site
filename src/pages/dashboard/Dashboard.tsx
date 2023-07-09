@@ -49,7 +49,21 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
                         </IonCol>
                         
                         ))
-                    : null}
+                    : 
+                        <IonCol size="12" sizeMd="6" sizeLg="4" key={`reward-z`}>
+                            <IonCard className="ion-no-margin" style={{ borderTop: "3px solid var(--ion-color-primary)" }}>
+                                <IonCardHeader>
+                                    <IonCardTitle>
+                                        AIT Reward
+                                    </IonCardTitle>
+                                </IonCardHeader>
+                                <IonCardContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                                    <div style={{ fontSize: '20px' }}>{ `0 AIT` }</div>
+                                    <div><IonButton routerLink="/dashboard/tasks" size="small" fill="clear">Get More Rewards</IonButton></div>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    }
                 </IonRow>
             </IonGrid>
             {/* <IonButton onClick={processLogout}>Logout</IonButton> */}
