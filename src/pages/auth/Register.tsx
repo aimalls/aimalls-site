@@ -64,8 +64,8 @@ const Register: React.FC = () => {
                                             <div className="register-column">
                                                 <IonRow className='ion-justify-content-center'>
                                                     <IonCol size='12'>
-                                                        <div className="register-title">Create Your Account</div>
-                                                        <div className="register-description">New Here?</div>
+                                                        <div className="register-title">Sign Up</div>
+                                                        {/* <div className="register-description">New Here?</div> */}
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='9'>
                                                         <IonButton expand='block' size='large' color={'light'} href={getGoogleAuthURL(import.meta.env.VITE_GOOGLE_AUTH_REDIRECT_URL)}>
