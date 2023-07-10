@@ -77,7 +77,7 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
                                         Referrals
                                     </IonCardTitle>
                                 </IonCardHeader>
-                                <IonCardContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                                <IonCardContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', paddingBottom: '30px' }}>
                                     <div style={{ fontSize: '20px' }}>{ referralCountQuery.data } Users</div>
                                 </IonCardContent>
                             </IonCard>
