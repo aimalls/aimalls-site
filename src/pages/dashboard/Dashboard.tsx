@@ -5,6 +5,7 @@ import { Logout } from "../../requests/auth.request";
 import { useHistory } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { getUserRewardsFromAPI, iReward } from "../../requests/reward.request";
+import { getUserReferralsCount } from "../../requests/user.request";
 
 export interface iProps {}
 export const Dashboard: FC<iProps> = (props): JSX.Element => {
@@ -16,6 +17,11 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
     const rewardsQuery = useQuery(
         ["rewards"],
         () => getUserRewardsFromAPI()
+    )
+
+    const referralCountQuery = useQuery(
+        ["referral_count"],
+        () => getUserReferralsCount(user._id)
     )
 
     const rewardsData = rewardsQuery.data;
@@ -33,7 +39,7 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
                     </IonCol>
                     { rewardsData && rewardsData.length !== 0 ?
                         rewardsData.map((reward: iReward, index: number)=> (
-                            
+                        
                         <IonCol size="12" sizeMd="6" sizeLg="4" key={`reward-${index}`}>
                             <IonCard className="ion-no-margin" style={{ borderTop: "3px solid var(--ion-color-primary)" }}>
                                 <IonCardHeader>
@@ -47,9 +53,8 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>
-                        
                         ))
-                    : 
+                    :    
                         <IonCol size="12" sizeMd="6" sizeLg="4" key={`reward-z`}>
                             <IonCard className="ion-no-margin" style={{ borderTop: "3px solid var(--ion-color-primary)" }}>
                                 <IonCardHeader>
@@ -64,9 +69,22 @@ export const Dashboard: FC<iProps> = (props): JSX.Element => {
                             </IonCard>
                         </IonCol>
                     }
+                    {referralCountQuery.data !== undefined ? 
+                        <IonCol size="12" sizeMd="6" sizeLg="4" key={`referral-count`}>
+                            <IonCard className="ion-no-margin" style={{ borderTop: "3px solid var(--ion-color-primary)", height: '100%' }}>
+                                <IonCardHeader>
+                                    <IonCardTitle>
+                                        Referrals
+                                    </IonCardTitle>
+                                </IonCardHeader>
+                                <IonCardContent style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                                    <div style={{ fontSize: '20px' }}>{ referralCountQuery.data } Users</div>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    : null}
                 </IonRow>
             </IonGrid>
-            {/* <IonButton onClick={processLogout}>Logout</IonButton> */}
         </IonContent>
     )
 };
