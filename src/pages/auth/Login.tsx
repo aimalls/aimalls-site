@@ -70,7 +70,7 @@ const Login: React.FC = () => {
                                                 <div className='login-description'>Welcome back</div>
                                             </IonCol>
                                             <IonCol size='12' sizeSm='9' sizeMd='7'>
-                                                <IonButton expand='block' color={'light'} href={getGoogleAuthURL(import.meta.env.VITE_GOOGLE_AUTH_REDIRECT_URL)}>
+                                                <IonButton expand='block' color={'light'} size='large' href={getGoogleAuthURL(import.meta.env.VITE_GOOGLE_AUTH_REDIRECT_URL)}>
                                                     <img src={gmailIcon} alt="Google Icon" height={25} />
                                                     <div className='sign-up-title'>Sign In with Google</div>
                                                 </IonButton>

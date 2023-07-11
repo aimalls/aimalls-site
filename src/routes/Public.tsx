@@ -8,6 +8,7 @@ import Login from "../pages/auth/Login"
 import Register from "../pages/auth/Register"
 import ForgotPassword from "../pages/auth/ForgotPassword"
 import Verification from "../pages/auth/Verification"
+import ChangePassword from "../pages/auth/ChangePassword"
 
 export const PublicRoutes = () => {
     
@@ -39,6 +40,9 @@ export const PublicRoutes = () => {
             </Route>
             <Route exact path="/forgot-password">
                 <ForgotPassword />
+            </Route>
+            <Route exact path="/change-password">
+                <ChangePassword />
             </Route>
         </>
         

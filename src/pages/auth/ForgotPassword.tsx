@@ -49,9 +49,12 @@ const ForgotPassword = () => {
                             </IonRow>
                             <IonRow className='ion-justify-content-center'>
                                 <IonCol size='12' sizeMd='6' sizeLg='4'>
-                                    <div className='forgot-password-btn'>
+                                    {/* <div className='forgot-password-btn'>
                                         <a href="/forgot-password" onClick={handleSubmit}>Send Request</a>
-                                    </div>
+                                    </div> */}
+                                    <IonButton size='large' shape='round' expand='block' onClick={handleSubmit}>
+                                        Send Request
+                                    </IonButton>
                                 </IonCol>
                             </IonRow>
                             <IonCol size='12'>
