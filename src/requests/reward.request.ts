@@ -2,6 +2,7 @@ import { HTTP_API } from "../helpers/http";
 export interface iReward {
   _id: string;
   total: Total;
+  usd: Total
 }
 
 interface Total {

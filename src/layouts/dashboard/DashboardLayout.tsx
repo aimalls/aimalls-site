@@ -1,7 +1,7 @@
 import { IonButton, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonPage, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar, useIonAlert } from "@ionic/react";
 import { FC, useContext, useMemo } from "react";
 import DashboardRoutes from "../../routes/DashboardRoutes";
-import UserContextProvider, { UserContext } from "../../contexts/userContext";
+import { UserContext } from "../../contexts/userContext";
 import { mail, menuOutline } from "ionicons/icons";
 import logoFull from "../../assets/images/logo-full.png";
 import { useHistory } from "react-router";
@@ -117,58 +117,6 @@ export const DashboardLayout: FC<iProps> = (props): JSX.Element => {
                     )}
                 </IonPage>
             </IonSplitPane>
-            {/* <IonMenu contentId='dashboard-header-content' className='dashboard-navigation-content' type='push' >
-                <div className='logo-wrap'>
-                    <img src={logoFull} className='logo' />
-                </div>
-                <IonContent className='ion-padding'>
-                    <IonList>
-                        <IonItem lines="full" href="/dashboard">
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
-                        </IonItem>
-                        <IonItem lines="full" href="/dashboard">
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
-                        </IonItem>
-                        <IonItem lines="full" href="/dashboard">
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>Dashboard</IonLabel>
-                        </IonItem>
-                        <IonItem lines='full' onClick={processLogout}>
-                            <IonLabel slot='end' color={'primary'} className='dashboard-navigation-link'>
-                                Log out
-                            </IonLabel>
-                        </IonItem>
-                        <IonButton className='ion-margin-top' fill='solid' shape='round' expand="full" style={{textTransform: "lowercase"}}>
-                            <IonIcon slot="start" icon={mail}></IonIcon>
-                            support@aimalls.app
-                        </IonButton>
-                    </IonList>
-                </IonContent>
-            </IonMenu>
-            <IonPage id="dashboard-header-content">
-                {!!user?.email == false ? (
-                    <IonContent>Unauthenticated!, Login first!</IonContent>
-                    ): (
-                    <>
-                        <IonHeader className='ion-padding-horizontal'>
-                            <IonToolbar style={{height: "70px", display: "flex"}}>
-                                    <IonMenuToggle slot='end' >
-                                        <IonButton fill='solid' color={"primary"}>
-                                            <IonIcon slot='icon-only' icon={menuOutline}></IonIcon>
-                                        </IonButton>
-                                    </IonMenuToggle>
-                                <IonTitle>
-                                    <img src={logoFull} className='logo'  height={50}/>
-                                </IonTitle>
-                            </IonToolbar>
-                        </IonHeader>
-                        <IonContent>
-                            <IonRouterOutlet>
-                                <DashboardRoutes />
-                            </IonRouterOutlet>
-                        </IonContent>
-                    </>
-                )}
-            </IonPage> */}
             
         </div>
     )

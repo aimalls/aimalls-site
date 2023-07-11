@@ -7,6 +7,8 @@ import { iTask } from "../../../hooks/useTask";
 import DynamicFormField from "../../../components/dynamic-form-field/DynamicFormField";
 import { saveUserTaskToAPI } from "../../../requests/user-task.request";
 import { Toast } from "@capacitor/toast";
+import PageHeader from "../../../layouts/dashboard/parts/PageHeader";
+import UserPanel from "../../../layouts/dashboard/parts/UserPanel";
 
 export interface iProps {}
 
@@ -58,8 +60,13 @@ export const Task: FC<iProps> = (props): JSX.Element => {
 
     return (
         <IonContent>
-            <IonLoading  message="Loading..." duration={3000} spinner="circles" />
-            <IonGrid>
+            <div className="ion-hide-lg-up">
+                <PageHeader/>
+            </div>
+            <div className="ion-hide-lg-down">
+                <UserPanel/>
+            </div>
+            <IonGrid className="responsive-grid">
                 { !taskIsLoading ? (
                 <IonRow>
                     <IonCol size="12" className="page-title">

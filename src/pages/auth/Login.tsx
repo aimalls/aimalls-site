@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "../../styles/auth/Login.scss"
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton, IonLabel, IonRouterLink } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton, IonLabel, IonRouterLink, useIonAlert } from '@ionic/react'
 import Logo from '../../assets/images/logo-full.png'
 
 import gmailIcon from '../../assets/images/google.png'
@@ -19,6 +19,8 @@ const Login: React.FC = () => {
 
     const history = useHistory();
 
+    const [presentAlert] = useIonAlert();
+
     const processLogin = async (code?: string) => {
         try {
             if (code) {
@@ -31,7 +33,7 @@ const Login: React.FC = () => {
                 }
             }
         } catch (error: any) {
-            alert(error.response.data.error)
+            presentAlert(error.response.data.error)
         }
     }
 
@@ -94,7 +96,9 @@ const Login: React.FC = () => {
                                                     value={password}
                                                     required
                                                     onIonChange={(val) => setPassword(val.detail.value!)}
-                                                />
+                                                >
+                                                    
+                                                </IonInput>
                                                 
                                                 <div className="forgot-password">
                                                 <IonButton href='/forgot-password' fill='clear'>

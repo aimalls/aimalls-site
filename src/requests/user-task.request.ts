@@ -6,3 +6,9 @@ export const saveUserTaskToAPI = (task: any) => {
         .then(response => response.data)
         .catch(err => Promise.reject(err.response.data))
 }
+
+export const getTaskCompletedCountFromAPI = () => {
+    return HTTP_API().get("/user-task/get-task-completed-count")
+        .then(response => response.data)
+        .catch(err => Promise.reject(err.response.data))
+}

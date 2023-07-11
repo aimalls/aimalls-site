@@ -1,5 +1,5 @@
 import { Route } from "react-router"
-import { DashboardLayout } from "../layouts/dashboard/DashboardLayout"
+import { DashboardLayoutV2 } from "../layouts/dashboard/DashboardLayoutV2"
 import UserContextProvider from "../contexts/userContext"
 
 
@@ -10,7 +10,7 @@ export const PrivateRoutes = () => {
         <>
             <Route path="/dashboard">
                 <UserContextProvider>
-                    <DashboardLayout />
+                    <DashboardLayoutV2 />
                 </UserContextProvider>
             </Route>
         </>

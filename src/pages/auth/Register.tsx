@@ -1,4 +1,4 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink, useIonAlert } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/Register.scss'
 import Logo from '../../assets/images/logo-full.png'
@@ -26,6 +26,8 @@ const Register: React.FC = () => {
     const mode = url.searchParams.get("mode")
     const mail = url.searchParams.get("mail")
 
+    const [presentAlert] = useIonAlert();
+
     const [registrationForm, setRegistrationForm] = useState({
         email: !!mail ? mail : '',
         password: '',
@@ -44,8 +46,8 @@ const Register: React.FC = () => {
         try {
             await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
             setVerified(true)
-        } catch (error) {
-            console.log(error)
+        } catch (error: any) {
+            presentAlert(error.response.data.error)
         }
         
     }

@@ -12,7 +12,7 @@
                 text-align: center;
                 font-size: 40px;
                 font-family: 'WorkSans-Bold';
-                color: var(--ion-color-tertiary);
+                color: var(--ion-color-primary);
             }
             .login-description{
                 text-align: center;
@@ -98,7 +98,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: var(--ion-color-tertiary);
+        background: var(--ion-color-primary);
         padding: 0px 15px;
         color: #fff;
         .register-title{
