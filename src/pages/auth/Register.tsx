@@ -146,7 +146,7 @@ const Register: React.FC = () => {
                                             </div>
                                         </div>
                                     </IonCol>
-                                    <IonCol size='12'>
+                                    <IonCol size='12' sizeMd='8'>
                                         <div className="verified-title">Yehey!</div>
                                         { !!mail ? (
                                             <div className="verified-description">
@@ -160,7 +160,7 @@ const Register: React.FC = () => {
                                         
                                         
                                     </IonCol>
-                                    <IonCol size='12' sizeMd='8' className='ion-marigin-top'>
+                                    <IonCol size='12' sizeMd='6' className='ion-marigin-top'>
                                         <IonButton expand='block' shape='round' size='large' color={'light'} href='/login'>
                                             <div className='got-it-button'>
                                                 Got it
