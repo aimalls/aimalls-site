@@ -6,12 +6,11 @@ import { arrowBackOutline } from 'ionicons/icons'
 
 const ForgotPassword = () => {
 
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState<string>('')
 
     const handleSubmit = () => {
-        const requestData = {
-            email
-        }
+        
+
     }
 
     return (
@@ -39,7 +38,7 @@ const ForgotPassword = () => {
                                         label='Email' 
                                         className='inputs' 
                                         labelPlacement="floating"
-                                        placeholder='Enter your Email' 
+                                        placeholder='Enter your Email'
                                         counter={true}
                                         value={email}
                                         keyboard-attach

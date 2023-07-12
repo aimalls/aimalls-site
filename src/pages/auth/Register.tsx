@@ -56,9 +56,9 @@ const Register: React.FC = () => {
 
     const processRegistration = async () => {
         try {
-            console.log(registrationForm)
-            // await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
-            // setVerified(true)
+            // console.log(registrationForm)
+            await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
+            setVerified(true)
         } catch (error: any) {
             presentAlert(error.response.data.error)
         }
