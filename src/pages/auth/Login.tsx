@@ -62,7 +62,7 @@ const Login: React.FC = () => {
                             <IonRow className='ion-justify-content-between'>
                                 <IonCol size='12' sizeSm='6' sizeMd='8'>
                                     <div className="login-column">
-                                        <IonRow className='ion-justify-content-center'>
+                                        <IonRow className='ion-justify-content-center ion-padding'>
                                             <IonCol size='12'>
                                                 <div className="login-title">Login to Your Account</div>
                                                 <div className='login-description'>Welcome back</div>

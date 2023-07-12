@@ -61,8 +61,8 @@ const Register: React.FC = () => {
                                 <IonGrid className='ion-no-padding'>
                                     <IonRow className='ion-justify-content-between'>
                                         <IonCol size='12' sizeMd='8'>
-                                            <div className="register-column">
-                                                <IonRow className='ion-justify-content-center'>
+                                            <div className="register-column ">
+                                                <IonRow className='ion-justify-content-center ion-padding'>
                                                     <IonCol size='12'>
                                                         <div className="register-title">Create Your Account</div>
                                                         <div className="register-description">New Here?</div>

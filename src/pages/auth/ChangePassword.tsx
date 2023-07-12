@@ -2,7 +2,7 @@ import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonButton, IonI
 import React, { useState } from 'react'
 import '../../styles/auth/ChangePassword.scss'
 import changePasswordIcon from '../../assets/images/change-password.png'
-import errorIcon from '../../assets/images/error3.png'
+import errorIcon from '../../assets/images/error.png'
 import { lockClosed } from 'ionicons/icons'
 
 const ChangePassword: React.FC = () => {
@@ -17,7 +17,7 @@ const ChangePassword: React.FC = () => {
         <div id='change-password'>
             <IonPage>
                 <IonContent fullscreen>
-                    {!succeedChangePassword ? (
+                    {succeedChangePassword ? (
                         <div id="change-password-content">
                             <IonGrid className='container'>
                                 <IonRow className="ion-justify-content-center">
