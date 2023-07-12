@@ -8,7 +8,7 @@ export const SocialButtons = () => {
             <a href="https://www.facebook.com/aimallsapp" target="_blank">
                 <img src={ faceBookLogo } alt="facebook" />
             </a>
-            <a href="https://t.me/AiMallsOfficial" target="_blank">
+            <a href="https://t.me/+FkMAw3ZXCZI1NWZl" target="_blank">
                 <img src={ telegramLogo } alt="telegram" />
             </a>
             <a href="https://twitter.com/ai_malls" target="_blank">
