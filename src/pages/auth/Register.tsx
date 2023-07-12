@@ -1,5 +1,5 @@
 import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink, useIonAlert } from '@ionic/react'
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import '../../styles/auth/Register.scss'
 import Logo from '../../assets/images/logo-full.png'
 
@@ -21,31 +21,44 @@ const Register: React.FC = () => {
     const [termsandConditions, setTermsandConditions] = useState(false);
     const [referrer, setReferrer] = useLocalStorage("referrer", '')
 
-    const url_string = window.location.href
-    const url = new URL(url_string)
-    const mode = url.searchParams.get("mode")
-    const mail = url.searchParams.get("mail")
+    
 
     const [presentAlert] = useIonAlert();
 
     const [registrationForm, setRegistrationForm] = useState({
-        email: !!mail ? mail : '',
+        email: '',
         password: '',
         confirm_password: '',
         referrer: !!referrer ? referrer : ''
     });
 
+    const [isGmail, setIsGmail] = useState<boolean>(false)
+
+    useEffect(() => {
+        const url_string = window.location.href
+        const url = new URL(url_string)
+        const mode = url.searchParams.get("mode")
+        const mail = url.searchParams.get("mail")
+        if (mail) {
+            handleFormChange("email", {value: mail})
+            setIsGmail(true)
+        }
+    }, [])
+
     const handleFormChange = (prop: any, { value }: any) => {
-        let prev_reg: any = registrationForm;
+        let prev_reg: any = {...registrationForm};
         prev_reg[prop] = value
 
-        setRegistrationForm(prev_reg)
+        setRegistrationForm((r) => {
+            return r = prev_reg;
+        })
     }
 
     const processRegistration = async () => {
         try {
-            await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
-            setVerified(true)
+            console.log(registrationForm)
+            // await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
+            // setVerified(true)
         } catch (error: any) {
             presentAlert(error.response.data.error)
         }
@@ -83,8 +96,8 @@ const Register: React.FC = () => {
                                                             labelPlacement="floating" 
                                                             placeholder='Enter your Email' 
                                                             type='email'
-                                                            value={mail}
-                                                            disabled={ !!mail }
+                                                            value={registrationForm.email}
+                                                            disabled={ isGmail }
                                                             onIonChange={(val) => handleFormChange('email', val.detail)}
                                                         />
                                                         
@@ -105,11 +118,11 @@ const Register: React.FC = () => {
                                                             onIonChange={(val) => handleFormChange('confirm_password', val.detail)} 
                                                         />
                                                         <div className="terms-and-conditions">
-                                                            <IonCheckbox labelPlacement='end' onIonChange={(val) => setTermsandConditions(val.detail.checked)}>I accept the</IonCheckbox>
+                                                            <IonCheckbox labelPlacement='end'  onIonChange={(val) => setTermsandConditions(val.detail.checked)}>I accept the</IonCheckbox>
                                                             <a href="/terms-and-conditions" target='_blank'>Terms and Conditions</a>
                                                         </div>
                                                         <div className='privacy-policy'>
-                                                            <IonCheckbox labelPlacement='end' onIonChange={(val) => setPrivacyPolicy(val.detail.checked)}>I agree to the</IonCheckbox>
+                                                            <IonCheckbox labelPlacement='end'  onIonChange={(val) => setPrivacyPolicy(val.detail.checked)}>I agree to the</IonCheckbox>
                                                             <a href="/privacy-policy" target='_blank'>Privacy Policy</a>
                                                         </div>
                                                         <IonButton onClick={processRegistration} disabled={ (!privacyPolicy || !termsandConditions) } expand='block' size='large' shape='round'>Register</IonButton>
@@ -150,7 +163,7 @@ const Register: React.FC = () => {
                                     </IonCol>
                                     <IonCol size='12' sizeMd='8'>
                                         <div className="verified-title">Yehey!</div>
-                                        { !!mail ? (
+                                        { isGmail ? (
                                             <div className="verified-description">
                                                 Your registration is almost done, You can now login using your google account!
                                             </div>
