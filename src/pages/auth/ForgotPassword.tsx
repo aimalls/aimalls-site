@@ -1,16 +1,30 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonPage, IonRow } from '@ionic/react'
+import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonPage, IonRow, useIonAlert, useIonLoading } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/ForgotPassword.scss'
 import Key from '../../assets/images/key.png'
 import { arrowBackOutline } from 'ionicons/icons'
+import { requestForgotPasswordLinkFromAPI } from '../../requests/auth.request'
 
 const ForgotPassword = () => {
 
     const [email, setEmail] = useState<string>('')
+    const [emailSent, setEmailSent] = useState<boolean>(false)
 
-    const handleSubmit = () => {
-        
+    const [presentAlert] = useIonAlert();
 
+    const [present, dismiss] = useIonLoading();
+
+    const handleSubmit = async () => {
+        await present()
+        try {
+            const request = await requestForgotPasswordLinkFromAPI(email);
+            setEmailSent(true)
+            presentAlert(request.data.message)
+        } catch (error: any) {
+            presentAlert(error.response.data.error)
+        } finally {
+            await dismiss();
+        }
     }
 
     return (

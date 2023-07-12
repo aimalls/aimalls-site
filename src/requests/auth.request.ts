@@ -47,3 +47,19 @@ export const getUserInfo = async () => {
         return Promise.reject(error)
     }
 }
+
+export const requestForgotPasswordLinkFromAPI = async (email: string) => {
+    try {
+        return await HTTP_API().post("/auth/request-forgot-password-link", { email })
+    } catch (error) {
+        return Promise.reject(error)
+    }
+}
+
+export const processForgotPasswordChangeToAPI = async (newPassword: string, token: string) => {
+    try {
+        return await HTTP_API().post("/auth/process-forgot-password-change", { newPassword, token })
+    } catch (error) {
+        return Promise.reject(error)
+    }
+}

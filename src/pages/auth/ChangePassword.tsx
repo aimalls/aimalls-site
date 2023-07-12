@@ -1,23 +1,58 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonButton, IonIcon, IonItem } from '@ionic/react'
-import React, { useState } from 'react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonButton, IonIcon, IonItem, useIonAlert, useIonLoading } from '@ionic/react'
+import React, { useMemo, useState } from 'react'
 import '../../styles/auth/ChangePassword.scss'
 import changePasswordIcon from '../../assets/images/change-password.png'
 import errorIcon from '../../assets/images/error3.png'
 import { lockClosed } from 'ionicons/icons'
+import { processForgotPasswordChangeToAPI } from '../../requests/auth.request'
 
 const ChangePassword: React.FC = () => {
 
     const [succeedChangePassword, setSucceedChangePassword] = useState<boolean>(true)
     const [newPassword, setNewPassword] = useState("")
+    const [confirmNewPassword, setConfirmNewPassword] = useState("")
 
-    const handleNSaveNewPassword = () => {
+    const change_password_token = useMemo(() => {
+        const url_string = window.location.href
+        const url = new URL(url_string)
+        const token = url.searchParams.get("token")
+        if (token) {
+            return token
+        }
+        return undefined
+    }, [])
 
+    const [presentAlert] = useIonAlert();
+    const [present, dismiss] = useIonLoading();
+
+    
+
+    const handleNSaveNewPassword = async () => {
+        if (newPassword !== confirmNewPassword) {
+            presentAlert("Password did not match!");
+            return
+        }
+
+        if (!change_password_token) {
+            presentAlert("Cannot change password without token!, please check your email.");
+            return
+        }
+        try {
+            await present()
+            const request = await processForgotPasswordChangeToAPI(newPassword, change_password_token)
+            setSucceedChangePassword(true)
+            presentAlert(request.data.message)
+        } catch (error: any) {
+            presentAlert(error.response.data.error)
+        } finally {
+            await dismiss();
+        }
     }
     return (
         <div id='change-password'>
             <IonPage>
                 <IonContent fullscreen>
-                    {!succeedChangePassword ? (
+                    {!!change_password_token ? (
                         <div id="change-password-content">
                             <IonGrid className='container'>
                                 <IonRow className="ion-justify-content-center">
@@ -45,6 +80,17 @@ const ChangePassword: React.FC = () => {
                                                 keyboard-attach
                                                 onIonChange={(val) => setNewPassword(val.detail.value!)}
                                             />
+                                            <IonInput 
+                                                label='Confirm New Password' 
+                                                className='inputs' 
+                                                labelPlacement="floating"
+                                                placeholder='Confirm New Password' 
+                                                counter={true}
+                                                value={confirmNewPassword}
+                                                type='password'
+                                                keyboard-attach
+                                                onIonChange={(val) => setConfirmNewPassword(val.detail.value!)}
+                                            />
                                         {/* </IonItem> */}
                                     </IonCol>
                                 </IonRow>
@@ -69,13 +115,8 @@ const ChangePassword: React.FC = () => {
                                     <IonCol size='12'>
                                         <div className="error-title">Error!</div>
                                         <div className="error-description">
-                                            Something's wrong with your request.
+                                            Invalid Request, Please check your email and click the correct link provided for changing your password.
                                         </div>
-                                    </IonCol>
-                                    <IonCol size='12' sizeSm='6' sizeMd='4'>
-                                        <IonButton expand='block' size='large' href='/forgot-password' shape='round' color={'light'}>
-                                            Retry
-                                        </IonButton>
                                     </IonCol>
                                 </IonRow>
                             </IonGrid>
