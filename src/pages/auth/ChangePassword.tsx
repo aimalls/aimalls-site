@@ -2,7 +2,7 @@ import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonButton, IonI
 import React, { useMemo, useState } from 'react'
 import '../../styles/auth/ChangePassword.scss'
 import changePasswordIcon from '../../assets/images/change-password.png'
-import errorIcon from '../../assets/images/error3.png'
+import errorIcon from '../../assets/images/error.png'
 import { lockClosed } from 'ionicons/icons'
 import { processForgotPasswordChangeToAPI } from '../../requests/auth.request'
 
