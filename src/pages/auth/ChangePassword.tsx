@@ -3,12 +3,12 @@ import React, { useMemo, useState } from 'react'
 import '../../styles/auth/ChangePassword.scss'
 import changePasswordIcon from '../../assets/images/change-password.png'
 import errorIcon from '../../assets/images/error.png'
-import { lockClosed } from 'ionicons/icons'
+import { checkmark, checkmarkDone, chevronBack, lockClosed } from 'ionicons/icons'
 import { processForgotPasswordChangeToAPI } from '../../requests/auth.request'
 
 const ChangePassword: React.FC = () => {
 
-    const [succeedChangePassword, setSucceedChangePassword] = useState<boolean>(true)
+    const [succeedChangePassword, setSucceedChangePassword] = useState<boolean>(false)
     const [newPassword, setNewPassword] = useState("")
     const [confirmNewPassword, setConfirmNewPassword] = useState("")
 
@@ -52,7 +52,7 @@ const ChangePassword: React.FC = () => {
         <div id='change-password'>
             <IonPage>
                 <IonContent fullscreen>
-                    {!!change_password_token ? (
+                    {!!change_password_token && !succeedChangePassword ? (
                         <div id="change-password-content">
                             <IonGrid className='container'>
                                 <IonRow className="ion-justify-content-center">
@@ -67,8 +67,6 @@ const ChangePassword: React.FC = () => {
                                         <div className="title">Set new Password</div>
                                     </IonCol>
                                     <IonCol size='12' sizeMd='6' sizeLg='4'>
-                                        {/* <IonItem fill='outline'>
-                                            <IonIcon icon={lockClosed}></IonIcon> */}
                                             <IonInput 
                                                 label='New Password' 
                                                 className='inputs' 
@@ -91,12 +89,33 @@ const ChangePassword: React.FC = () => {
                                                 keyboard-attach
                                                 onIonChange={(val) => setConfirmNewPassword(val.detail.value!)}
                                             />
-                                        {/* </IonItem> */}
                                     </IonCol>
                                 </IonRow>
                                 <IonRow className='ion-justify-content-center'>
                                     <IonCol size='12' sizeMd='6' sizeLg='4'>
                                         <IonButton expand='block'shape='round' size='large' onClick={handleNSaveNewPassword}>Save</IonButton>
+                                    </IonCol>
+                                </IonRow>
+                            </IonGrid>
+                        </div>
+                    ) : succeedChangePassword ? (
+                        <div id='change-password-invalid'>
+                            <IonGrid className="container">
+                                <IonRow className="ion-justify-content-center">
+                                    <IonCol size='12' style={{ display: 'flex', justifyContent: 'center', fontSize: '100px' }}>
+                                        <IonIcon icon={ checkmarkDone } color='white'></IonIcon>
+                                    </IonCol>
+                                    <IonCol size='12'>
+                                        <div className="error-title">Change Password Success!</div>
+                                        <div className="error-description">
+                                            You have changed your password successfully!, Please secure your password all the time and don't let anyone know!.
+                                        </div>
+                                    </IonCol>
+                                    <IonCol size='12' sizeMd='6'>
+                                        <IonButton expand='full' shape='round' routerLink='/login' size='large'>
+                                            <IonIcon slot='start' icon={ chevronBack }></IonIcon>
+                                            Back to Login
+                                        </IonButton>
                                     </IonCol>
                                 </IonRow>
                             </IonGrid>
