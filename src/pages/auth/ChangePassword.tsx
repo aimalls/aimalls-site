@@ -119,7 +119,7 @@ const ChangePassword: React.FC = () => {
                                             </div>
                                         </div>
                                     </IonCol>
-                                    <IonCol size='12'>
+                                    <IonCol size='12' sizeMd='8'>
                                         <div className="error-title">Error!</div>
                                         <div className="error-description">
                                             Invalid Request, Please check your email and click the correct link provided for changing your password.
