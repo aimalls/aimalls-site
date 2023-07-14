@@ -69,6 +69,9 @@ const ChangePassword: React.FC = () => {
                                     <IonCol size='12' sizeMd='6' sizeLg='4'>
                                         {/* <IonItem fill='outline'>
                                             <IonIcon icon={lockClosed}></IonIcon> */}
+                                            
+                                        <IonItem  className="inputs ion-margin-bottom">
+                                            <IonIcon icon={lockClosed} color='primary' size='large' slot='end'></IonIcon>
                                             <IonInput 
                                                 label='New Password' 
                                                 className='inputs' 
@@ -80,6 +83,10 @@ const ChangePassword: React.FC = () => {
                                                 keyboard-attach
                                                 onIonChange={(val) => setNewPassword(val.detail.value!)}
                                             />
+                                        </IonItem>
+                                        
+                                        <IonItem  className="inputs ion-margin-bottom">
+                                            <IonIcon icon={lockClosed} color='primary' size='large' slot='end'></IonIcon>
                                             <IonInput 
                                                 label='Confirm New Password' 
                                                 className='inputs' 
@@ -91,7 +98,7 @@ const ChangePassword: React.FC = () => {
                                                 keyboard-attach
                                                 onIonChange={(val) => setConfirmNewPassword(val.detail.value!)}
                                             />
-                                        {/* </IonItem> */}
+                                        </IonItem>
                                     </IonCol>
                                 </IonRow>
                                 <IonRow className='ion-justify-content-center'>

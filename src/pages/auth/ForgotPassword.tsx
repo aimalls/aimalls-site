@@ -1,8 +1,8 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonPage, IonRow, useIonAlert, useIonLoading } from '@ionic/react'
+import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonItem, IonPage, IonRow, useIonAlert, useIonLoading } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/ForgotPassword.scss'
 import Key from '../../assets/images/key.png'
-import { arrowBackOutline } from 'ionicons/icons'
+import { arrowBackOutline, lockClosed, mail } from 'ionicons/icons'
 import { requestForgotPasswordLinkFromAPI } from '../../requests/auth.request'
 
 const ForgotPassword = () => {
@@ -48,16 +48,20 @@ const ForgotPassword = () => {
                                     </div>
                                 </IonCol>
                                 <IonCol size='12' sizeMd='6' sizeLg='4'>
-                                    <IonInput 
-                                        label='Email' 
-                                        className='inputs' 
-                                        labelPlacement="floating"
-                                        placeholder='Enter your Email'
-                                        counter={true}
-                                        value={email}
-                                        keyboard-attach
-                                        onIonChange={(val) => setEmail(val.detail.value!)}
-                                    />
+                                    <IonItem  className="inputs">
+                                        <IonIcon icon={mail} color='primary' size='large' slot='end'></IonIcon>
+                                        <IonInput 
+                                            label='Email' 
+                                            // className='inputs' 
+                                            labelPlacement="floating"
+                                            aria-label='Email'
+                                            placeholder='Enter your Email'
+                                            counter={true}
+                                            value={email}
+                                            keyboard-attach
+                                            onIonChange={(val) => setEmail(val.detail.value!)}
+                                        />
+                                    </IonItem>
                                 </IonCol>
                             </IonRow>
                             <IonRow className='ion-justify-content-center'>
