@@ -45,17 +45,11 @@ const ForgotPassword = () => {
                                     <div id="forgot-password-content">
                                         <IonRow className="ion-justify-content-center">
                                             <IonCol size='12'>
-                                                
                                                 <IonRouterLink routerLink='/'>
                                                     <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
                                                         <img src={ Logo } alt='aimalls' />
                                                     </div>
                                                 </IonRouterLink>
-                                                {/* <div className="icon">
-                                                    <div className="icon-img">
-                                                        <img src={Key} alt="key icon" height={50} width={50} />
-                                                    </div>
-                                                </div> */}
                                             </IonCol>
                                             <IonCol size='12'>
                                                 <div className="title">Yo! Forgot Your Password?</div>
@@ -67,8 +61,7 @@ const ForgotPassword = () => {
                                                 <IonItem  className="inputs">
                                                     <IonIcon icon={mail} color='primary' size='large' slot='end'></IonIcon>
                                                     <IonInput 
-                                                        label='Email' 
-                                                        // className='inputs' 
+                                                        label='Email'
                                                         labelPlacement="floating"
                                                         aria-label='Email'
                                                         placeholder='Enter your Email'
@@ -94,7 +87,6 @@ const ForgotPassword = () => {
                                                         <IonIcon icon={arrowBackOutline}></IonIcon>
                                                         <div>Back to Login</div>
                                                     </IonButton>
-                                                    
                                                 </div>
                                             </IonCol>
                                         </IonRow>

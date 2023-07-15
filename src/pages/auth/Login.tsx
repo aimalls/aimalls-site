@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "../../styles/auth/Login.scss"
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton, IonLabel, IonRouterLink, useIonAlert, IonIcon } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonItem, IonButton, IonRouterLink, useIonAlert, IonIcon } from '@ionic/react'
 import Logo from '../../assets/images/logo-full.png'
 
 import gmailIcon from '../../assets/images/google.png'
@@ -13,7 +13,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { AxiosResponse } from 'axios'
 import { useHistory } from 'react-router'
 import { useProgressiveImage } from '../../hooks/ProgressiveImage'
-import { lockClosed, mail, mailOutline } from 'ionicons/icons'
+import { lockClosed, mail } from 'ionicons/icons'
 
 const Login: React.FC = () => {
 
@@ -122,13 +122,11 @@ const Login: React.FC = () => {
                                                         </IonInput>
                                                     </IonItem>
                                                 </div>
-                                                
                                                 <div className="forgot-password">
-                                                <IonButton href='/forgot-password' fill='clear' style={{textTransform: "capitalize", fontFamily: "WorkSans-Regular"}}>
-                                                    <div className='forgot-password-title'>forgot password?</div>
-                                                </IonButton>
+                                                    <IonButton href='/forgot-password' fill='clear' style={{textTransform: "capitalize", fontFamily: "WorkSans-Regular"}}>
+                                                        <div className='forgot-password-title'>forgot password?</div>
+                                                    </IonButton>
                                                 </div>
-
                                                 <IonButton 
                                                     expand='block' 
                                                     shape='round' 
@@ -141,7 +139,14 @@ const Login: React.FC = () => {
                                                 <div className='register-button-mobile'>
                                                     <div className="register-button-mobile-content">
                                                         <div>Don't Have an Account?</div>
-                                                        <IonButton routerLink='/register' size='small' style={{ textTransform: "capitalize", fontSize: "17px", fontFamily: "WorkSans-Regular" }} fill='clear'>Register</IonButton>
+                                                        <IonButton 
+                                                            routerLink='/register' 
+                                                            size='small' 
+                                                            style={{ textTransform: "capitalize", fontSize: "17px", fontFamily: "WorkSans-Regular" }} 
+                                                            fill='clear'
+                                                        >
+                                                            Register
+                                                        </IonButton>
                                                     </div>
                                                 </div>
                                             </IonCol>
@@ -152,10 +157,16 @@ const Login: React.FC = () => {
                                     <div className="register-column">
                                         <IonRow className='ion-justify-content-center'>
                                             <IonCol size='12'>
-                                                <IonRouterLink routerLink='/'><div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}><img src={ Logo } alt='aimalls' /></div></IonRouterLink>
+                                                <IonRouterLink routerLink='/'>
+                                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
+                                                        <img src={ Logo } alt='aimalls' />
+                                                    </div>
+                                                </IonRouterLink>
                                                 <div className="register-title">New Here?</div>
                                                 <div className="register-description">
-                                                    Welcome to the future of shopping, where AI takes you on a personalized retail journey like never before. Sign up today and discover the extraordinary convenience, tailored experiences, and endless possibilities of AI malls.
+                                                    Welcome to the future of shopping, where AI takes you on a personalized retail journey like never before. 
+                                                    Sign up today and discover the extraordinary convenience, tailored experiences, 
+                                                    and endless possibilities of AI malls.
                                                 </div>
                                             </IonCol>
                                             <IonCol size='12' sizeMd='8'>
@@ -171,7 +182,7 @@ const Login: React.FC = () => {
                             </IonRow>
                         </IonGrid>
                     </div>
-                    </IonContent>
+                </IonContent>
             </IonPage>
         </div>
     )

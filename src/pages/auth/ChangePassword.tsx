@@ -67,22 +67,16 @@ const ChangePassword: React.FC = () => {
                                         <div id="change-password-content">
                                             <IonRow className="ion-justify-content-center">
                                                 <IonCol size='12'>
-                                                <IonRouterLink routerLink='/'>
-                                                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
-                                                        <img src={ Logo } alt='aimalls' />
-                                                    </div>
-                                                </IonRouterLink>
-                                                    {/* <div className="icon">
-                                                        <div className="icon-img">
-                                                            <img src={changePasswordIcon} alt="change password icon" height={50} width={50} />
+                                                    <IonRouterLink routerLink='/'>
+                                                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
+                                                            <img src={ Logo } alt='aimalls' />
                                                         </div>
-                                                    </div> */}
+                                                    </IonRouterLink>
                                                 </IonCol>
                                                 <IonCol size='12'>
                                                     <div className="title">Set new Password</div>
                                                 </IonCol>
                                                 <IonCol size='12' sizeMd='8' sizeLg='6'>
-                                                        
                                                     <IonItem  className="inputs ion-margin-bottom">
                                                         <IonIcon icon={lockClosed} color='primary' size='large' slot='end'></IonIcon>
                                                         <IonInput 
@@ -97,7 +91,6 @@ const ChangePassword: React.FC = () => {
                                                             onIonChange={(val) => setNewPassword(val.detail.value!)}
                                                         />
                                                     </IonItem>
-                                                    
                                                     <IonItem  className="inputs ion-margin-bottom">
                                                         <IonIcon icon={lockClosed} color='primary' size='large' slot='end'></IonIcon>
                                                         <IonInput 
@@ -132,12 +125,6 @@ const ChangePassword: React.FC = () => {
                                         <div id="change-password-invalid-content">
                                             <IonRow className="ion-justify-content-center">
                                                 <IonCol size='12'>
-                                                    {/* <div className="error-icon">
-                                                        <div className="icon-img">
-                                                            <img src={errorIcon} alt="change password icon" height={50} width={50} />
-                                                        </div>
-                                                    </div> */}
-                                                    
                                                     <IonRouterLink routerLink='/'>
                                                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
                                                             <img src={ Logo } alt='aimalls' />

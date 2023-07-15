@@ -165,7 +165,14 @@ const Register: React.FC = () => {
                                                         <div className='login-button-mobile'>
                                                             <div className="login-button-mobile-content">
                                                                 <div>Already Have an Account?</div>
-                                                                <IonButton routerLink='/login' size='small' style={{ textTransform: "capitalize", fontSize: "17px", fontFamily: "WorkSans-Regular" }} fill='clear'>Login</IonButton>
+                                                                <IonButton 
+                                                                    routerLink='/login' 
+                                                                    size='small' 
+                                                                    style={{ textTransform: "capitalize", fontSize: "17px", fontFamily: "WorkSans-Regular" }} 
+                                                                    fill='clear'
+                                                                >
+                                                                    Login
+                                                                </IonButton>
                                                             </div>
                                                         </div>
                                                     </IonCol>
@@ -176,10 +183,15 @@ const Register: React.FC = () => {
                                             <div className="login-column">
                                                 <IonRow className='ion-justify-content-center al'>
                                                     <IonCol size='12'>
-                                                        <IonRouterLink routerLink='/'><div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }} ><img src={ Logo } alt='aimalls' /></div></IonRouterLink>
+                                                        <IonRouterLink routerLink='/'>
+                                                            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }} >
+                                                                <img src={ Logo } alt='aimalls' />
+                                                            </div>
+                                                        </IonRouterLink>
                                                         <div className="login-title">Welcome Back!</div>
                                                         <div className="login-description">
-                                                            Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
+                                                            Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, 
+                                                            intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
                                                         </div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='7'>
@@ -214,8 +226,6 @@ const Register: React.FC = () => {
                                                 Your registration is almost done, please check your email to complete the verification of your account!
                                             </div>
                                         )}
-                                        
-                                        
                                     </IonCol>
                                     <IonCol size='12' sizeMd='6' className='ion-marigin-top'>
                                         <IonButton expand='block' shape='round' size='large' color={'light'} href='/login'>
