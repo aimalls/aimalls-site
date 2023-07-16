@@ -1,14 +1,21 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonPage, IonRow, useIonAlert, useIonLoading } from '@ionic/react'
+import { IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonItem, IonPage, IonRouterLink, IonRow, useIonAlert, useIonLoading } from '@ionic/react'
 import React, { useState } from 'react'
 import '../../styles/auth/ForgotPassword.scss'
 import Key from '../../assets/images/key.png'
-import { arrowBackOutline } from 'ionicons/icons'
+import { arrowBackOutline, lockClosed, mail } from 'ionicons/icons'
 import { requestForgotPasswordLinkFromAPI } from '../../requests/auth.request'
+import { useProgressiveImage } from '../../hooks/ProgressiveImage'
+
+import changePasswordBg from '../../assets/images/auth-bg4.jpg'
+import Logo from '../../assets/images/logo-full.png'
+import changePasswordBgPlaceholder from '../../assets/images/auth-bg4-placeholder.jpg'
 
 const ForgotPassword = () => {
 
     const [email, setEmail] = useState<string>('')
     const [emailSent, setEmailSent] = useState<boolean>(false)
+    
+    const loaded_bg = useProgressiveImage(changePasswordBg);
 
     const [presentAlert] = useIonAlert();
 

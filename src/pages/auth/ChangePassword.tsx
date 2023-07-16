@@ -1,16 +1,23 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonButton, IonIcon, IonItem, useIonAlert, useIonLoading } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonInput, IonButton, IonIcon, IonItem, useIonAlert, useIonLoading, IonRouterLink } from '@ionic/react'
 import React, { useMemo, useState } from 'react'
 import '../../styles/auth/ChangePassword.scss'
 import changePasswordIcon from '../../assets/images/change-password.png'
 import errorIcon from '../../assets/images/error.png'
 import { checkmark, checkmarkDone, chevronBack, lockClosed } from 'ionicons/icons'
 import { processForgotPasswordChangeToAPI } from '../../requests/auth.request'
+import { useProgressiveImage } from '../../hooks/ProgressiveImage'
+
+import forgotPasswordBg from '../../assets/images/auth-bg4.jpg'
+import Logo from '../../assets/images/logo-full.png'
+import forgotPasswordBgPlaceholder from '../../assets/images/auth-bg4-placeholder.jpg'
 
 const ChangePassword: React.FC = () => {
 
     const [succeedChangePassword, setSucceedChangePassword] = useState<boolean>(false)
     const [newPassword, setNewPassword] = useState("")
     const [confirmNewPassword, setConfirmNewPassword] = useState("")
+    
+    const loaded_bg = useProgressiveImage(forgotPasswordBg);
 
     const change_password_token = useMemo(() => {
         const url_string = window.location.href
@@ -121,20 +128,26 @@ const ChangePassword: React.FC = () => {
                             </IonGrid>
                         </div>
                     ) : (
-                        <div id='change-password-invalid'>
+                        <div id='change-password-invalid' style={{ backgroundImage: `url(${ loaded_bg || forgotPasswordBgPlaceholder })` }}>
                             <IonGrid className="container">
-                                <IonRow className="ion-justify-content-center">
-                                    <IonCol size='12'>
-                                        <div className="error-icon">
-                                            <div className="icon-img">
-                                                <img src={errorIcon} alt="change password icon" height={50} width={50} />
-                                            </div>
-                                        </div>
-                                    </IonCol>
-                                    <IonCol size='12'>
-                                        <div className="error-title">Error!</div>
-                                        <div className="error-description">
-                                            Invalid Request, Please check your email and click the correct link provided for changing your password.
+                                <IonRow className='ion-justify-content-center'>
+                                    <IonCol size='12' sizeSm='9' sizeMd='9' sizeLg='6' style={{display: "flex", justifyContent: "center"}}>
+                                        <div id="change-password-invalid-content">
+                                            <IonRow className="ion-justify-content-center">
+                                                <IonCol size='12'>
+                                                    <IonRouterLink routerLink='/'>
+                                                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
+                                                            <img src={ Logo } alt='aimalls' />
+                                                        </div>
+                                                    </IonRouterLink>
+                                                </IonCol>
+                                                <IonCol size='12' >
+                                                    <div className="error-title">Error!</div>
+                                                    <div className="error-description">
+                                                        Invalid Request, Please check your email and click the correct link provided for changing your password.
+                                                    </div>
+                                                </IonCol>
+                                            </IonRow>
                                         </div>
                                     </IonCol>
                                 </IonRow>

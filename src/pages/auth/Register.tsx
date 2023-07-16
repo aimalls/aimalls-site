@@ -1,7 +1,11 @@
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink, useIonAlert } from '@ionic/react'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonButton, IonInput, IonLabel, IonCheckbox, IonRouterLink, useIonAlert, IonItem, IonIcon, useIonLoading } from '@ionic/react'
 import React, { useEffect, useMemo, useState } from 'react'
 import '../../styles/auth/Register.scss'
 import Logo from '../../assets/images/logo-full.png'
+
+
+import registerBg from '../../assets/images/auth-bg4.jpg'
+import registerBgPlaceholder from '../../assets/images/auth-bg4-placeholder.jpg'
 
 
 // import facebook from '../../assets/images/facebook-logo.png'
@@ -13,6 +17,8 @@ import gmailIcon from '../../assets/images/google.png'
 import { Register as RegisterRequest } from '../../requests/auth.request'
 import { useLocalStorage } from 'usehooks-ts'
 import getGoogleAuthURL from '../../helpers/googleAuth'
+import { lockClosed, mail } from 'ionicons/icons'
+import { useProgressiveImage } from '../../hooks/ProgressiveImage'
 
 const Register: React.FC = () => {
     
@@ -20,10 +26,14 @@ const Register: React.FC = () => {
     const [privacyPolicy, setPrivacyPolicy] = useState(false);
     const [termsandConditions, setTermsandConditions] = useState(false);
     const [referrer, setReferrer] = useLocalStorage("referrer", '')
+    
+    const loaded_bg = useProgressiveImage(registerBg);
 
     
 
     const [presentAlert] = useIonAlert();
+
+    const [present, dismiss] = useIonLoading();
 
     const [registrationForm, setRegistrationForm] = useState({
         email: '',
@@ -57,16 +67,16 @@ const Register: React.FC = () => {
     const processRegistration = async () => {
         try {
             // console.log(registrationForm)
+            await present();
             await RegisterRequest(registrationForm.email, registrationForm.password, registrationForm.confirm_password, registrationForm.referrer)
             setVerified(true)
         } catch (error: any) {
             presentAlert(error.response.data.error)
+        } finally {
+            await dismiss();
         }
         
     }
-
-    
-    
     return (
         <div id='register'>
             <IonPage>
@@ -75,57 +85,98 @@ const Register: React.FC = () => {
                             <div id="register-content">
                                 <IonGrid className='ion-no-padding'>
                                     <IonRow className='ion-justify-content-between'>
-                                        <IonCol size='12' sizeMd='8'>
-                                            <div className="register-column ">
+                                        <IonCol size='12' sizeSm='12' sizeMd='8'>
+                                            <div className="register-column" style={{ backgroundImage: `url(${ loaded_bg || registerBgPlaceholder })` }}>
                                                 <IonRow className='ion-justify-content-center ion-padding'>
                                                     <IonCol size='12'>
-                                                        <div className="register-title" style={{ marginBottom: '30px' }}>Sign Up</div>
-                                                        <div className="register-description"></div>
+                                                        <div className='logo-mobile'>
+                                                            <IonRouterLink routerLink='/'>
+                                                                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }}>
+                                                                    <img src={ Logo } alt='aimalls' />
+                                                                </div>
+                                                            </IonRouterLink>
+                                                        </div>
+                                                        <div className="register-title" style={{ marginBottom: '30px' }}>Sign up to add an Account</div>
                                                     </IonCol>
-                                                    <IonCol size='12' sizeMd='9'>
+                                                    <IonCol size='12' sizeSm='9' sizeMd='7'>
                                                         <IonButton expand='block' size='large' color={'light'} href={getGoogleAuthURL(import.meta.env.VITE_GOOGLE_AUTH_REDIRECT_URL)}>
                                                             <img src={gmailIcon} alt="Google Icon" height={25} />
                                                             <div className='sign-up-title'>Sign In with Google</div>
                                                         </IonButton>
                                                         <div className='line-break'>or</div>
                                                     </IonCol>
-                                                    <IonCol size='12' sizeMd='9'>
-                                                        <IonInput 
-                                                            label='Email' 
-                                                            className='inputs ion-margin-top'
-                                                            labelPlacement="floating" 
-                                                            placeholder='Enter your Email' 
-                                                            type='email'
-                                                            value={registrationForm.email}
-                                                            disabled={ isGmail }
-                                                            onIonChange={(val) => handleFormChange('email', val.detail)}
-                                                        />
-                                                        
-                                                        <IonInput 
-                                                            label='Password' 
-                                                            className='inputs ion-margin-top'
-                                                            labelPlacement="floating" 
-                                                            placeholder='Enter your Password'
-                                                            type='password'
-                                                            onIonChange={(val) => handleFormChange('password', val.detail)}
+                                                    <IonCol size='12' sizeSm='9' sizeMd='7'>
+                                                        <IonItem className=' inputs ion-margin-bottom'>
+                                                            <IonInput 
+                                                                label='Email' 
+                                                                aria-label='Email'
+                                                                labelPlacement="floating" 
+                                                                placeholder='Enter your Email' 
+                                                                type='email'
+                                                                value={registrationForm.email}
+                                                                disabled={ isGmail }
+                                                                onIonChange={(val) => handleFormChange('email', val.detail)}
                                                             />
-                                                        <IonInput 
-                                                            label='Confirm Password' 
-                                                            className='inputs ion-margin-top'
-                                                            labelPlacement="floating" 
-                                                            placeholder='Enter your Confirm Password'
-                                                            type="password"
-                                                            onIonChange={(val) => handleFormChange('confirm_password', val.detail)} 
-                                                        />
+                                                            <IonIcon icon={mail} color='light' slot='end' size='large'></IonIcon>
+                                                        </IonItem>
+                                                        <IonItem className=' inputs ion-margin-bottom'>
+                                                            <IonInput 
+                                                                label='Password' 
+                                                                aria-label='Password'
+                                                                labelPlacement="floating" 
+                                                                placeholder='Enter your Password'
+                                                                type='password'
+                                                                onIonChange={(val) => handleFormChange('password', val.detail)}
+                                                            />
+                                                            <IonIcon icon={lockClosed} color='light' slot='end' size='large'></IonIcon>
+                                                        </IonItem>
+                                                        <IonItem className=' inputs ion-margin-bottom'>
+                                                            <IonInput 
+                                                                label='Confirm Password'
+                                                                aria-label='Confirm Password'
+                                                                labelPlacement="floating" 
+                                                                className='inputs-content'
+                                                                placeholder='Enter your Confirm Password'
+                                                                type="password"
+                                                                onIonChange={(val) => handleFormChange('confirm_password', val.detail)} 
+                                                            />
+                                                            <IonIcon icon={lockClosed} color='light' slot='end' size='large'></IonIcon>
+                                                        </IonItem>
                                                         <div className="terms-and-conditions">
-                                                            <IonCheckbox labelPlacement='end'  onIonChange={(val) => setTermsandConditions(val.detail.checked)}>I accept the</IonCheckbox>
+                                                            <IonCheckbox labelPlacement='end'  onIonChange={(val) => setTermsandConditions(val.detail.checked)}>
+                                                                I accept the
+                                                            </IonCheckbox>
                                                             <a href="/terms-and-conditions" target='_blank'>Terms and Conditions</a>
                                                         </div>
                                                         <div className='privacy-policy'>
-                                                            <IonCheckbox labelPlacement='end'  onIonChange={(val) => setPrivacyPolicy(val.detail.checked)}>I agree to the</IonCheckbox>
+                                                            <IonCheckbox labelPlacement='end'  onIonChange={(val) => setPrivacyPolicy(val.detail.checked)}>
+                                                                I agree to the
+                                                            </IonCheckbox>
                                                             <a href="/privacy-policy" target='_blank'>Privacy Policy</a>
                                                         </div>
-                                                        <IonButton onClick={processRegistration} disabled={ (!privacyPolicy || !termsandConditions) } expand='block' size='large' shape='round'>Register</IonButton>
+                                                        <IonButton 
+                                                            onClick={processRegistration} 
+                                                            disabled={ (!privacyPolicy || !termsandConditions) } 
+                                                            expand='block' 
+                                                            size='large' 
+                                                            shape='round'
+                                                            style={{textTransform: "capitalize", fontFamily: "WorkSans-Regular"}}
+                                                        >
+                                                            Register
+                                                        </IonButton>
+                                                        <div className='login-button-mobile'>
+                                                            <div className="login-button-mobile-content">
+                                                                <div>Already Have an Account?</div>
+                                                                <IonButton 
+                                                                    routerLink='/login' 
+                                                                    size='small' 
+                                                                    style={{ textTransform: "capitalize", fontSize: "17px", fontFamily: "WorkSans-Regular" }} 
+                                                                    fill='clear'
+                                                                >
+                                                                    Login
+                                                                </IonButton>
+                                                            </div>
+                                                        </div>
                                                     </IonCol>
                                                 </IonRow>    
                                             </div>
@@ -134,10 +185,15 @@ const Register: React.FC = () => {
                                             <div className="login-column">
                                                 <IonRow className='ion-justify-content-center al'>
                                                     <IonCol size='12'>
-                                                        <IonRouterLink routerLink='/'><div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }} ><img src={ Logo } alt='aimalls' /></div></IonRouterLink>
+                                                        <IonRouterLink routerLink='/'>
+                                                            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "30px" }} >
+                                                                <img src={ Logo } alt='aimalls' />
+                                                            </div>
+                                                        </IonRouterLink>
                                                         <div className="login-title">Welcome Back!</div>
                                                         <div className="login-description">
-                                                            Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
+                                                            Rediscover the wonders of AI malls. Log in today and immerse yourself in a world of seamless shopping, 
+                                                            intelligent recommendations, and delightful surprises. Your AI-powered retail adventure awaits!
                                                         </div>
                                                     </IonCol>
                                                     <IonCol size='12' sizeMd='7'>
@@ -172,8 +228,6 @@ const Register: React.FC = () => {
                                                 Your registration is almost done, please check your email to complete the verification of your account!
                                             </div>
                                         )}
-                                        
-                                        
                                     </IonCol>
                                     <IonCol size='12' sizeMd='6' className='ion-marigin-top'>
                                         <IonButton expand='block' shape='round' size='large' color={'light'} href='/login'>
