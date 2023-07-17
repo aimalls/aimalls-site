@@ -20,6 +20,8 @@ import { isPlatform } from '@ionic/react';
 
 import Thumb from "../assets/images/thumb.jpg"
 import { Header } from './home-parts/Header';
+import Featured from './home-parts/Featured';
+import Partners from './home-parts/Partners';
 
 const Home: React.FC = () => {
     const [loading, setLoading] = useState(false)
@@ -54,6 +56,8 @@ const Home: React.FC = () => {
                 {/* <TokenomicsSection /> */}
                 <RoadMap />
                 <FAQSection />
+                <Featured />
+                <Partners />
                 <FooterSection />
             </IonContent>
         </IonPage>
