@@ -14,24 +14,24 @@ const Featured: React.FC = () => {
 
     const featured_content = [
         {
-            title: "BSC",
-            img: BSCLogo,
-            link: "https://twitter.com/bsc_daily/status/1678078741443133441?fbclid=IwAR3bJK-j4QEEcV9iUM_RG7ieju-ravNkJxGMR3-LLqRxHuIgFqQ7W_LuStA"
-        },
-        {
-            title: "CoinWire",
-            img: CoinWireLogo,
-            link: 'https://aimalls.medium.com/powering-the-future-of-ecommerce-through-a-dynamic-partnership-19c9c56b0583'
-        },
-        {
             title: "Yahoo! Finance",
             img: YahooLogo,
             link: "https://finance.yahoo.com/news/aimalls-unveils-future-shopping-ai-152000205.html"
         },
         {
+            title: "CoinWire",
+            img: CoinWireLogo,
+            link: 'https://coinwire.com/from-algorithms-to-awesomeness-experience-next-level-shopping-with-aimalls/'
+        },
+        {
             title: "Bloomberg",
             img: BloombergLogo,
             link: "https://www.bloomberg.com/press-releases/2023-06-29/aimalls-unveils-the-future-of-shopping-with-ai-powered-online-store?fbclid=IwAR23IWKUdDzimAKfUklF9JcDQHTYRhm18ASHjdUIDq9Oq5s50C2BEFT9MxY"
+        },
+        {
+            title: "BSC",
+            img: BSCLogo,
+            link: "https://twitter.com/bsc_daily/status/1678078741443133441?fbclid=IwAR3bJK-j4QEEcV9iUM_RG7ieju-ravNkJxGMR3-LLqRxHuIgFqQ7W_LuStA"
         },
         {
             title: "Business Insider",

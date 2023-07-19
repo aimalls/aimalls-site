@@ -1,4 +1,4 @@
-import { IonGrid, IonRow, IonCol } from '@ionic/react'
+import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react'
 import React from 'react'
 
 import BSCLogo from '../../assets/images/Partners-Featured-Logos/Bsc.png'
@@ -10,20 +10,24 @@ const Partners: React.FC = () => {
 
     const partners_content = [
         {
-            title: "BSC",
-            img: BSCLogo
+            title: "CoinWire",
+            img: CoinwireLogo,
+            link: "https://coinwire.com/"
         },
         {
-            title: "CoinWire",
-            img: CoinwireLogo
+            title: "BSC",
+            img: BSCLogo,
+            link: "https://twitter.com/bsc_daily"
         },
         {
             title: "Agora",
-            img: AgoraLogo
+            img: AgoraLogo,
+            link: "https://agoragroup.ae/"
         },
         {
             title: "CoinMarketCap",
-            img: CoinMarketCapLogo
+            img: CoinMarketCapLogo,
+            link: "https://coinmarketcap.com/"
         }
     ]
 
@@ -39,9 +43,9 @@ const Partners: React.FC = () => {
                     { partners_content.map((partner, index) => (
                         <IonCol key={index} size='12' sizeSm='6' sizeMd='4' sizeLg='3'>
                             <div  style={{ display: "flex", justifyContent: "center"}}>
-                                <div style={{height: "auto", margin: "20px 10px"}}>
+                                <IonButton fill='clear' href={partner.link} color={"light"} style={{height: "auto", margin: "20px 0"}} target='_blank'>
                                     <img src={partner.img} alt={`${partner.title} Logo`} width={200} />
-                                </div>
+                                </IonButton>
                             </div>
                         </IonCol>
                     )) }
