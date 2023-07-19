@@ -34,7 +34,7 @@ export const RoadMap: React.FC = () => {
                         </div>
                     </IonCol>
                     <IonCol size="12" sizeSm="12" sizeMd="5" sizeLg="4">
-                        <div className="content-title">2023</div>
+                        <div className="content-title">2024</div>
                         <div className="content">
                             <div className="quarter">Q1</div>
                             <div className="quarter-details">Testing AI Integration Quality Assurance</div>
