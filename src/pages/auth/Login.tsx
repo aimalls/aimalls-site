@@ -104,7 +104,7 @@ const Login: React.FC = () => {
                                                             label='Email'
                                                             required
                                                             value={email}
-                                                            onIonChange={(val) => setEmail(val.detail.value!)}
+                                                            onIonInput={(val) => setEmail(val.detail.value!)}
                                                         />
                                                     </IonItem>
                                                 </div>
@@ -120,7 +120,7 @@ const Login: React.FC = () => {
                                                             placeholder='Enter your Password'
                                                             type='password'
                                                             required
-                                                            onIonChange={(val) => setPassword(val.detail.value!)}
+                                                            onIonInput={(val) => setPassword(val.detail.value!)}
                                                         >
                                                             
                                                         </IonInput>
