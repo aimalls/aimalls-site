@@ -34,6 +34,7 @@
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
     "sass": "^1.63.5",
+    "swiper": "^10.1.0",
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {

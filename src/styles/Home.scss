@@ -432,6 +432,20 @@
         }
     }
 
+    #aimalls-app-overview {
+        background: #1e110e;
+        padding-bottom: 50px;
+        .header-title {
+            color: #FFF;
+            font-size: 40px;
+            font-family: 'WorkSans-Bold';
+
+            span {
+                color: var(--ion-color-primary);
+            }
+        }
+    }
+
     #future-of-shopping-section {
         min-height: 500px;
         background-repeat: no-repeat;

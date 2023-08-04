@@ -22,6 +22,7 @@ import Thumb from "../assets/images/thumb.jpg"
 import { Header } from './home-parts/Header';
 import Featured from './home-parts/Featured';
 import Partners from './home-parts/Partners';
+import AppOverview from './home-parts/AppOverview';
 
 const Home: React.FC = () => {
     const [loading, setLoading] = useState(false)
@@ -45,6 +46,7 @@ const Home: React.FC = () => {
             <IonContent fullscreen>
                 <HeroSection />
                 <AboutSection />
+                <AppOverview />
                 <FutureOfShoppingSection />
                 <DiscoverBenefits />
                 <FutureOfShoppingV2Section />
