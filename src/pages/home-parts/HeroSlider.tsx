@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation'
 import '@ionic/react/css/ionic-swiper.css';
 
+import signUp from '../../assets/images/banners/Sign-up.png'
+import welcome from '../../assets/images/banners/WELCOME.png'
 
 import account from '../../assets/images/banners/account.png'
 import addToCart from '../../assets/images/banners/add_to_cart.png'
@@ -32,41 +34,39 @@ import scan from '../../assets/images/banners/SCAN.png'
 import scan2 from '../../assets/images/banners/SCAN-1.png'
 import search from '../../assets/images/banners/Search.png'
 import settings from '../../assets/images/banners/Settings.png'
-import signUp from '../../assets/images/banners/Sign-up.png'
 import trackOrder from '../../assets/images/banners/track-order.png'
 import verify from '../../assets/images/banners/VERIFY.png'
-import welcome from '../../assets/images/banners/WELCOME.png'
 import { useScreen } from '../../hooks/ScreenSize';
 import { SocialButtons } from '../../components/SocialButtons';
 
 
 const HeroSlider: React.FC = () => {
-
+	
 	const slideContent = [
-		{ title: 'Account', img: account },
-		{ title: 'Add To Cart', img: addToCart },
-		{ title: 'Add To Cart', img: addToCart2 },
-		{ title: 'Checkout', img: cart },
-		{ title: 'Choices', img: choice },
-		{ title: 'Choices', img: choice2 },
-		{ title: 'Completed Orders', img: completed },
-		{ title: 'Confirm Order', img: confirm },
-		{ title: 'Email Confirmation', img: done },
-		{ title: 'Payment Methods', img: fillOut },
-		{ title: 'Forgot Password', img: forgotPassword },
-		{ title: 'Home', img: home },
-		{ title: 'Login Account Save Account', img: login },
-		{ title: 'Login', img: login2 },
-		{ title: 'Ongoing Orders', img: ongoing },
-		{ title: 'Order Placed', img: orderPlace },
+		{ title: 'Sign Up', img: signUp },
+		{ title: 'Sign up using your mobile number', img: welcome },
 		{ title: 'OTP', img: otp },
-		{ title: 'Payment Method', img: paymentMethod },
+		{ title: 'Mobile Number Verified', img: verify },
+		{ title: 'Forgot Password', img: forgotPassword },
+		{ title: 'Email Confirmation', img: done },
+		{ title: 'Login', img: login2 },
+		{ title: 'Home', img: home },
+		{ title: 'Search', img: search },
 		{ title: 'Scan', img: scan },
 		{ title: 'Scan Results', img: scan2 },
-		{ title: 'Search', img: search },
-		{ title: 'Settings', img: settings },
-		{ title: 'Sign Up', img: signUp },
+		{ title: 'Choices', img: choice },
+		{ title: 'Add To Cart', img: addToCart },
+		{ title: 'Confirm Order', img: confirm },
+		{ title: 'Checkout', img: cart },
+		{ title: 'Payment Method', img: paymentMethod },
+		{ title: 'Payment Methods', img: fillOut },
+		{ title: 'Order Placed', img: orderPlace },
+		{ title: 'Completed Orders', img: completed },
+		{ title: 'Ongoing Orders', img: ongoing },
 		{ title: 'Track Order', img: trackOrder },
+		{ title: 'Account', img: account },
+		{ title: 'Settings', img: settings },
+		{ title: 'Login Save Account', img: login },
 	]
 
 	const [chunkedSlides, setChunkedSlides] = useState([]);
