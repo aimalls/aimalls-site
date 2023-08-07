@@ -5,6 +5,8 @@ import BSCLogo from '../../assets/images/Partners-Featured-Logos/Bsc.png'
 import CoinwireLogo from '../../assets/images/Partners-Featured-Logos/Coinwire-2.png'
 import AgoraLogo from '../../assets/images/Partners-Featured-Logos/Agora.png'
 import CoinMarketCapLogo from '../../assets/images/Partners-Featured-Logos/Coinmarket.png'
+import TrustFi from '../../assets/images/Partners-Featured-Logos/Trustfi.png'
+import Mexc from '../../assets/images/Partners-Featured-Logos/Mexc.png'
 
 const Partners: React.FC = () => {
 
@@ -28,6 +30,16 @@ const Partners: React.FC = () => {
             title: "CoinMarketCap",
             img: CoinMarketCapLogo,
             link: "https://coinmarketcap.com/"
+        },
+        {
+            title: "TrustFi",
+            img: TrustFi,
+            link: "https://www.trustfi.org/"
+        },
+        {
+            title: "MEXC",
+            img: Mexc,
+            link: "https://www.mexc.com/"
         }
     ]
 
