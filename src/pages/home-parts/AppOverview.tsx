@@ -21,9 +21,6 @@ import SwiperEvents from "swiper";
 
 export const AppOverview: FC<iProps> = (props): JSX.Element => {
 
-    const handleTransition = (e: SwiperEvents) => {
-        console.log(e)
-    }
 
     return (
         <div id="aimalls-app-overview">
@@ -41,7 +38,6 @@ export const AppOverview: FC<iProps> = (props): JSX.Element => {
                         pagination={true}
                         zoom={true}
                         loop={true}
-                        onSlideNextTransitionStart={handleTransition}
                     >
                         <SwiperSlide>
                             <img src={ banner1 } slot="app overview" />

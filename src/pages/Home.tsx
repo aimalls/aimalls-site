@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             {/* <img src={Thumb} alt="test thumb" style={{ display: 'none' }} /> */}
             <Header />
             <IonContent fullscreen>
-                <HeroSlider />
+                {/* <HeroSlider /> */}
                 <HeroSection />
                 <AboutSection />
                 <AppOverview />

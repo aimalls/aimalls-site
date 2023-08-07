@@ -1,8 +1,8 @@
-import { IonGrid, IonRow, IonCol } from '@ionic/react'
-import React from 'react'
+import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Keyboard, Pagination, Scrollbar, Navigation } from 'swiper/modules';
+import { Keyboard, Pagination, Scrollbar, Navigation, Autoplay, Zoom } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/keyboard';
 import 'swiper/css/pagination';
@@ -36,6 +36,8 @@ import signUp from '../../assets/images/banners/Sign-up.png'
 import trackOrder from '../../assets/images/banners/track-order.png'
 import verify from '../../assets/images/banners/VERIFY.png'
 import welcome from '../../assets/images/banners/WELCOME.png'
+import { useScreen } from '../../hooks/ScreenSize';
+import { SocialButtons } from '../../components/SocialButtons';
 
 
 const HeroSlider: React.FC = () => {
@@ -65,36 +67,78 @@ const HeroSlider: React.FC = () => {
 		{ title: 'Settings', img: settings },
 		{ title: 'Sign Up', img: signUp },
 		{ title: 'Track Order', img: trackOrder },
-		{ title: 'Verified Member', img: verify },
-		{ title: 'Sign up using mobile number', img: welcome },
 	]
 
+	const [chunkedSlides, setChunkedSlides] = useState([]);
+	const { screenWidth } = useScreen();
+
+	useEffect(() => {
+		let chunkSize = 4;
+		if (screenWidth < 768 && screenWidth > 576 ) {
+			chunkSize = 2
+		} else if(screenWidth < 576) {
+			chunkSize = 1
+		}
+		for (let i = 0; i < slideContent.length; i += chunkSize) {
+			const chunk = slideContent.slice(i, i + chunkSize)
+			setChunkedSlides((current) => {
+				let curr = [...current, chunk] as any
+
+				return curr;
+			})
+		}
+
+	}, [])
+
+
 	return (
-		<div id='hero-slider'>
-			<IonGrid>
-				<IonRow>
-					<IonCol size="12" sizeSm="12" sizeMd="12">
-						<Swiper modules={[Keyboard, Pagination, Scrollbar, Navigation]}
-							keyboard={true}
-							navigation={true}
-							pagination={true}
-							loop={true}
-							className="mySwiper"
-						>
-							{ slideContent.map((slide, index) => (
-								<SwiperSlide key={index}>
-									<div>
-										{slide.title}
-									</div>
-									<img src={slide.img} alt={slide.title} />
-								</SwiperSlide>
+		<Swiper modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom]}
+			autoplay={true}
+			keyboard={true}
+			pagination={true}
+			zoom={true}
+			loop={true}
+		>
+			<SwiperSlide>
+				<IonGrid className="container" style={{ alignSelf: "center" }}>
+					<IonRow className={screenWidth <= 768 ? `ion-justify-content-center` : ''}>
+						<IonCol size="10" sizeMd="5" sizeLg="4" pushMd="1">
+							<div className="hero-tagline">Experience the <span>Future of Shopping </span> with <span>AI</span></div>
+							<div className="hero-caption">It is an AI-powered online mall, a platform and an app that uses intelligent algorithms.</div>
+							<div className="hero-action-buttons">
+								<IonButton color="primary" shape="round" href="#about-section">Get Started</IonButton>
+								<IonButton color="primary" shape="round" href="https://cdn.aimalls.app/whitepaper.pdf" target="_blank">Whitepaper</IonButton>
+							</div>
+						</IonCol>
+					</IonRow>
+					<IonRow className="ion-justify-content-center ion-hide-md-up">
+						<IonCol size="10" pushMd="1" className="hero-social-buttons">
+							<SocialButtons />
+						</IonCol>
+					</IonRow>
+				</IonGrid>
+			</SwiperSlide>
+			{chunkedSlides.map((chunkSlide: any, index) => (
+				<SwiperSlide key={index}>
+					<IonGrid className='container'>
+						<IonRow className='ion-justify-content-center'>
+							<IonCol size='10'>
+								<div className="hero-tagline">AIMalls <span>App</span></div>
+							</IonCol>
+							<IonCol size='10' style={{ display: 'flex', justifyContent: 'center' }}>
+								
+							{chunkSlide?.map((slide: any, index: number) => (
+								<div key={index}>
+									<img style={{ maxHeight: 400, padding: '0px 20px' }} src={slide.img} alt={slide.title} />
+								</div>
 							))}
-						</Swiper>
-					</IonCol>
-				</IonRow>
-			</IonGrid>
-		</div>
+							</IonCol>
+						</IonRow>
+					</IonGrid>
+				</SwiperSlide>
+			))}
+		</Swiper>
 	)
-	}
+}
 
 export default HeroSlider

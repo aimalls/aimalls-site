@@ -9,6 +9,7 @@ import { useEffect, useRef } from "react"
 
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import HeroSlider from "./HeroSlider"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -54,7 +55,8 @@ export const HeroSection = () => {
             <div className="social-buttons ion-hide-md-down">
                 <SocialButtons />
             </div>
-            <IonGrid className="container" style={{ alignSelf: "center" }}>
+            <HeroSlider />
+            {/* <IonGrid className="container" style={{ alignSelf: "center" }}>
                 <IonRow className={screenWidth <= 768 ? `ion-justify-content-center` : ''}>
                     <IonCol size="10" sizeMd="5" sizeLg="4" pushMd="1">
                         <div className="hero-tagline">Experience the <span>Future of Shopping </span> with <span>AI</span></div>
@@ -64,13 +66,16 @@ export const HeroSection = () => {
                             <IonButton color="primary" shape="round" href="https://cdn.aimalls.app/whitepaper.pdf" target="_blank">Whitepaper</IonButton>
                         </div>
                     </IonCol>
+                    <IonCol size="10" sizeMd="6" sizeLg="7" pushMd="1">
+                        <HeroSlider />
+                    </IonCol>
                 </IonRow>
                 <IonRow className="ion-justify-content-center ion-hide-md-up">
                     <IonCol size="10" pushMd="1" className="hero-social-buttons">
                         <SocialButtons />
                     </IonCol>
                 </IonRow>
-            </IonGrid>
+            </IonGrid> */}
         </div>
     )
 }
