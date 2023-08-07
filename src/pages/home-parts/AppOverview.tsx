@@ -17,8 +17,14 @@ import banner1 from "../../assets/images/banners/20230804_225156_0000.png"
 import banner2 from "../../assets/images/banners/20230804_225156_0001.png"
 import banner3 from "../../assets/images/banners/20230804_225156_0002.png"
 import banner4 from "../../assets/images/banners/20230804_225156_0003.png"
+import SwiperEvents from "swiper";
 
 export const AppOverview: FC<iProps> = (props): JSX.Element => {
+
+    const handleTransition = (e: SwiperEvents) => {
+        console.log(e)
+    }
+
     return (
         <div id="aimalls-app-overview">
             <IonGrid className="container">
@@ -35,6 +41,7 @@ export const AppOverview: FC<iProps> = (props): JSX.Element => {
                         pagination={true}
                         zoom={true}
                         loop={true}
+                        onSlideNextTransitionStart={handleTransition}
                     >
                         <SwiperSlide>
                             <img src={ banner1 } slot="app overview" />
