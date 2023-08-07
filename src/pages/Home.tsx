@@ -23,6 +23,7 @@ import { Header } from './home-parts/Header';
 import Featured from './home-parts/Featured';
 import Partners from './home-parts/Partners';
 import AppOverview from './home-parts/AppOverview';
+import HeroSlider from './home-parts/HeroSlider';
 
 const Home: React.FC = () => {
     const [loading, setLoading] = useState(false)
@@ -44,6 +45,7 @@ const Home: React.FC = () => {
             {/* <img src={Thumb} alt="test thumb" style={{ display: 'none' }} /> */}
             <Header />
             <IonContent fullscreen>
+                <HeroSlider />
                 <HeroSection />
                 <AboutSection />
                 <AppOverview />
