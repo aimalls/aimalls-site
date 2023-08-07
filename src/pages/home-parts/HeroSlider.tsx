@@ -93,7 +93,10 @@ const HeroSlider: React.FC = () => {
 
 	return (
 		<Swiper modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom]}
-			autoplay={true}
+			autoplay={{
+				delay: 3000,
+				disableOnInteraction: false,
+			}}
 			keyboard={true}
 			pagination={true}
 			zoom={true}
