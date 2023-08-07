@@ -123,7 +123,7 @@ const HeroSlider: React.FC = () => {
 					<IonGrid className='container'>
 						<IonRow className='ion-justify-content-center'>
 							<IonCol size='10'>
-								<div className="hero-tagline">AIMalls <span>App</span></div>
+								<div className="hero-tagline ion-text-center">AIMalls <span>App</span></div>
 							</IonCol>
 							<IonCol size='10' style={{ display: 'flex', justifyContent: 'center' }}>
 								
