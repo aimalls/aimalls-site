@@ -24,6 +24,7 @@ import Featured from './home-parts/Featured';
 import Partners from './home-parts/Partners';
 import AppOverview from './home-parts/AppOverview';
 import HeroSlider from './home-parts/HeroSlider';
+import LicensesAcquired from './home-parts/LicensesAcquired';
 
 const Home: React.FC = () => {
     const [loading, setLoading] = useState(false)
@@ -48,6 +49,7 @@ const Home: React.FC = () => {
                 {/* <HeroSlider /> */}
                 <HeroSection />
                 <AboutSection />
+                <LicensesAcquired />
                 <AppOverview />
                 <FutureOfShoppingSection />
                 <DiscoverBenefits />
