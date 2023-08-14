@@ -7,10 +7,18 @@ import AgoraLogo from '../../assets/images/Partners-Featured-Logos/Agora.png'
 import CoinMarketCapLogo from '../../assets/images/Partners-Featured-Logos/Coinmarket.png'
 import TrustFi from '../../assets/images/Partners-Featured-Logos/Trustfi.png'
 import Mexc from '../../assets/images/Partners-Featured-Logos/Mexc.png'
+import Certik from "../../assets/images/certik.png"
+import Cryptorev from "../../assets/images/cryptorev.jpeg"
+import Cryptodet from "../../assets/images/cryptodetect.jpg"
 
 const Partners: React.FC = () => {
 
     const partners_content = [
+        {
+            title: "Certik",
+            img: Certik,
+            link: "https://certik.com/"
+        },
         {
             title: "CoinWire",
             img: CoinwireLogo,
@@ -40,6 +48,16 @@ const Partners: React.FC = () => {
             title: "MEXC",
             img: Mexc,
             link: "https://www.mexc.com/"
+        },
+        {
+            title: "Crypto Revolution",
+            img: Cryptorev,
+            link: "#"
+        },
+        {
+            title: "Crypto Detect",
+            img: Cryptodet,
+            link: "#"
         }
     ]
 
@@ -52,15 +70,15 @@ const Partners: React.FC = () => {
                     </IonCol>
                 </IonRow>
                 <IonRow className="ion-justify-content-center ion-align-items-center">
-                    { partners_content.map((partner, index) => (
+                    {partners_content.map((partner, index) => (
                         <IonCol key={index} size='12' sizeSm='6' sizeMd='4' sizeLg='3'>
-                            <div  style={{ display: "flex", justifyContent: "center"}}>
-                                <IonButton fill='clear' href={partner.link} color={"light"} style={{height: "auto", margin: "20px 0"}} target='_blank'>
+                            <div style={{ display: "flex", justifyContent: "center" }}>
+                                <IonButton fill='clear' href={partner.link} color={"light"} style={{ height: "auto", margin: "20px 0" }} target='_blank'>
                                     <img src={partner.img} alt={`${partner.title} Logo`} width={200} />
                                 </IonButton>
                             </div>
                         </IonCol>
-                    )) }
+                    ))}
                 </IonRow>
             </IonGrid>
         </div>
