@@ -67,7 +67,7 @@ export const HeroSection = () => {
                         </div>
                     </IonCol>
                     <IonCol size="10" sizeMd="5" pushMd="1">
-                        <iframe id="ytplayer" type="text/html" width="720" height="405"
+                        <iframe id="ytplayer" width="720" height="405"
                             style={{ aspectRatio: '16 / 9', width: '100%' }}
                             src="https://www.youtube.com/embed/6PxUtby8l8s?autoplay=1&controls=1"
                             frameBorder="0" allowFullScreen>
