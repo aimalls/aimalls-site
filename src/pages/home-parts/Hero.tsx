@@ -22,8 +22,8 @@ export const HeroSection = () => {
     const tl = useRef<any>();
 
     useEffect(() => {
-        if(hero.current) {
-            if(!tl.current) {
+        if (hero.current) {
+            if (!tl.current) {
                 tl.current = gsap.timeline()
                     .from(" .hero-tagline", {
                         opacity: 0,
@@ -35,30 +35,30 @@ export const HeroSection = () => {
                         y: 80,
                         duration: 0.5
                     })
-                    // .from(" .started-btn", {
-                    //     opacity: 0,
-                    //     x: -80,
-                    //     duration: 0.4
-                    // })
-                    
-                    // .from(" .whitepaper-btn", {
-                    //     opacity: 0,
-                    //     x: 80,
-                    //     duration: 0.4
-                    // })
+                // .from(" .started-btn", {
+                //     opacity: 0,
+                //     x: -80,
+                //     duration: 0.4
+                // })
+
+                // .from(" .whitepaper-btn", {
+                //     opacity: 0,
+                //     x: 80,
+                //     duration: 0.4
+                // })
             }
         }
     }, [])
 
     return (
-        <div id="hero-section"  ref={hero}  style={{ backgroundImage: `url(${ loaded_bg || heroBgPlaceholder })` }}>
+        <div id="hero-section" ref={hero} style={{ backgroundImage: `url(${loaded_bg || heroBgPlaceholder})` }}>
             <div className="social-buttons ion-hide-md-down">
                 <SocialButtons />
             </div>
-            <HeroSlider />
-            {/* <IonGrid className="container" style={{ alignSelf: "center" }}>
-                <IonRow className={screenWidth <= 768 ? `ion-justify-content-center` : ''}>
-                    <IonCol size="10" sizeMd="5" sizeLg="4" pushMd="1">
+            {/* <HeroSlider /> */}
+            <IonGrid className="container" style={{ alignSelf: "center" }}>
+                <IonRow className={screenWidth <= 768 ? `ion-justify-content-center` : 'ion-align-items-center'}>
+                    <IonCol size="10" sizeMd="5" sizeLg="5" pushMd="1">
                         <div className="hero-tagline">Experience the <span>Future of Shopping </span> with <span>AI</span></div>
                         <div className="hero-caption">It is an AI-powered online mall, a platform and an app that uses intelligent algorithms.</div>
                         <div className="hero-action-buttons">
@@ -66,8 +66,12 @@ export const HeroSection = () => {
                             <IonButton color="primary" shape="round" href="https://cdn.aimalls.app/whitepaper.pdf" target="_blank">Whitepaper</IonButton>
                         </div>
                     </IonCol>
-                    <IonCol size="10" sizeMd="6" sizeLg="7" pushMd="1">
-                        <HeroSlider />
+                    <IonCol size="10" sizeMd="5" pushMd="1">
+                        <iframe id="ytplayer" type="text/html" width="720" height="405"
+                            style={{ aspectRatio: '16 / 9', width: '100%' }}
+                            src="https://www.youtube.com/embed/6PxUtby8l8s?autoplay=1&controls=1"
+                            frameBorder="0" allowFullScreen>
+                        </iframe>
                     </IonCol>
                 </IonRow>
                 <IonRow className="ion-justify-content-center ion-hide-md-up">
@@ -75,7 +79,7 @@ export const HeroSection = () => {
                         <SocialButtons />
                     </IonCol>
                 </IonRow>
-            </IonGrid> */}
+            </IonGrid>
         </div>
     )
 }

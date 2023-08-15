@@ -7,8 +7,8 @@ import AgoraLogo from '../../assets/images/Partners-Featured-Logos/Agora.png'
 import CoinMarketCapLogo from '../../assets/images/Partners-Featured-Logos/Coinmarket.png'
 import TrustFi from '../../assets/images/Partners-Featured-Logos/Trustfi.png'
 import Mexc from '../../assets/images/Partners-Featured-Logos/Mexc.png'
-import Certik from "../../assets/images/certik.png"
-import Cryptorev from "../../assets/images/cryptorev.jpeg"
+import Certik from "../../assets/images/Partners-Featured-Logos/certik.png"
+import Cryptorev from "../../assets/images/Partners-Featured-Logos/cryptorev.png"
 import Cryptodet from "../../assets/images/cryptodetect.jpg"
 
 const Partners: React.FC = () => {
