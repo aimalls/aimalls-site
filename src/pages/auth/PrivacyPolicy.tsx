@@ -13,10 +13,10 @@ const PrivacyPolicy: React.FC = () => {
                             <IonCol size='12' sizeMd='8'>
                                 <div className='title'>Privacy Policy</div>
                                 <div className="revised-date">
-                                    <em>This Privacy Policy was last revised on 28 June, 2023.</em>
+                                    <em>This Privacy Policy was last revised on 16 August, 2023.</em>
                                 </div>
                                 <div className='description'>
-                                    At Aimalls, we value and respect your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you interact with our website, mobile application, and any related services (collectively referred to as "Services"). By using our Services, you consent to the practices described in this policy.
+                                    At Aimalls, we value your privacy and are committed to protecting it. This Privacy Policy outlines how we access, use, store, and share Google user data in connection with our website, mobile application, and other related services (collectively referred to as "Services"). By using our Services and agreeing to this Privacy Policy, you consent to our practices described herein.
                                 </div>
                             </IonCol>
                             <IonCol size='12' sizeMd='8'>
@@ -26,13 +26,20 @@ const PrivacyPolicy: React.FC = () => {
                                         1.1 Personal Information
                                     </div>
                                     <div className="content-description">
-                                        We may collect personal information that you provide directly to us when you use our Services. This may include your name, email address, postal address, phone number, and other information that can identify you personally.
+                                        We may collect information that you provide to us when interacting with our Services, including but not limited to your name, email address, postal address, and phone number.
                                     </div>
                                     <div className="content-sub-title">
-                                        1.2 Usage Information
+                                        1.2 Google User Data
                                     </div>
                                     <div className="content-description">
-                                        We automatically collect certain information about your use of our Services, including your IP address, browser type, operating system, device information, pages visited, and the dates and times of your interactions with our Services.
+                                        When you authorize our app through Google OAuth, we may access, use, and store the Google user data described in the OAuth consent screen. This may include data related to your Google profile, email, and other information that is necessary for the provision of our Services.
+                                    </div>
+
+                                    <div className="content-sub-title">
+                                        1.3 Usage Information
+                                    </div>
+                                    <div className="content-description">
+                                        We automatically collect information related to your use of our Services, such as IP address, browser type, and other related data.
                                     </div>
                                 </div>
                             </IonCol>
@@ -45,19 +52,19 @@ const PrivacyPolicy: React.FC = () => {
                                         2.1 Provide and Improve Services
                                     </div>
                                     <div className="content-description">
-                                        We use the information we collect to provide and improve our Services, customize your user experience, communicate with you, and fulfill your requests. This includes processing transactions, sending notifications, and responding to your inquiries.
+                                        We use the information we collect to offer, maintain, and enhance our Services, including processing transactions, responding to inquiries, and customizing your experience.
                                     </div>
                                     <div className="content-sub-title">
                                         2.2 Marketing and Promotions
                                     </div>
                                     <div className="content-description">
-                                        With your consent, we may use your contact information to send you promotional materials, newsletters, and other marketing communications. You can opt-out of receiving these communications at any time by following the instructions provided in the communication or contacting us directly.
+                                        With your consent, we may send promotional materials and other marketing-related communications. You may opt-out at any time.
                                     </div>
                                     <div className="content-sub-title">
                                         2.3 Legal Compliance
                                     </div>
                                     <div className="content-description">
-                                        We may use your information to comply with applicable laws, regulations, legal processes, and enforce our terms of service or other agreements.
+                                        We may use your information to comply with legal obligations and to enforce our terms and agreements.
                                     </div>
                                 </div>
                             </IonCol>
@@ -70,19 +77,13 @@ const PrivacyPolicy: React.FC = () => {
                                         3.1 Third-Party Service Providers
                                     </div>
                                     <div className="content-description">
-                                        We may share your personal information with trusted third-party service providers who assist us in operating our business and delivering our Services. These providers are obligated to protect your information and only use it for the purposes we specify.
+                                        We may share information with trusted third-party providers who assist us in providing our Services. Such providers are obligated to safeguard your information.
                                     </div>
                                     <div className="content-sub-title">
-                                        3.2 Business Transfers
+                                        3.2 Legal Requirements
                                     </div>
                                     <div className="content-description">
-                                        If Aimalls undergoes a merger, acquisition, or sale of all or a portion of its assets, your personal information may be transferred to the acquiring party. We will notify you via email and/or prominent notice on our website of any change in ownership or the use of your personal information.
-                                    </div>
-                                    <div className="content-sub-title">
-                                        3.3 Legal Requirements
-                                    </div>
-                                    <div className="content-description">
-                                        We may disclose your information if required to do so by law or in response to a valid request from government authorities, such as a court order or subpoena.
+                                        We may disclose information if legally required to do so by authorities or court orders.
                                     </div>
                                 </div>
                             </IonCol>
@@ -92,7 +93,7 @@ const PrivacyPolicy: React.FC = () => {
                                         4. Data Security
                                     </div>
                                     <div className="content-description">
-                                        We employ industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+                                        We implement industry-standard security measures to protect your information. While we strive to ensure security, we cannot guarantee absolute safety.
                                     </div>
                                 </div>
                             </IonCol>
@@ -102,27 +103,37 @@ const PrivacyPolicy: React.FC = () => {
                                         5. Children's Privacy
                                     </div>
                                     <div className="content-description">
-                                        Our Services are not intended for individuals under the age of 16. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal information from a child under 16, we will promptly delete it from our records.
+                                        Our Services are not designed for individuals under 16, and we do not knowingly collect personal information from children under 16.
                                     </div>
                                 </div>
                             </IonCol>
                             <IonCol size='12' sizeMd='8'>
                                 <div className="content">
                                     <div className="content-title">
-                                        6. Your Rights and Choices
+                                        6. Your Rights
                                     </div>
                                     <div className="content-description">
-                                        You have the right to access, update, correct, and delete your personal information in accordance with applicable laws. You may also request the restriction or cessation of the processing of your personal information. To exercise these rights or for any privacy-related inquiries, please contact us using the information provided at the end of this policy.
+                                        You may access, update, or delete your personal information according to applicable laws. Please contact us to exercise these rights.
                                     </div>
                                 </div>
                             </IonCol>
                             <IonCol size='12' sizeMd='8'>
                                 <div className="content">
                                     <div className="content-title">
-                                        7. Changes to this Privacy Policy
+                                        7. Links to Google API User Data Policy
                                     </div>
                                     <div className="content-description">
-                                        We reserve the right to modify this Privacy Policy at any time. If we make material changes, we will notify you by posting the updated.
+                                        This Privacy Policy complies with the Google API Service: User Data Policy, which governs how we access, use, store, and share Google user data. The privacy policy is linked to the OAuth Consent Screen on the Google API Console and can be accessed directly from our app’s home page.
+                                    </div>
+                                </div>
+                            </IonCol>
+                            <IonCol size='12' sizeMd='8'>
+                                <div className="content">
+                                    <div className="content-title">
+                                        8. Changes to this Privacy Policy
+                                    </div>
+                                    <div className="content-description">
+                                        We may update this Privacy Policy periodically. We will notify you of significant changes by posting the updated policy.
                                     </div>
                                 </div>
                             </IonCol>
