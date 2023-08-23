@@ -8,6 +8,10 @@ import CoinMarketCapLogo from '../../assets/images/Partners-Featured-Logos/Coinm
 import TrustFi from '../../assets/images/Partners-Featured-Logos/Trustfi.png'
 import Mexc from '../../assets/images/Partners-Featured-Logos/Mexc.png'
 
+import KingdomStarter from '../../assets/images/Partners-Featured-Logos/KingdomStarter.jpg'
+
+import ixir from '../../assets/images/Partners-Featured-Logos/Ixirpad.png'
+
 const Partners: React.FC = () => {
 
     const partners_content = [
@@ -40,6 +44,16 @@ const Partners: React.FC = () => {
             title: "MEXC",
             img: Mexc,
             link: "https://www.mexc.com/"
+        },
+        {
+            title: "KingdomStarter",
+            img: KingdomStarter,
+            link: "https://kingdomstarter.io/"
+        },
+        {
+            title: "IXIR",
+            img: ixir,
+            link: "https://www.ixirpad.com/"
         }
     ]
 
