@@ -1,5 +1,5 @@
 import { FC, useEffect, useMemo, useState } from "react";
-import { IonButton, IonCheckbox, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonItem, IonLabel, IonList, IonModal, IonPage, IonRange, IonRow, useIonAlert, useIonLoading, useIonToast } from "@ionic/react";
+import { CheckboxCustomEvent, IonButton, IonCheckbox, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonItem, IonLabel, IonList, IonModal, IonPage, IonRange, IonRow, useIonAlert, useIonLoading, useIonToast } from "@ionic/react";
 import { useHistory } from "react-router";
 
 // import { useAccount, useConnect, useDisconnect, useContractRead  } from 'wagmi'
@@ -136,11 +136,7 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
     }
 
 
-    const [applicationSubmitted, setApplicationSubmitted] = useState(true);
-
-    const handleApplicationSubmit = () => {
-        setApplicationSubmitted(true)
-    }
+    const [applicationSubmitted, setApplicationSubmitted] = useState(false);
 
     const handleApplicationReset = () => {
         
@@ -164,7 +160,7 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
 
     const handleTaskNextStep = async () => {
         if (twitterHandle == "" || telegramHandle == "" || facebookHandle == "") {
-            await presentToast("Please fill-in all required fields!", 10000)
+            await presentToast("Please fill-in all required fields!", 3000)
             return
         }
         nextStep();
@@ -172,14 +168,25 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
 
     const [fullName, setFullname] = useState("");
     const [email, setEmail] = useState("");
+    const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(false);
 
     const handleBasicInfoNextStep = async () => {
         if (fullName == "" || email == "") {
-            await presentToast("Please fill-in all required fields!", 10000)
+            await presentToast("Please fill-in all required fields!", 3000)
             return
         }
+
+        if (!privacyPolicyAccepted) {
+            await presentToast("Please review and accept the privacy policy if you wish to continue.", 3000)
+        }
+
         refetchTokenBalances();
         nextStep();
+    }
+
+    const handlePrivacyPolicyAccept = (e: CheckboxCustomEvent) => {
+        const { checked } = e.detail;
+        setPrivacyPolicyAccepted(checked)
     }
 
     const handleTokenHoldingsNextStep = async () => {
@@ -357,6 +364,13 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                                         placeholder="Please type your email address"
                                         onIonInput={({ detail }) => setEmail(detail.value!)}
                                     ></IonInput>
+                                    
+                                </IonCol>
+                                <IonCol size="12" style={{ display: 'flex', justifyContent: 'center' }}>
+                                    <IonCheckbox labelPlacement='end' value={privacyPolicyAccepted} onIonChange={(e) => handlePrivacyPolicyAccept(e)}>
+                                        I agree to the 
+                                    </IonCheckbox>
+                                    <a href="/whitelist/privacy-policy" target='_blank' style={{ marginLeft: '3px' }}> Privacy Policy</a>
                                 </IonCol>
                             </IonRow>
                             <IonRow className="ion-justify-content-end">
@@ -364,7 +378,7 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                                     <IonButton expand="block" onClick={prevStep}>Back</IonButton>
                                 </IonCol>
                                 <IonCol size="12" sizeMd="4" style={{ marginTop: '30px' }}>
-                                    <IonButton expand="block" onClick={handleBasicInfoNextStep}>Next</IonButton>
+                                    <IonButton expand="block" onClick={handleBasicInfoNextStep} disabled={ !privacyPolicyAccepted }>Next</IonButton>
                                 </IonCol>
                             </IonRow>
                         </IonCol>
