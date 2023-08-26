@@ -230,6 +230,7 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
             presentToast(result.message, 5000);
             setFullname("");
             setEmail("");
+            setPrivacyPolicyAccepted(false)
             setTwitterHandle("");
             setTelegramHandle("");
             setFacebookHandle("");
