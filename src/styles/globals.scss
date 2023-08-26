@@ -35,6 +35,12 @@ body {
     align-items: center;
 }
 
+.whitelist-modal::part(content) {
+    background: rgb(255,255,255);
+    background: url('../assets/images/blurry-gradient-haikei.png') center center no-repeat;
+    background-size: cover;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         margin: 0px 1%;

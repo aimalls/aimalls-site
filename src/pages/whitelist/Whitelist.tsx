@@ -23,6 +23,8 @@ import "../../styles/pages/whitelist/Whitelist.scss"
 import { useQuery } from "@tanstack/react-query";
 import { getRequiredTokenHoldingsFromAPI, getWhitelistTasksFromAPI, iWhitelistTask, saveWhitelistApplicationToAPI } from "../../requests/whitelist.request";
 import { refresh } from "ionicons/icons";
+
+import logoRobot from "../../assets/images/logo-robot.png"
   
 
 export interface iProps {}
@@ -134,7 +136,7 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
     }
 
 
-    const [applicationSubmitted, setApplicationSubmitted] = useState(false);
+    const [applicationSubmitted, setApplicationSubmitted] = useState(true);
 
     const handleApplicationSubmit = () => {
         setApplicationSubmitted(true)
@@ -226,8 +228,8 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
             setFacebookHandle("");
             setAllocationAmount(100);
             setCurrentStep(1)
+            setApplicationSubmitted(true)
         } catch (err: any) {
-            console.log(err)
             presentToast(err, 5000)
         } finally {
             await dismiss();
@@ -438,12 +440,15 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                     </IonRow>
                     
                 </IonGrid>
-                <IonModal isOpen={applicationSubmitted}>
+                <IonModal isOpen={applicationSubmitted} className="whitelist-modal">
                     <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
                         <IonGrid>
                             <IonRow className="ion-justify-content-center">
-                                <IonCol size="10" className="ion-text-center">
-                                    Whitelisting Application Submitted Successfully!, Please check your email.
+                                <IonCol size="10" style={{ display: 'flex', justifyContent: 'center' }}>
+                                    <img src={logoRobot} style={{ objectFit: 'contain', height: '200px' }} />
+                                </IonCol>
+                                <IonCol size="10" className="ion-text-center" style={{ color: "#FFF" }}>
+                                    Whitelisting Application Submitted Successfully!, You'll be notified throught your email once we're done reviewing it.
                                 </IonCol>
                                 <IonCol size="8">
                                     <IonButton expand="block" onClick={() => handleApplicationReset()}>Finish</IonButton>
