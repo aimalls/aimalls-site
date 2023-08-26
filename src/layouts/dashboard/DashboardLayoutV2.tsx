@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonPage, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar, useIonAlert } from "@ionic/react";
-import { homeOutline, list, logOut, mail, menuOutline, people } from "ionicons/icons";
+import { homeOutline, list, logOut, mail, menuOutline, people, shieldCheckmarkOutline } from "ionicons/icons";
 import { FC, useContext, useEffect, useMemo, useState } from "react";
 import { Logout } from "../../requests/auth.request";
 import { useHistory } from "react-router";

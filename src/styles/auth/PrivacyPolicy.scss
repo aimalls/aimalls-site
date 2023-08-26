@@ -1,4 +1,9 @@
 #privacy-policy {
+    background: url('../../assets/images/logo-robot.png') right top no-repeat;
+    background-size: contain;
+    ion-content {
+        --background: none;
+    }
     .title{
         text-align: center;
         color: var(--ion-color-primary);
@@ -31,5 +36,11 @@
             font-size: 15px;
             padding-top: 5px;
         }
+    }
+}
+
+@media screen and (max-width: 798px) {
+    #privacy-policy {
+        background-size: 50%;
     }
 }

@@ -44,31 +44,6 @@ export const Tasks: FC<iProps> = (props): JSX.Element => {
                             )): null}
                         </IonList>
                     </IonCol>
-                    {/* {!isTasksLoading ? tasks.map((task: iTask) => (
-                        <IonCol size="12" sizeMd="4" sizeSm="6" key={task._id} style={{ display: 'flex' }}>
-                            <IonCard style={{ width: '100%' }}>
-                                <IonCardHeader>
-                                    <IonCardTitle>
-                                        { task.taskTitle }
-                                    </IonCardTitle>
-                                </IonCardHeader>
-                                
-                                <IonCardContent>
-                                    <div dangerouslySetInnerHTML={{ __html: task.taskDescription }}></div>
-                                    <IonCardSubtitle>
-                                        Reward: { `${task.taskReward.amount.$numberDecimal} ${task.taskReward.currency}` }
-                                    </IonCardSubtitle>
-                                    <div style={{ display: 'flex', justifyContent: 'end' }}>
-                                        { !task.userCompletionStatus || task.userCompletionStatus == 'Rejected' ? (
-                                            <IonButton routerLink={`/dashboard/tasks/${task._id}`}>Go</IonButton>
-                                        ): (    
-                                            <IonButton disabled>{ task.userCompletionStatus }</IonButton>
-                                        )}
-                                    </div>
-                                </IonCardContent>
-                            </IonCard>
-                        </IonCol>
-                    )) : null} */}
                     
                 </IonRow>
             </IonGrid>

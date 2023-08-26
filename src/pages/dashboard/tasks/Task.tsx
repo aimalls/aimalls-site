@@ -1,6 +1,6 @@
 import { IonButton, IonCol, IonContent, IonGrid, IonLoading, IonRow, useIonAlert, useIonLoading } from "@ionic/react";
 import { useQuery } from "@tanstack/react-query";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { getTaskByIdFromAPI } from "../../../requests/task.request";
 import { iTask } from "../../../hooks/useTask";
@@ -33,6 +33,18 @@ export const Task: FC<iProps> = (props): JSX.Element => {
 
     const [formField, setFormField] = useState<object>({})
 
+
+    const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        const url_string = window.location.href
+        const url = new URL(url_string)
+        const redirect = url.searchParams.get("redirect")
+        if (redirect) {
+            setRedirectUrl(redirect)
+        }
+    }, [])
+
     const handleTaskFormSubmit = async () => {
         await present({ message: 'Saving task..' })
         try {
@@ -42,7 +54,11 @@ export const Task: FC<iProps> = (props): JSX.Element => {
             }
             await saveUserTaskToAPI(form)
             presentAlert("Task Saved.")
-            navigation.push("/dashboard/tasks")
+            if (redirectUrl) {
+                navigation.push(`/dashboard/${redirectUrl}`)
+            } else {
+                navigation.push("/dashboard/tasks")
+            }
         } catch (err: any) {
             presentAlert(err.error)
         } finally {
@@ -81,7 +97,7 @@ export const Task: FC<iProps> = (props): JSX.Element => {
                         </IonCol>
                     ))}
                     <IonCol size="12" sizeMd="3" pushMd="6" style={{ padding: '0px' }}>
-                        <IonButton expand="block" routerLink="/dashboard/tasks">Do Later</IonButton>
+                        <IonButton expand="block" routerLink={ redirectUrl ? `/dashboard/${redirectUrl}` : 'dashboard/tasks' }>Do Later</IonButton>
                         
                     </IonCol>
                     <IonCol size="12" sizeMd="3" pushMd="6" style={{ padding: '0px' }}>
