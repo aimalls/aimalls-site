@@ -21,10 +21,11 @@ import { RangeValue } from "@ionic/core";
 
 import "../../styles/pages/whitelist/Whitelist.scss"
 import { useQuery } from "@tanstack/react-query";
-import { getRequiredTokenHoldingsFromAPI, getWhitelistTasksFromAPI, iWhitelistTask, saveWhitelistApplicationToAPI } from "../../requests/whitelist.request";
+import { getRequiredTokenHoldingsFromAPI, getWhitelistApplicationFromAPI, getWhitelistTasksFromAPI, iWhitelistApplication, iWhitelistTask, saveWhitelistApplicationToAPI } from "../../requests/whitelist.request";
 import { refresh } from "ionicons/icons";
 
 import logoRobot from "../../assets/images/logo-robot.png"
+import { useWhitelist } from "../../hooks/useWhitelist";
   
 
 export interface iProps {}
@@ -60,7 +61,9 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
     const [presentToast] = useIonToast();
 
 
-    const address = useAddress();
+    const address = useAddress() as string;
+
+    const { whitelistApplications, isWhitelistApplicationLoading } = useWhitelist();
 
     const {
         data: oreTokenBalance, 
@@ -266,7 +269,29 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                                 <IonCol size="12">
                                     <ConnectWallet className="web3-connect" style={{ width: '100%', marginTop: '50px' }} />
                                 </IonCol>
-                                
+                                { address ? (
+                                <IonCol size="12">
+                                    { whitelistApplications ? (
+                                        <IonList>
+                                            { whitelistApplications.map((application: iWhitelistApplication) => (
+                                                <IonItem key={application._id}>
+                                                    <IonLabel>
+                                                        <div>
+                                                            Allocation: ${ application.allocationAmount.$numberDecimal }
+                                                        </div>
+                                                        <p>
+                                                            { application.createdAt }
+                                                        </p>
+                                                    </IonLabel>
+                                                    <IonLabel slot="end">
+                                                        { application.status }
+                                                    </IonLabel>
+                                                </IonItem>
+                                            )) }
+                                        </IonList>
+                                    ): null }
+                                </IonCol>
+                                ): null }
                             </IonRow>
                             { address ? (
                             <IonRow className="ion-justify-content-end">
