@@ -12,7 +12,7 @@ import ChangePassword from "../pages/auth/ChangePassword"
 
 import WhiteListPrivacyPolicy from "../pages/whitelist/PrivacyPolicy"
 
-import Web3ContextProvider from "../contexts/web3Context";
+// import Web3ContextProvider from "../contexts/web3Context";
 import {
     ThirdwebProvider,
     ConnectWallet,
