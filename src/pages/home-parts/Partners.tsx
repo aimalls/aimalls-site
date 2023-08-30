@@ -21,7 +21,7 @@ const Partners: React.FC = () => {
         {
             title: "Certik",
             img: Certik,
-            link: "https://certik.com/"
+            link: "https://skynet.certik.com/projects/aimalls"
         },
         {
             title: "CoinWire",
