@@ -1,0 +1,28 @@
+#whitelist-page {
+    background: url('../../../assets/images/whitelisting-bg.png') center center no-repeat;
+    background-size: cover;
+    color: #FFF;
+    ion-content {
+        --background: none;
+        .page-title {
+            margin-top: 100px;
+            color: #FFF;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .sub-page-title {
+            color: #FFF;
+        }
+        .sub-page-title-description {
+            color: #FFF;
+        }
+        .web3-connect {
+            background: var(--ion-color-primary);
+            color: #FFF;
+            font-weight: bold;
+            padding: 15px;
+        }
+    }
+    
+    
+}

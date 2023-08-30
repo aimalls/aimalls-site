@@ -10,6 +10,9 @@ export default defineConfig({
     legacy(),
     VitePWA({ registerType: 'autoUpdate' })
   ],
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  }
   // test: {
   //   globals: true,
   //   environment: 'jsdom',

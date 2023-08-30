@@ -16,6 +16,14 @@ body {
     font-size: 1.5rem;
 }
 
+.sub-page-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.sub-page-title-description {
+    font-size: .8rem;
+}
+
 #loading-wrapper {
     z-index: 1000;
     background: #FFF;
@@ -25,6 +33,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.whitelist-modal::part(content) {
+    background: rgb(255,255,255);
+    background: url('../assets/images/blurry-gradient-haikei.png') center center no-repeat;
+    background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
