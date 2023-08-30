@@ -5,18 +5,6 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import Tasks from "../pages/dashboard/Tasks";
 import Task from "../pages/dashboard/tasks/Task";
 import Referrals from "../pages/dashboard/Referrals";
-import Whitelist from "../pages/whitelist/Whitelist";
-import Web3ContextProvider from "../contexts/web3Context";
-import {
-    ThirdwebProvider,
-    ConnectWallet,
-    metamaskWallet,
-    coinbaseWallet,
-    walletConnect,
-    trustWallet,
-    useAddress,
-    useContract,
-  } from "@thirdweb-dev/react";
 
 export interface iProps {}
 export const DashboardRoutes: FC<iProps> = (props): JSX.Element => {
