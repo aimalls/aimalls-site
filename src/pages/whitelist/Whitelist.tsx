@@ -32,18 +32,21 @@ export interface iProps {}
 
 type iRequiredHolding = {
     token: string,
-    required: number
+    required: number,
+    buy_link: string
 }
 
 interface iLoadedTokenHolding {
   token: string;
   required: number;
+  buy_link: string,
   name: string;
   symbol: string;
   decimals: number;
   value: Value;
   displayValue: string;
   sufficient: boolean;
+  requiredFormattedValue: string,
   loading: boolean
 }
 
@@ -103,28 +106,34 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
             return requiredHoldings.map((requiredHolding: iRequiredHolding)  => {
                 if (requiredHolding.token == "0x91f006ee672f8f39c6e63ca75b1ca14067b3c366") {
                     const sufficient = parseFloat(oreTokenBalance?.displayValue.toString()!) >= requiredHolding.required;
+                    const requiredFormattedValue = Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1}).format(requiredHolding.required)
                     return {
                         ...requiredHolding,
                         ...oreTokenBalance,
                         sufficient,
+                        requiredFormattedValue,
                         loading: isOreTokenBalanceLoading
                     }
                 }
                 if (requiredHolding.token == "0x21f1ce0FCf1E9E39F8e79B7762801E8096d9f6CD") {
                     const sufficient = parseFloat(bcpayTokenBalance?.displayValue.toString()!) >= requiredHolding.required;
+                    const requiredFormattedValue = Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1}).format(requiredHolding.required)
                     return {
                         ...requiredHolding,
                         ...bcpayTokenBalance,
                         sufficient,
+                        requiredFormattedValue,
                         loading: isBcpayTokenBalanceLoading
                     }
                 }
                 if (requiredHolding.token == "0x057bad39378b5970c5c8a68b6829544e7578dc01") {
                     const sufficient = parseFloat(teteAiTokenBalance?.displayValue.toString()!) >= requiredHolding.required;
+                    const requiredFormattedValue = Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1}).format(requiredHolding.required)
                     return {
                         ...requiredHolding,
                         ...teteAiTokenBalance,
                         sufficient,
+                        requiredFormattedValue,
                         loading: isTeteAiTokenBalanceLoading
                     }
                 }
@@ -425,8 +434,11 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                                             <IonLabel>
                                                 { holding.loading ? 'Loading...' : `${holding.name}: ${holding.displayValue}` }
                                             </IonLabel>
+                                            <IonLabel color={"success"}>
+                                                <IonButton target="_blank" href={ holding.buy_link } className="buy-token-btn">Buy</IonButton>
+                                            </IonLabel>
                                             <IonLabel style={{ textAlign: 'end' }}>
-                                                Required: { holding.required }
+                                                Required: { holding.requiredFormattedValue }
                                                 
                                             </IonLabel>
                                         </IonItem>
