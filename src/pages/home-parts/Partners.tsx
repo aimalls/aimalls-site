@@ -14,6 +14,10 @@ import Cryptodet from "../../assets/images/cryptodetect.jpg"
 import KingdomStarter from '../../assets/images/Partners-Featured-Logos/KingdomStarter.jpg'
 
 import ixir from '../../assets/images/Partners-Featured-Logos/Ixirpad.png'
+import nftb from '../../assets/images/Partners-Featured-Logos/nftb.png'
+import momo from '../../assets/images/Partners-Featured-Logos/momo.png'
+import cryptorank from '../../assets/images/Partners-Featured-Logos/Cryptorank.svg'
+import dao from '../../assets/images/Partners-Featured-Logos/dao.png'
 
 const Partners: React.FC = () => {
 
@@ -72,6 +76,26 @@ const Partners: React.FC = () => {
             title: "IXIRPad",
             img: ixir,
             link: "https://www.ixirpad.com/"
+        },
+        {
+            title: "NFTb",
+            img: nftb,
+            link: "https://nftb.io/"
+        },
+        {
+            title: "cryptorank",
+            img: cryptorank,
+            link: "https://cryptorank.io/"
+        },
+        {
+            title: "DAOStarter",
+            img: dao,
+            link: "https://www.daostarter.pro/#/index"
+        },
+        {
+            title: "Momo",
+            img: momo,
+            link: "https://www.momo-erc.com/index.html"
         }
     ]
 
