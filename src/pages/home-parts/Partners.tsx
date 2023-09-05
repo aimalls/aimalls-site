@@ -16,7 +16,7 @@ import KingdomStarter from '../../assets/images/Partners-Featured-Logos/KingdomS
 import ixir from '../../assets/images/Partners-Featured-Logos/Ixirpad.png'
 import nftb from '../../assets/images/Partners-Featured-Logos/nftb.png'
 import momo from '../../assets/images/Partners-Featured-Logos/momo.png'
-import cryptorank from '../../assets/images/Partners-Featured-Logos/Cryptorank.svg'
+import cryptorank from '../../assets/images/Partners-Featured-Logos/cryptorank.svg'
 import dao from '../../assets/images/Partners-Featured-Logos/dao.png'
 
 const Partners: React.FC = () => {
