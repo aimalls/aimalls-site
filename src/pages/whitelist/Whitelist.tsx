@@ -330,38 +330,45 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                                     </IonList>
                                 </IonCol>
                                 <IonCol size="12">
-
-                                    <IonInput
-                                        type="text"
-                                        fill="solid"
-                                        labelPlacement="floating"
-                                        label="Twitter Handle*"
-                                        placeholder="Please input your Twitter Handle/Username"
-                                        style={{ marginBottom: '10px' }}
-                                        value={twitterHandle}
-                                        onIonInput={({detail}) => setTwitterHandle(detail.value!)}
-                                    ></IonInput>
-                                    <IonInput
-                                        required
-                                        type="text"
-                                        fill="solid"
-                                        labelPlacement="floating"
-                                        label="Telegram Handle*"
-                                        value={telegramHandle}
-                                        placeholder="Please input your Telegram Handle/Username"
-                                        style={{ marginBottom: '10px' }}
-                                        onIonInput={({detail}) => setTelegramHandle(detail.value!)}
-                                    ></IonInput>
-                                    <IonInput
-                                        type="text"
-                                        fill="solid"
-                                        labelPlacement="floating"
-                                        label="Facebook Handle*"
-                                        value={facebookHandle}
-                                        placeholder="Please input your Facebook Handle/Username"
-                                        style={{ marginBottom: '10px' }}
-                                        onIonInput={({detail}) => setFacebookHandle(detail.value!)}
-                                    ></IonInput>
+                                    <IonList lines="none">
+                                        <IonItem>
+                                            <IonInput
+                                                type="text"
+                                                fill="solid"
+                                                labelPlacement="floating"
+                                                label="Twitter Handle*"
+                                                placeholder="Please input your Twitter Handle/Username"
+                                                style={{ marginBottom: '10px' }}
+                                                value={twitterHandle}
+                                                onIonInput={({detail}) => setTwitterHandle(detail.value!)}
+                                            ></IonInput>
+                                        </IonItem>
+                                        <IonItem>
+                                            <IonInput
+                                                required
+                                                type="text"
+                                                fill="solid"
+                                                labelPlacement="floating"
+                                                label="Telegram Handle*"
+                                                value={telegramHandle}
+                                                placeholder="Please input your Telegram Handle/Username"
+                                                style={{ marginBottom: '10px' }}
+                                                onIonInput={({detail}) => setTelegramHandle(detail.value!)}
+                                            ></IonInput>
+                                        </IonItem>
+                                        <IonItem>
+                                            <IonInput
+                                                type="text"
+                                                fill="solid"
+                                                labelPlacement="floating"
+                                                label="Facebook Handle*"
+                                                value={facebookHandle}
+                                                placeholder="Please input your Facebook Handle/Username"
+                                                style={{ marginBottom: '10px' }}
+                                                onIonInput={({detail}) => setFacebookHandle(detail.value!)}
+                                            ></IonInput>
+                                        </IonItem>
+                                    </IonList>
                                 </IonCol>
                             </IonRow>
                             <IonRow className="ion-justify-content-end">
@@ -380,25 +387,33 @@ export const Whitelist: FC<iProps> = (props): JSX.Element => {
                                     <div className="sub-page-title-description">Kindly share your essential information with us so that we can keep you informed.</div>
                                 </IonCol>
                                 <IonCol size="12">
-                                    <IonInput
-                                        type="text"
-                                        fill="solid"
-                                        labelPlacement="floating"
-                                        label="Full Name*"
-                                        value={fullName}
-                                        placeholder="Please type your Full Name"
-                                        style={{ marginBottom: '10px' }}
-                                        onIonInput={({ detail }) => setFullname(detail.value!)}
-                                    ></IonInput>
-                                    <IonInput
-                                        type="email"
-                                        fill="solid"
-                                        value={email}
-                                        labelPlacement="floating"
-                                        label="Email Address*"
-                                        placeholder="Please type your email address"
-                                        onIonInput={({ detail }) => setEmail(detail.value!)}
-                                    ></IonInput>
+                                    <IonList>
+                                        <IonItem>
+                                            <IonInput
+                                                type="text"
+                                                fill="solid"
+                                                labelPlacement="floating"
+                                                label="Full Name*"
+                                                value={fullName}
+                                                placeholder="Please type your Full Name"
+                                                style={{ marginBottom: '10px' }}
+                                                onIonInput={({ detail }) => setFullname(detail.value!)}
+                                            ></IonInput>
+                                        </IonItem>
+                                        <IonItem>
+                                            <IonInput
+                                                type="email"
+                                                fill="solid"
+                                                value={email}
+                                                labelPlacement="floating"
+                                                label="Email Address*"
+                                                placeholder="Please type your email address"
+                                                onIonInput={({ detail }) => setEmail(detail.value!)}
+                                            ></IonInput>
+                                        </IonItem>
+                                    </IonList>
+                                    
+                                    
                                     
                                 </IonCol>
                                 <IonCol size="12" style={{ display: 'flex', justifyContent: 'center' }}>
